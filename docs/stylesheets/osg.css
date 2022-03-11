@@ -1,0 +1,89 @@
+:root {
+    --md-default-fg-color: #3a3a3a;
+    --md-primary-fg-color: #F1A52C;
+    --md-primary-bg-color: #3a3a3a;
+    --md-accent-fg-color: #FFC364;
+}
+
+:root>* {
+    --md-footer-bg-color: #3a3a3a;
+
+    --md-typeset-a-color: #ad510c;
+    --md-text-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.md-typeset h1, .md-typeset h2 {
+    font-weight: 400;
+}
+
+.md-typeset__table td {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.md-typeset table th {
+    min-width: 0px !important;
+}
+
+.before-dot::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    -moz-border-radius: 6.5px;
+    -webkit-border-radius: 6.5px;
+    border-radius: 6.5px;
+    transform: translate(0%,15%);
+}
+
+.text-light-blue::before {
+    background-color: #648fff
+}
+
+.text-blue::before {
+    background-color: #785ef0;
+}
+
+.text-pink::before {
+    background-color: #dc267f;
+}
+
+.text-orange::before {
+    background-color: #fe6100;
+}
+
+.text-light-orange::before {
+    background-color: #ffb000;
+}
+
+.text-black::before {
+    background-color: #000;
+}
+
+.tabbed-in {
+    margin-left: 18px;
+}
+
+/*$text: #3a3a3a;*/
+/*$primary: */
+/*$secondary: #F1A52C;*/
+/*$info: #FFC364;*/
+/*$warning: #fff1c7;*/
+/*$white-offset: #fff7ea;*/
+/*$nav-link-color: $text;*/
+
+
+/*$nav-link-font-weight: 500;*/
+/*$navbar-light-color: #3a3a3a;*/
+
+/*$border-radius: 1rem;*/
+
+/*$btn-border-radius: .25rem;*/
+
+/*$card-border-color: black;*/
+/*$card-border-radius: $border-radius;*/
+
+/*$font-family-base: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+/*$headings-font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+/*$headings-font-weight: 600;*/

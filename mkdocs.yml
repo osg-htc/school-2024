@@ -1,0 +1,33 @@
+site_name: OSG User School 2023
+site_url: https://osg-htc.org/user-school-2023/
+repo_name: null
+theme:
+  name: material
+  logo: assets/OSG_Logo.svg
+  favicon: assets/OSG_Logo.png
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - codehilite:
+      guess_lang: False
+  - meta
+  - pymdownx.details
+  - toc:
+      permalink: True
+
+extra_css:
+  - stylesheets/code-highlight.css
+  - stylesheets/osg.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/OSGUserSchool
+      name: OSG User School on Twitter
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/OSGUserSchool
+      name: OSG User School on Facebook
+
+nav:
+  - Home:                           index.md
