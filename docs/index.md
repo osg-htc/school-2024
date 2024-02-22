@@ -1,4 +1,4 @@
-# OSG User School 2023
+# OSG School 2024
 
 <figure>
     <img src="assets/Madison_Skyline.jpeg" alt="Madison Skyline" />
@@ -9,7 +9,7 @@
 *Learn how this summer at the lovely [University of Wisconsin–Madison](https://wisc.edu/)*
 
 During the School,
-<span style="font-weight: bold; color: #FF6600;">August 7&ndash;11</span>,
+<span style="font-weight: bold; color: #FF6600;">August 5&ndash;9</span>,
 you will learn to use [high-throughput computing](https://htcondor.org/htc.html) (HTC) systems
 &mdash;
 at your own campus or
@@ -39,7 +39,7 @@ basic travel and local costs associated with the School.
 
 ## Contact Us
 
-The OSG User School is part of the
+The OSG School is part of the
 [OSG Outreach Area](https://osg-htc.org/outreach/)&nbsp;&mdash;
 please visit that site to learn about other OSG Outreach activities.
 

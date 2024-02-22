@@ -1,4 +1,4 @@
-site_name: OSG User School 2023
+site_name: OSG School 2024
 site_url: https://osg-htc.org/user-school-2023/
 repo_name: null
 theme:
@@ -24,10 +24,10 @@ extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/OSGUserSchool
-      name: OSG User School on Twitter
+      name: OSG School on Twitter
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/OSGUserSchool
-      name: OSG User School on Facebook
+      name: OSG School on Facebook
 
 nav:
   - Home:                           index.md
