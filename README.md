@@ -1,9 +1,8 @@
-# OSG School 2023
+# OSG School 2024
 
-The source files for the OSG School 2023 website.
+The source files for the OSG School 2024 website.
 
 To serve the website locally, download Docker and use the command in the root directory:
-
 
 ```console
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
@@ -26,9 +25,9 @@ When you add new documentation you should name the file like so: ```part<x>-ex<y
 
 Documentation should be referenced in two locations:
 
-#### [/docs/material/index.md](https://github.com/osg-htc/user-school-2023/blob/main/docs/materials/index.md)
+#### [/docs/material/index.md](https://github.com/osg-htc/school-2024/blob/main/docs/materials/index.md)
 
-This is an overview page that contains all documentation and each category's files.
+This is an overview page that contains all documentation and each category’s files.
 
 Use format below when adding to this page
 ```markdown
@@ -43,7 +42,7 @@ Use format below when adding to this page
 - [Exercise 1.2: <exercise-name>](<category>/part1-ex2-<exercise-name>.md)
 ```
         
-#### [/mkdocs.yml](https://github.com/osg-htc/user-school-2023/blob/main/mkdocs.yml)
+#### [/mkdocs.yml](https://github.com/osg-htc/school-2024/blob/main/mkdocs.yml)
 
 This files generates the website navigation. You should not include the category files in this navigation.
 
