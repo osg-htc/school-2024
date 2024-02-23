@@ -1,4 +1,4 @@
-# OSG School 2024
+# OSG School 2024 
 
 The source files for the OSG School 2024 website.
 
