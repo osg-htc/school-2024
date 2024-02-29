@@ -8,6 +8,8 @@
 
 *Learn how this summer at the lovely [University of Wisconsin–Madison](https://wisc.edu/)*
 
+<p style="color: #FF6600; font-weight: bold;">Applications are now open! <a href="#applications">See below</a> for details.</p>
+
 During the School,
 <span style="font-weight: bold; color: #FF6600;">August 5&ndash;9</span>,
 you will learn to use [high-throughput computing](https://htcondor.org/htc.html) (HTC) systems
@@ -37,6 +39,27 @@ People accepted to this program will receive financial support for
 basic travel and local costs associated with the School.
 
 
+## Applications
+
+Applications are now open.
+**The deadline for applications is Monday, 1 April 2024.**
+Submit your application by then to ensure consideration!
+
+To apply, complete both of the steps below (in parallel, if you like):
+
+* Complete the [online application form](https://uwmadison.co1.qualtrics.com/jfe/form/SV_e3bMhbSRecLzWxo)
+  (the link goes to a Qualtrics survey, which is the application)
+
+* Have someone email a letter of recommendation for you to
+  [school@osg-htc.org](mailto:school@osg-htc.org)
+  (ideally PDF or plain text)
+
+For the letter of recommendation, ask someone who knows you professionally&nbsp;&mdash;
+ideally a faculty member or other supervisor.
+They should clearly identify your name and the “OSG School 2024” in the subject line and letter,
+so that we can associate your application and letter.
+
+
 ## Contact Us
 
 The OSG School is part of the
@@ -47,6 +70,6 @@ If you have any questions about the event, feel free to email us:
 
 <school@osg-htc.org>
 
-<a href="https://www.facebook.com/OSGUserSchool" target="_blank" style="border: 0px none black; text-decoration: none;"><img src="files/FB-f-Logo__blue_512.png" height="28" width="28" alt="Facebook logo"></a> <a href="https://twitter.com/OSGUserSchool" target="_blank" style="border: 0px none black; text-decoration: none;"><img src="files/Twitter_logo_blue.png" style="height: 28px; width: 28px; background-color: white;" alt="Twitter logo"></a> OSGUserSchool
+<a href="https://twitter.com/OSGSchool" target="_blank" style="border: 0px none black; text-decoration: none;"><img src="files/Twitter_logo_blue.png" style="height: 28px; width: 28px; background-color: white;" alt="Twitter logo"></a> OSGSchool
 
 <p style="font-size: 90%;">* Image provided by Wikimedia user Av9 under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons License</a></p>
