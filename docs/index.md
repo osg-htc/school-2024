@@ -62,9 +62,9 @@ so that we can associate your application and letter.
 
 ## Contact Us
 
-The OSG School is part of the
-[OSG Outreach Area](https://osg-htc.org/outreach/)&nbsp;&mdash;
-please visit that site to learn about other OSG Outreach activities.
+The [OSG School](https://osg-htc.org/community/school.html)
+is the premier training event of the OSG Consortium and
+is held annually at UW–Madison.
 
 If you have any questions about the event, feel free to email us:
 
