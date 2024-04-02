@@ -8,8 +8,6 @@
 
 *Learn how this summer at the lovely [University of Wisconsin–Madison](https://wisc.edu/)*
 
-<p style="color: #FF6600; font-weight: bold;">Applications are now open! <a href="#applications">See below</a> for details.</p>
-
 During the School,
 <span style="font-weight: bold; color: #FF6600;">August 5&ndash;9</span>,
 you will learn to use [high-throughput computing](https://htcondor.org/htc.html) (HTC) systems
@@ -41,24 +39,22 @@ basic travel and local costs associated with the School.
 
 ## Applications
 
-Applications are now open.
-**The deadline for applications is Monday, 1 April 2024.**
-Submit your application by then to ensure consideration!
+Applications are now closed for 2024.
+The deadline for applications was Monday, 1 April 2024.
 
-To apply, complete both of the steps below (in parallel, if you like):
-
-* Complete the [online application form](https://uwmadison.co1.qualtrics.com/jfe/form/SV_e3bMhbSRecLzWxo)
-  (the link goes to a Qualtrics survey, which is the application)
-
-* Have someone email a letter of recommendation for you to
-  [school@osg-htc.org](mailto:school@osg-htc.org)
-  (ideally PDF or plain text)
+If still needed,
+have someone email a letter of recommendation for you to
+[school@osg-htc.org](mailto:school@osg-htc.org)
+(ideally PDF or plain text)
 
 For the letter of recommendation, ask someone who knows you professionally&nbsp;&mdash;
 ideally a faculty member or other supervisor.
 They should clearly identify your name and the “OSG School 2024” in the subject line and letter,
 so that we can associate your application and letter.
 
+**Applicants:**
+We plan to review applications in April and invite participants by early May or so.
+We will contact you once decisions have been made. Thank you for your patience!
 
 ## Contact Us
 
