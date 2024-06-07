@@ -23,11 +23,14 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/OSGUserSchool
+      link: https://twitter.com/OSGSchool
       name: OSG School on Twitter
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/OSGUserSchool
-      name: OSG School on Facebook
 
 nav:
   - Home:                           index.md
+  - Logistics:
+    - General information:          logistics/index.md
+    - Travel:
+      - Travel planning:            logistics/travel-planning.md
+    - Visa requirements:            logistics/visas.md
+    - Hotel information:            logistics/hotel.md
