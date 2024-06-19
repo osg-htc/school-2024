@@ -24,10 +24,11 @@ Here are ideas that have helped some School travelers in past years:
     Or look into bus routes, especially from larger cities like Chicago.
     The buses are very comfortable, have wi-fi, and run frequently.
 
--   If you fly, we may ask you to consider flying to
+-   If you fly, try to get flights to and from Madison (MSN) itself.
+    In some cases, we may ask you to consider flying to
     Milwaukee (1&frac12; hours away) or Chicago (2&frac12; hours away),
-    then taking a direct bus to Madison.
-    In some cases, this option saves a lot of money.
+    then taking a direct bus to Madison;
+    we do this only when the costs or itinerary options to Madison are terrible.
 
 -   If you fly, be flexible about departure times &mdash;
     early and late flights are often the least expensive.
