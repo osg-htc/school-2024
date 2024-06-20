@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part1-ex3-jobs/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex3 jobs - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#htc-exercise-13-run-jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex3 jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-first-job" class="md-nav__link">
+    Running Your First Job
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Your First Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-your-job-in-the-queue" class="md-nav__link">
+    View your job in the queue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-job-with-arguments" class="md-nav__link">
+    Running a Job With Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-script-job-from-the-submit-directory" class="md-nav__link">
+    Running a Script Job From the Submit Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-challenge" class="md-nav__link">
+    Extra Challenge
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="htc-exercise-13-run-jobs">HTC Exercise 1.3: Run Jobs!<a class="headerlink" href="#htc-exercise-13-run-jobs" title="Permanent link">&para;</a></h1>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The goal of this exercise is to submit jobs to HTCondor and have them run on the PATh Facility. This is a huge step in learning to use an HTC system!</p>
+<p><strong>This exercise will take longer than the first two, short ones. If you are having any problems getting the jobs to run, please ask the instructors! It is very important that you know how to run jobs.</strong></p>
+<h2 id="running-your-first-job">Running Your First Job<a class="headerlink" href="#running-your-first-job" title="Permanent link">&para;</a></h2>
+<p>Nearly all of the time, when you want to run an HTCondor job, you first write an HTCondor submit file for it. In this section, you will run the same <code>hostname</code> command as in Exercise 1.1, but where this command will run within a job on one of the 'execute' servers on the PATh Facility's HTCondor pool.</p>
+<p>First, create an example submit file called <code>hostname.sub</code> using your favorite text editor (e.g., <code>nano</code>, <code>vim</code>) and then transfer the following information to that file:</p>
+<div class="codehilite"><pre><span></span><code>executable = /bin/hostname
+
+output = hostname.out
+error = hostname.err
+log = hostname.log
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue
+</code></pre></div>
+
+<p>Save your submit file using the name <code>hostname.sub</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can name the HTCondor submit file using any filename. 
+It's a good practice to always include the <code>.sub</code> extension, but it is not required. 
+This is because the submit file is a simple text file that we are using to pass information to HTCondor.</p>
+</div>
+<p>The lines of the submit file have the following meanings:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Submit Command</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>executable</code></td>
+<td align="left">The name of the program to run (relative to the directory from which you submit).</td>
+</tr>
+<tr>
+<td align="left"><code>output</code></td>
+<td align="left">The filename where HTCondor will write the standard output from your job.</td>
+</tr>
+<tr>
+<td align="left"><code>error</code></td>
+<td align="left">The filename where HTCondor will write the standard error from your job. This particular job is not likely to have any, but it is best to include this line for every job.</td>
+</tr>
+<tr>
+<td align="left"><code>log</code></td>
+<td align="left">The filename where HTCondor will write information about your job run. While not required, it is a <strong>really</strong> good idea to have a log file for every job.</td>
+</tr>
+<tr>
+<td align="left"><code>request_*</code></td>
+<td align="left">Tells HTCondor how many <code>cpus</code> and how much <code>memory</code> and <code>disk</code> we want, which is not much, because the 'hostname' executable is very small.</td>
+</tr>
+<tr>
+<td align="left"><code>queue</code></td>
+<td align="left">Tells HTCondor to run your job with the settings above.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that we are not using the <code>arguments</code> or <code>transfer_input_files</code> lines that were mentioned during lecture because the <code>hostname</code> program is all that needs to be transferred from the access point server, and we want to run it without any additional options.</p>
+<p>Double-check your submit file, so that it matches the text above. Then, tell HTCondor to run your job:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_submit hostname.sub
+<span class="go">Submitting job(s).</span>
+<span class="go">1 job(s) submitted to cluster NNNN.</span>
+</code></pre></div>
+
+<p>The actual cluster number will be shown instead of <code>NNNN</code>. <strong>If, instead of the text above, there are error messages, read them carefully and then try to correct your submit file or ask for help.</strong></p>
+<p>Notice that <code>condor_submit</code> returns back to the shell prompt right away. It does <strong>not</strong> wait for your job to run. Instead, as soon as it has finished submitting your job into the queue, the submit command finishes.</p>
+<h3 id="view-your-job-in-the-queue">View your job in the queue<a class="headerlink" href="#view-your-job-in-the-queue" title="Permanent link">&para;</a></h3>
+<p>Now, use <code>condor_q</code> and <code>condor_q -nobatch</code> to watch for your job in the queue! </p>
+<p>You may not even catch the job in the <code>R</code> running state, because the <code>hostname</code> command runs very quickly. When the job itself is finished, it will 'leave' the queue and no longer be listed in the <code>condor_q</code> output.</p>
+<p>After the job finishes, check for the <code>hostname</code> output in <code>hostname.out</code>, which is where job information printed to the terminal screen will be printed for the job.</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>cat hostname.out
+<span class="go">e171.chtc.wisc.edu</span>
+</code></pre></div>
+
+<p>The <code>hostname.err</code> file should be empty, unless there were issues running the <code>hostname</code> executable after it was transferred to the slot. The <code>hostname.log</code> is more complex and will be the focus of a later exercise.</p>
+<h2 id="running-a-job-with-arguments">Running a Job With Arguments<a class="headerlink" href="#running-a-job-with-arguments" title="Permanent link">&para;</a></h2>
+<p>Very often, when you run a command on the command line, it includes arguments (i.e. options) after the program name, as in the below examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>sleep <span class="m">60</span>
+</code></pre></div>
+
+<p>In an HTCondor submit file, the program (or 'executable') name goes in the <code>executable</code> statement and <strong>all remaining arguments</strong> go into an <code>arguments</code> statement. For example, if the full command is:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>sleep <span class="m">60</span>
+</code></pre></div>
+
+<p>Then in the submit file, we would put the location of the "sleep" program (you can find it with <code>which sleep</code>) as the job <code>executable</code>, and <code>60</code> as the job <code>arguments</code>:</p>
+<div class="codehilite"><pre><span></span><code>executable = /bin/sleep
+arguments = 60
+</code></pre></div>
+
+<p>Let’s try a job submission with arguments. We will use the <code>sleep</code> command shown above, which does nothing (i.e., puts the job to sleep) for the specified number of seconds, then exits normally. It is convenient for simulating a job that takes a while to run.</p>
+<p>Create a new submit file and save the following text in it.</p>
+<div class="codehilite"><pre><span></span><code>executable = /bin/sleep
+arguments = 60
+
+output = sleep.out
+error = sleep.err
+log = sleep.log
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue
+</code></pre></div>
+
+<p>You can save the file using any name, but as a reminder, we recommend it uses the <code>.sub</code> file extension. </p>
+<p>Except for changing a few filenames, this submit file is nearly identical to the last one, except for the addition of the <code>arguments</code> line.</p>
+<p>Submit this new job to HTCondor. Again, watch for it to run using <code>condor_q</code> and <code>condor_q -nobatch</code>; 
+check once every 15 seconds or so. 
+Once the job starts running, it will take about 1 minute to run (reminder: the <code>sleep</code> command is telling the job to do nothing for 60 seconds), 
+so you should be able to see it running for a bit. 
+When the job finishes, it will disappear from the queue, but there will be no output in the output or error files, because <code>sleep</code> does not produce any output.</p>
+<h2 id="running-a-script-job-from-the-submit-directory">Running a Script Job From the Submit Directory<a class="headerlink" href="#running-a-script-job-from-the-submit-directory" title="Permanent link">&para;</a></h2>
+<p>So far, we have been running programs (executables) that come with the standard Linux system. 
+More frequently, you will want to run a program that exists within your directory 
+or perhaps a shell script of commands that you'd like to run within a job. In this example, you will write a shell script and a submit file that runs the shell script within a job:</p>
+<ol>
+<li>
+<p>Put the following contents into a file named <code>test-script.sh</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="c1"># START</span>
+<span class="nb">echo</span> <span class="s1">&#39;Date: &#39;</span> <span class="sb">`</span>date<span class="sb">`</span> 
+<span class="nb">echo</span> <span class="s1">&#39;Host: &#39;</span> <span class="sb">`</span>hostname<span class="sb">`</span> 
+<span class="nb">echo</span> <span class="s1">&#39;System: &#39;</span> <span class="sb">`</span>uname -spo<span class="sb">`</span> 
+<span class="nb">echo</span> <span class="s2">&quot;Program: </span><span class="nv">$0</span><span class="s2">&quot;</span> 
+<span class="nb">echo</span> <span class="s2">&quot;Args: </span><span class="nv">$*</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s1">&#39;ls: &#39;</span> <span class="sb">`</span>ls<span class="sb">`</span>
+<span class="c1"># END</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Add executable permissions to the file (so that it can be run as a program):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>chmod +x test-script.sh
+</code></pre></div>
+
+</li>
+<li>
+<p>Test your script from the command line:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>./test-script.sh hello <span class="m">42</span> 
+<span class="go">Date: Mon Jul 17 10:02:20 CDT 2017 </span>
+<span class="go">Host: learn.chtc.wisc.edu </span>
+<span class="go">System: Linux x86_64 GNU/Linux </span>
+<span class="go">Program: ./test-script.sh</span>
+<span class="go">Args: hello 42</span>
+<span class="go">ls: hostname.sub montage hostname.err hostname.log hostname.out test-script.sh</span>
+</code></pre></div>
+
+<p>This step is <strong>really</strong> important! If you cannot run your executable from the command-line, HTCondor probably cannot run it on another machine, either. 
+Further, debugging problems like this one is surprisingly difficult. 
+So, if possible, test your <code>executable</code> and <code>arguments</code> as a command at the command-line first.</p>
+</li>
+<li>
+<p>Write the submit file (this should be getting easier by now):</p>
+<div class="codehilite"><pre><span></span><code>executable = test-script.sh
+arguments = foo bar baz
+
+output = script.out
+error = script.err
+log = script.log
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue
+</code></pre></div>
+
+<p>In this example, the <code>executable</code> that was named in the submit file did <strong>not</strong> start with a <code>/</code>, 
+    so the location of the file is relative to the submit directory itself. 
+    In other words, in this format the executable must be in the same directory as the submit file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blank lines between commands and spaces around the <code>=</code> do not matter to HTCondor.
+For example, this submit file is equivalent to the one above:</p>
+<div class="codehilite"><pre><span></span><code>executable = test-script.sh
+arguments =  foo bar baz
+output =     script.out
+error =      script.err
+log =        script.log
+
+request_cpus=1
+request_memory=1GB
+request_disk=1GB
+
+queue
+</code></pre></div>
+
+<p>Use whitespace to make things clear to <strong>you</strong>, the user. </p>
+</div>
+</li>
+<li>
+<p>Submit the job, wait for it to finish, and check the standard output file (and standard error file, which should be empty).</p>
+<p>What do you notice about the lines returned for "Program" and "ls"? Remember that only files pertaining
+to <strong>this</strong> job will be in the job working directory on the execute point server. You're also seeing the effects
+of HTCondor's need to standardize some filenames when running your job, though they are named as you expect 
+in the submission directory (per the submit file contents).</p>
+</li>
+</ol>
+<h2 id="extra-challenge">Extra Challenge<a class="headerlink" href="#extra-challenge" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are Extra Challenges throughout the school curriculum. You may be better off coming back to these after you've completed all other exercises for your current working session.</p>
+</div>
+<p>Below is a Python script that does something similar to the shell script above. Run this Python script using HTCondor.</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="sd">&quot;&quot;&quot;Extra Challenge for OSG School</span>
+<span class="sd">Written by Tim Cartwright</span>
+<span class="sd">Submitted to CHTC by #YOUR_NAME#</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">getpass</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">arguments</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time    :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> (</span><span class="si">%a</span><span class="s1">) %H:%M:%S %Z&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Host    :&#39;</span><span class="p">,</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">(),</span> <span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
+<span class="n">uname</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;System  :&quot;</span><span class="p">,</span> <span class="n">uname</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">uname</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">uname</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Version :&quot;</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Program :&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Script  :&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Args    :&#39;</span><span class="p">,</span> <span class="n">arguments</span><span class="p">)</span>
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

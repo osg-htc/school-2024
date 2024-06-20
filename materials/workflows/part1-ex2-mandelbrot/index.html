@@ -1,0 +1,462 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/workflows/part1-ex2-mandelbrot/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex2 mandelbrot - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workflows-exercise-12-a-brief-detour-through-the-mandelbrot-set" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex2 mandelbrot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-goatbrot-from-the-command-line" class="md-nav__link">
+    Running goatbrot From the Command Line
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dividing-the-work-into-smaller-pieces" class="md-nav__link">
+    Dividing the Work into Smaller Pieces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-the-image" class="md-nav__link">
+    View the Image!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="workflows-exercise-12-a-brief-detour-through-the-mandelbrot-set">Workflows Exercise 1.2: A Brief Detour Through the Mandelbrot Set<a class="headerlink" href="#workflows-exercise-12-a-brief-detour-through-the-mandelbrot-set" title="Permanent link">&para;</a></h1>
+<p>Before we explore using DAGs to implement workflows, let’s get a more interesting job. Let’s make pretty pictures!</p>
+<p>We have a small program that draws pictures of the Mandelbrot set. You can <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">read about the Mandelbrot set on Wikipedia</a>, or you can simply appreciate the pretty pictures. It’s a fractal.</p>
+<p>We have a simple program that can draw the Mandelbrot set. It's called <code>goatbrot</code>.</p>
+<p>Before beginning, ensure that you are connected to <code>ap40.uw.osg-htc.org</code>. Create a directory for this exercise and cd into it.</p>
+<h2 id="running-goatbrot-from-the-command-line">Running goatbrot From the Command Line<a class="headerlink" href="#running-goatbrot-from-the-command-line" title="Permanent link">&para;</a></h2>
+<p>You can generate the Mandelbrot set as a quick test with two simple commands.</p>
+<ol>
+<li>
+<p>Download the goatbrot executable:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/goatbrot
+<span class="gp">username@ap40 $ </span>chmod a+x goatbrot
+</code></pre></div>
+
+</li>
+<li>
+<p>Generate a PPM image of the Mandelbrot set:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>./goatbrot -i <span class="m">1000</span> -o tile_000000_000000.ppm -c <span class="m">0</span>,0 -w <span class="m">3</span> -s <span class="m">1000</span>,1000
+</code></pre></div>
+
+<p>The <code>goatbroat</code> program takes several parameters. Let's break them down:</p>
+<ul>
+<li><code>-i 1000</code> The number of iterations. Bigger numbers generate more accurate images but are slower to run.</li>
+<li><code>-o tile_000000_000000.ppm</code> The output file to generate.</li>
+<li><code>-c 0,0</code> The center point of the image. Here it is the point (0,0).</li>
+<li><code>-w 3</code> The width of the image. Here is 3.</li>
+<li><code>-s 1000,1000</code> The size of the final image. Here we generate a picture that is 1000 pixels wide and 1000 pixels tall.</li>
+</ul>
+</li>
+<li>
+<p>Convert the image to the JPEG format (using a built-in program called <code>convert</code>):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>convert tile_000000_000000.ppm mandel.jpg
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="dividing-the-work-into-smaller-pieces">Dividing the Work into Smaller Pieces<a class="headerlink" href="#dividing-the-work-into-smaller-pieces" title="Permanent link">&para;</a></h2>
+<p>The Mandelbrot set can take a while to create, particularly if you make the iterations large or the image size large. What if we broke the creation of the image into multiple invocations (an HTC approach!) then stitched them together? Once we do that, we can run each <code>goatbroat</code> in parallel in our cluster. Here's an example you can run by hand.</p>
+<ol>
+<li>
+<p>Run goatbroat 4 times:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>./goatbrot -i <span class="m">1000</span> -o tile_000000_000000.ppm -c -0.75,0.75 -w <span class="m">1</span>.5 -s <span class="m">500</span>,500
+<span class="gp">username@ap40 $ </span>./goatbrot -i <span class="m">1000</span> -o tile_000000_000001.ppm -c <span class="m">0</span>.75,0.75 -w <span class="m">1</span>.5 -s <span class="m">500</span>,500 
+<span class="gp">username@ap40 $ </span>./goatbrot -i <span class="m">1000</span> -o tile_000001_000000.ppm -c -0.75,-0.75 -w <span class="m">1</span>.5 -s <span class="m">500</span>,500 
+<span class="gp">username@ap40 $ </span>./goatbrot -i <span class="m">1000</span> -o tile_000001_000001.ppm -c <span class="m">0</span>.75,-0.75 -w <span class="m">1</span>.5 -s <span class="m">500</span>,500
+</code></pre></div>
+
+</li>
+<li>
+<p>Stitch the small images together into the complete image (in JPEG format):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>montage tile_000000_000000.ppm tile_000000_000001.ppm tile_000001_000000.ppm tile_000001_000001.ppm -mode Concatenate -tile 2x2 mandel.jpg
+</code></pre></div>
+
+</li>
+</ol>
+<p>This will produce the same image as above. We divided the image space into a 2×2 grid and ran <code>goatbrot</code> on each section of the grid. The built-in <code>montage</code> program stitches the files together and writes out the final image in JPEG format.</p>
+<h2 id="view-the-image">View the Image!<a class="headerlink" href="#view-the-image" title="Permanent link">&para;</a></h2>
+<p>Run the commands above so that you have the Mandelbrot image. 
+When you create the image, you might wonder how you can view it. 
+Use <code>scp</code> or <code>sftp</code> to copy the <code>mandel.jpg</code> back to your computer to view it. </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

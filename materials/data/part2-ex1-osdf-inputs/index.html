@@ -1,0 +1,517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/data/part2-ex1-osdf-inputs/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part2 ex1 osdf inputs - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-exercise-21-using-osdf-for-large-shared-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part2 ex1 osdf inputs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#place-the-database-in-osdf" class="md-nav__link">
+    Place the Database in OSDF
+  </a>
+  
+    <nav class="md-nav" aria-label="Place the Database in OSDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-to-your-data-to-the-osdf-space" class="md-nav__link">
+    Copy to your data to the OSDF space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-the-submit-file-and-wrapper" class="md-nav__link">
+    Modify the Submit File and Wrapper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-the-job" class="md-nav__link">
+    Submit the Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    Considerations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-keeping-osdf-clean" class="md-nav__link">
+    Note: Keeping OSDF 'Clean'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-exercise" class="md-nav__link">
+    Next exercise
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="data-exercise-21-using-osdf-for-large-shared-data">Data Exercise 2.1: Using OSDF for Large Shared Data<a class="headerlink" href="#data-exercise-21-using-osdf-for-large-shared-data" title="Permanent link">&para;</a></h1>
+<p>This exercise will use a <a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastHome">BLAST</a> workflow to
+demonstrate the functionality of OSDF for transferring input files to jobs on OSG.</p>
+<p>Because our individual blast jobs from previous exercises would take a bit longer
+with a larger database (too long for an workable exercise), we'll imagine for this exercise that our
+<code>pdbaa_files.tar.gz</code> file is too large for <code>transfer_input_files</code> (larger than ~1 GB).
+For this exercise, we will use the same inputs, but instead of using <code>transfer_input_files</code> for the <code>pdbaa</code> database,
+we will place it in OSDF and have the jobs download from there.</p>
+<p>OSDF is connected to a distributed set of caches spread across the U.S.
+They are connected with high bandwidth connections to each other, and to the data origin servers, where your data is
+originally placed.</p>
+<p><img alt="OSDF Map" src="../files/osgus19-day4-part2-CacheLocations.png" /></p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Make sure you're logged in to <code>ap40.uw.osg-htc.org</code></li>
+<li>Copy the following files from the previous Blast exercises to a new directory in <code>/home/&lt;username&gt;</code> called <code>osdf-shared</code>:<ul>
+<li><code>blast_wrapper.sh</code></li>
+<li><code>blastx</code></li>
+<li><code>mouse_rna.fa.1</code></li>
+<li><code>mouse_rna.fa.2</code></li>
+<li><code>mouse_rna.fa.3</code></li>
+<li>Your most recent submit file (probably named <code>blast_split.sub</code>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="place-the-database-in-osdf">Place the Database in OSDF<a class="headerlink" href="#place-the-database-in-osdf" title="Permanent link">&para;</a></h2>
+<h3 id="copy-to-your-data-to-the-osdf-space">Copy to your data to the OSDF space<a class="headerlink" href="#copy-to-your-data-to-the-osdf-space" title="Permanent link">&para;</a></h3>
+<p>OSDF provides a directory for you to store data which can be accessed through the caching servers.
+First, you need to move your BLAST database (<code>pdbaa_files.tar.gz</code>) into this directory. For <code>ap40.uw.osg-htc.org</code>, the directory
+to use is <code>/ospool/PROTECTED/[USERNAME]/</code></p>
+<p>As the <code>PROTECTED</code> directory name indicates, your files placed in the directory will only be accessible
+by your own jobs.</p>
+<h2 id="modify-the-submit-file-and-wrapper">Modify the Submit File and Wrapper<a class="headerlink" href="#modify-the-submit-file-and-wrapper" title="Permanent link">&para;</a></h2>
+<p>You will have to modify the wrapper and submit file to use OSDF:</p>
+<ol>
+<li>
+<p>HTCondor knows how to do OSDF transfers, so you just have to provide the correct URL in 
+   <code>transfer_input_files</code>. Note there is no servername (3 slashes in :///) and we instead
+   is is just based on namespace (<code>/ospool/PROTECTED</code> in this case):</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = blastx, $(inputfile), osdf:///ospool/PROTECTED/&lt;USERNAME&gt;/pdbaa_files.tar.gz
+</code></pre></div>
+
+</li>
+<li>
+<p>Confirm that your queue statement is correct for the current directory. It should be something like:</p>
+<div class="codehilite"><pre><span></span><code>queue inputfile matching mouse_rna.fa.*
+</code></pre></div>
+
+</li>
+</ol>
+<p>And that <code>mouse_rna.fa.*</code> files exist in the current directory (you should have copied a few them from the previous exercise
+directory).</p>
+<h2 id="submit-the-job">Submit the Job<a class="headerlink" href="#submit-the-job" title="Permanent link">&para;</a></h2>
+<p>Now submit and monitor the job! If your 100 jobs from the previous exercise haven't started running yet, this job will
+not yet start.
+However, after it has been running for ~2 minutes, you're safe to continue to the next exercise!</p>
+<h2 id="considerations">Considerations<a class="headerlink" href="#considerations" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Why did we not place all files in OSDF (for example, <code>blastx</code> and <code>mouse_rna.fa.*</code>)?</p>
+</li>
+<li>
+<p>What do you think will happen if you make changes to <code>pdbaa_files.tar.gz</code>? Will the caches
+   be updated automatically, or is there a possiblility that the old version of
+   <code>pdbaa_files.tar.gz</code> will be served up to jobs? What is the solution to this problem?
+   (Hint: OSDF only considers the filename when caching data)</p>
+</li>
+</ol>
+<h2 id="note-keeping-osdf-clean">Note: Keeping OSDF 'Clean'<a class="headerlink" href="#note-keeping-osdf-clean" title="Permanent link">&para;</a></h2>
+<p>Just as for any data directory, it is VERY important to remove old files from OSDF when you no longer need them,
+especially so that you'll have plenty of space for such files in the future.
+For example, you would delete (<code>rm</code>) files from <code>/ospool/PROTECTED/</code> on when you don't need them there
+anymore, but only after all jobs have finished.
+The next time you use OSDF after the school, remember to first check for old files that you can delete.</p>
+<h2 id="next-exercise">Next exercise<a class="headerlink" href="#next-exercise" title="Permanent link">&para;</a></h2>
+<p>Once completed, move onto the next exercise: <a href="../part2-ex2-osdf-outputs">Using OSDF for outputs</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

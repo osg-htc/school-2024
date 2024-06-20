@@ -1,0 +1,563 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/data/part1-ex3-blast-split/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex3 blast split - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-exercise-13-splitting-large-input-for-better-throughput" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex3 blast split
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtain-the-large-input" class="md-nav__link">
+    Obtain the large input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-the-input-file" class="md-nav__link">
+    Split the input file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-jobs-on-split-input" class="md-nav__link">
+    Run a Jobs on Split Input
+  </a>
+  
+    <nav class="md-nav" aria-label="Run a Jobs on Split Input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modify-the-submit-file" class="md-nav__link">
+    Modify the submit file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-the-wrapper-file" class="md-nav__link">
+    Modify the wrapper file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-jobs" class="md-nav__link">
+    Submit the jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-the-resource-requests" class="md-nav__link">
+    Update the resource requests
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="data-exercise-13-splitting-large-input-for-better-throughput">Data Exercise 1.3: Splitting Large Input for Better Throughput<a class="headerlink" href="#data-exercise-13-splitting-large-input-for-better-throughput" title="Permanent link">&para;</a></h1>
+<p>The objective of this exercise is to prepare for <em>blasting</em> a much larger input query file by splitting the input for
+greater throughput and lower memory and disk requirements.
+Splitting the input will also mean that we don't have to rely on additional large-data measures for the input query files.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Log in to <code>ap40.uw.osg-htc.org</code></p>
+</li>
+<li>
+<p>Create a directory for this exercise named <code>blast-split</code> and change into it.</p>
+</li>
+<li>Copy over the following files from the <a href="../part1-ex2-file-transfer">previous exercise</a>:<ul>
+<li>Your submit file</li>
+<li><code>blastx</code></li>
+<li><code>pdbaa_files.tar.gz</code></li>
+<li><code>blast_wrapper.sh</code></li>
+</ul>
+</li>
+<li>Remember to modify the submit file for the new locations of the above files.</li>
+</ol>
+<h3 id="obtain-the-large-input">Obtain the large input<a class="headerlink" href="#obtain-the-large-input" title="Permanent link">&para;</a></h3>
+<p>We've previously used <code>blastx</code> to analyze a relatively small input file of test data, <code>mouse.fa</code>, but let's imagine that
+you now need to blast a much larger dataset for your research.
+This dataset can be downloaded with the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/mouse_rna.tar.gz
+</code></pre></div>
+
+<p>After un-tar'ing (<code>tar xzf mouse_rna.tar.gz</code>) the file, you should be able to confirm that it's size is roughly 100 MB.
+Not only is this near the size cutoff for HTCondor file transfer, it would take hours to complete a single <code>blastx</code>
+analysis for it and the resulting output file would be huge.</p>
+<h3 id="split-the-input-file">Split the input file<a class="headerlink" href="#split-the-input-file" title="Permanent link">&para;</a></h3>
+<p>For <code>blast</code>, it's scientifically valid to split up the input query file, analyze the pieces, and then put the results
+back together at the end!
+On the other hand, BLAST databases should not be split, because the <code>blast</code> output includes a score value for each
+sequence that is calculated relative to the entire length of the database.</p>
+<p>Because genetic sequence data is used heavily across the life sciences, there are also tools for splitting up the data
+into smaller files.
+One of these is called <a href="http://genometools.org/">genome tools</a>, and you can download a package of precompiled binaries
+(just like BLAST) using the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/gt-1.5.10-Linux_x86_64-64bit-complete.tar.gz
+</code></pre></div>
+
+<p>Un-tar the gt package (<code>tar -xzvf ...</code>), then run its sequence file splitter as follows, with the target file size of 1MB:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>./gt-1.5.10-Linux_x86_64-64bit-complete/bin/gt splitfasta -targetsize <span class="m">1</span> mouse_rna.fa
+</code></pre></div>
+
+<p>You'll notice that the result is a set of 100 files, all about the size of 1 MB, and numbered 1 through 100.</p>
+<h2 id="run-a-jobs-on-split-input">Run a Jobs on Split Input<a class="headerlink" href="#run-a-jobs-on-split-input" title="Permanent link">&para;</a></h2>
+<p>Now, you'll submit jobs on the split input files, where each job will use a different piece of the large original input file.</p>
+<h3 id="modify-the-submit-file">Modify the submit file<a class="headerlink" href="#modify-the-submit-file" title="Permanent link">&para;</a></h3>
+<p>First, you'll create a new submit file that passes the input filename as an argument and use a list of applicable
+filenames.
+Follow the below steps:</p>
+<ol>
+<li>
+<p>Copy the submit file from the <a href="../part1-ex2-file-transfer">previous exercise</a> to a new file called <code>blast_split.sub</code> and modify the "queue" line of the submit file to the
+   following:</p>
+<div class="codehilite"><pre><span></span><code>queue inputfile matching mouse_rna.fa.*
+</code></pre></div>
+
+</li>
+<li>
+<p>Replace the <code>mouse.fa</code> instances in the submit file with <code>$(inputfile)</code>, and rename the output, log, and error files
+   to use the same <code>inputfile</code> variable:</p>
+<div class="codehilite"><pre><span></span><code>output = $(inputfile).out
+error = $(inputfile).err
+log = $(inputfile).log
+</code></pre></div>
+
+</li>
+<li>
+<p>Add an <code>arguments</code> line to the submit file so it will pass the name of the input file to the wrapper script</p>
+<div class="codehilite"><pre><span></span><code>arguments = $(inputfile)
+</code></pre></div>
+
+</li>
+<li>
+<p>Add the <code>$(inputfile)</code> to the end of your list of <code>transfer_input_files</code>:</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = ... , $(inputfile)
+</code></pre></div>
+
+</li>
+<li>
+<p>Update the memory and disk requests, since the new input file is larger and will also produce larger output.
+   It may be best to overestimate to something like 1 GB for each.</p>
+</li>
+</ol>
+<h3 id="modify-the-wrapper-file">Modify the wrapper file<a class="headerlink" href="#modify-the-wrapper-file" title="Permanent link">&para;</a></h3>
+<p>Replace instances of the input file name in the <code>blast_wrapper.sh</code> script so that it will insert the first argument in
+place of the input filename, like so:</p>
+<div class="codehilite"><pre><span></span><code>./blastx -db pdbaa -query $1 -out $1.result
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bash shell scripts will use the first argument in place of <code>$1</code>, the second argument as <code>$2</code>, etc.</p>
+</div>
+<h3 id="submit-the-jobs">Submit the jobs<a class="headerlink" href="#submit-the-jobs" title="Permanent link">&para;</a></h3>
+<p>This job will take a bit longer than the job in the last exercise, since the input file is larger (by about 3-fold).
+Again, make sure that only the desired <code>output</code>, <code>error</code>, and <code>result</code> files come back at the end of the job.
+In our tests, the jobs ran for ~15 minutes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Jobs on jobs!</p>
+<p>Be careful to not submit the job again. Why?  Our queue statement says <code>... matching mouse_rna.fa.*</code>, and look at
+the current directory.
+There are new files named <code>mouse_rna.fa.X.log</code> and other files.
+Submitting again, the <code>queue</code> statement would see these new files, and try to run blast on them!</p>
+<p>If you want to remove all of the extra files, you can try:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>rm *.err *.log *.out *.result
+</code></pre></div>
+
+</div>
+<h2 id="update-the-resource-requests">Update the resource requests<a class="headerlink" href="#update-the-resource-requests" title="Permanent link">&para;</a></h2>
+<p>After the job finishes successfully, examine the <code>log</code> file for memory and disk usage, and update the requests in the
+submit file.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

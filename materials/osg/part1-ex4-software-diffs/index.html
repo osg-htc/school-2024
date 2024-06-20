@@ -1,0 +1,509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/osg/part1-ex4-software-diffs/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>OSG Exercise 1.4: Software Differences in OSPool - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osg-exercise-14-software-differences-in-ospool" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSG Exercise 1.4: Software Differences in OSPool
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-operating-systems" class="md-nav__link">
+    Comparing operating systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-probe-jobs" class="md-nav__link">
+    Submitting probe jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting probe jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software-probe-code" class="md-nav__link">
+    Software probe code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#probing-several-servers" class="md-nav__link">
+    Probing several servers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="osg-exercise-14-software-differences-in-ospool">OSG Exercise 1.4: Software Differences in OSPool<a class="headerlink" href="#osg-exercise-14-software-differences-in-ospool" title="Permanent link">&para;</a></h1>
+<p>The goal of this exercise is to see some differences in the availability of software in the OSPool.
+At your local cluster, you may be used to having certain versions of software.
+But in the OSPool,
+it is likely that the software you need will not be available at all.</p>
+<h2 id="comparing-operating-systems">Comparing operating systems<a class="headerlink" href="#comparing-operating-systems" title="Permanent link">&para;</a></h2>
+<p>To really see differences between Execution Points in the PATh Facility versus the OSPool,
+you will want to compare the &ldquo;machine&rdquo; ClassAds between the two pools.
+Rather than inspecting the very long ClassAd for each Execution Point,
+you will look at a specific attribute called <code>OpSysAndVer</code>,
+which tells us the operating system version of the Execution Point.
+An easy way to show this attribute for all Execution Points is by using <code>condor_status</code>
+in conjunction with the <code>-autoformat</code> (or <code>-af</code>, for short) option.
+The <code>-autoformat</code> option is like the <code>-format</code> option you learned about earlier,
+and outputs the attributes you choose for each slot;
+but as you may have guessed, it does some automatic formatting for you.</p>
+<p>So, let’s examine the operating system and (major) version of slots on the PATh Facility and the OSPool.</p>
+<ol>
+<li>
+<p>Log in or switch to <code>ap1.facility.path-cc.io</code> and run the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>condor_status -autoformat OpSysAndVer
+</code></pre></div>
+
+</li>
+<li>
+<p>Log in or switch to <code>ap40.uw.osg-htc.org</code> (parallel windows are handy!)
+    and run the same command</p>
+</li>
+</ol>
+<p>You will see many values for the operating system and major version.
+Some are abbreviated&nbsp;— for example,
+<code>RedHat</code> stands for “Red Hat Enterprise Linux” and
+<code>SL</code> stands for “Scientific Linux” (a Red Hat variant).</p>
+<p>The only problem is that with hundreds or thousands of slots,
+it's difficult to get a feel for the composition of each pool from this output.
+You can use the <code>sort</code> and <code>uniq</code> commands, in sequence, on the <code>condor_status</code> output
+to get counts of each unique operating system and version string.
+Your command line should look something like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>condor_status -autoformat OpSysAndVer <span class="p">|</span> sort <span class="p">|</span> uniq -c
+</code></pre></div>
+
+<p>How would you describe the difference between the PATh Facility and OSPool?</p>
+<h2 id="submitting-probe-jobs">Submitting probe jobs<a class="headerlink" href="#submitting-probe-jobs" title="Permanent link">&para;</a></h2>
+<p>Now you have some idea of the diversity of operating systems on the OSPool.
+This is a step in the right direction to knowing what software is available in general.
+But what you really want to know is whether your specific software tool (and version) is available.</p>
+<h3 id="software-probe-code">Software probe code<a class="headerlink" href="#software-probe-code" title="Permanent link">&para;</a></h3>
+<p>The following shell script probes for software and returns the version if it is installed:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+get_version<span class="o">(){</span>
+    <span class="nv">program</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="nv">$program</span> --version &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+    <span class="nv">double_dash_rc</span><span class="o">=</span><span class="nv">$?</span>
+    <span class="nv">$program</span> -version &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+    <span class="nv">single_dash_rc</span><span class="o">=</span><span class="nv">$?</span>
+    which <span class="nv">$program</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+    <span class="nv">which_rc</span><span class="o">=</span><span class="nv">$?</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$double_dash_rc</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">$program</span> --version <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="nv">$single_dash_rc</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">$program</span> -version <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+    <span class="k">elif</span> <span class="o">[</span> <span class="nv">$which_rc</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$program</span><span class="s2"> installed but could not find version information&quot;</span>
+    <span class="k">else</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$program</span><span class="s2"> not installed&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+get_version <span class="s1">&#39;R&#39;</span>
+get_version <span class="s1">&#39;cmake&#39;</span>
+get_version <span class="s1">&#39;python&#39;</span>
+get_version <span class="s1">&#39;python3&#39;</span>
+</code></pre></div>
+
+<p>If there's a specific command line program that your research requires, feel free to add it to the script!
+For example, if you wanted to test for the existence and version of <code>nslookup</code>, you would add the following to the end
+of the script:</p>
+<div class="codehilite"><pre><span></span><code>get_version &#39;nslookup&#39;
+</code></pre></div>
+
+<h3 id="probing-several-servers">Probing several servers<a class="headerlink" href="#probing-several-servers" title="Permanent link">&para;</a></h3>
+<p>For this part of the exercise, try creating a submit file without referring to previous exercises!</p>
+<ol>
+<li>Log in or switch to <code>ap40.uw.osg-htc.org</code></li>
+<li>Create and change into a new folder for this exercise, e.g. <code>osg-ex14</code></li>
+<li>Save the above script as a file named <code>sw_probe.sh</code></li>
+<li>Make sure the script can be run: <code>chmod a+x sw_probe.sh</code></li>
+<li>Try running the script in place to make sure it works: <code>./sw_probe.sh</code></li>
+<li>Create a submit file that runs <code>sw_probe.sh</code> 100 times
+    and uses macros to write different <code>output</code>, <code>error</code>, and <code>log</code> files</li>
+<li>Submit your job and wait for the results</li>
+</ol>
+<p>Will you be able to do your research on the OSG with what's available?
+Do not worry if it does not seem like you can:
+Later today, you will learn how to make your jobs portable enough so that they can run anywhere!</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

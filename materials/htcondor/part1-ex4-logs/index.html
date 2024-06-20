@@ -1,0 +1,523 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part1-ex4-logs/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex4 logs - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#htc-exercise-14-read-and-interpret-log-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex4 logs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-log-file" class="md-nav__link">
+    Reading a Log File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-when-job-log-events-are-written" class="md-nav__link">
+    Understanding When Job Log Events Are Written
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-how-htcondor-writes-files" class="md-nav__link">
+    Understanding How HTCondor Writes Files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="htc-exercise-14-read-and-interpret-log-files">HTC Exercise 1.4: Read and Interpret Log Files<a class="headerlink" href="#htc-exercise-14-read-and-interpret-log-files" title="Permanent link">&para;</a></h1>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The goal of this exercise is to learn how to understand the contents of a job's log file, which is essentially a "history" of the steps HTCondor took to run your job.
+If you suspect something has gone wrong with your job, the log is the a great place to start looking for indications of whether things might have gone wrong (in addition to the .err file).</p>
+<p>This exercise is short, but you'll want to at least read over it before moving on.</p>
+<h2 id="reading-a-log-file">Reading a Log File<a class="headerlink" href="#reading-a-log-file" title="Permanent link">&para;</a></h2>
+<p>For this exercise, we can examine a log file for any previous job that you have run. The example output below is based on the <code>sleep 60</code> job.</p>
+<p>A job log file is updated throughout the life of a job, usually at key events. Each event starts with a heading that indicates what happened and when. Here are <strong>all</strong> of the event headings from the <code>sleep</code> job log (detailed output in between headings has been omitted here):</p>
+<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2023-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
+040 (5739.000.000) 2023-07-10 10:45:10 Started transferring input files
+040 (5739.000.000) 2023-07-10 10:45:10 Finished transferring input files
+001 (5739.000.000) 2023-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
+006 (5739.000.000) 2023-07-10 10:45:20 Image size of job updated: 72
+040 (5739.000.000) 2023-07-10 10:45:20 Started transferring output files
+040 (5739.000.000) 2023-07-10 10:45:20 Finished transferring output files
+006 (5739.000.000) 2023-07-10 10:46:11 Image size of job updated: 4072
+005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+</code></pre></div>
+
+<p>There is a lot of extra information in those lines, but you can see:</p>
+<ul>
+<li>The job ID: cluster 5739, process 0 (written <code>000</code>)</li>
+<li>The date and local time of each event</li>
+<li>A brief description of the event: submission, execution, some information updates, and termination</li>
+</ul>
+<p>Some events provide no information in addition to the heading. For example:</p>
+<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2020-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
+...
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each event ends with a line that contains only 3 dots: <code>...</code></p>
+</div>
+<p>However, some lines have additional information to help you quickly understand where and how your job is running. For example:  </p>
+<div class="codehilite"><pre><span></span><code>001 (5739.000.000) 2020-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
+    SlotName: slot1@WISC-PATH-IDPL-EP.osgvo-docker-pilot-idpl-7c6575d494-2sj5w
+    CondorScratchDir = &quot;/pilot/osgvo-pilot-2q71K9/execute/dir_9316&quot;
+    Cpus = 1
+    Disk = 174321444
+    GLIDEIN_ResourceName = &quot;WISC-PATH-IDPL-EP&quot;
+    GPUs = 0
+    Memory = 8192
+...
+</code></pre></div>
+
+<ul>
+<li>The <code>SlotName</code> is the name of the execution point slot your job was assigned to by HTCondor, and the name of the execution point resource is provided in <code>GLIDEIN_ResourceName</code></li>
+<li>The <code>CondorScratchDir</code> is the name of the scratch directory that was created by HTCondor for your job to run inside</li>
+<li>The <code>Cpu</code>, <code>GPUs</code>, <code>Disk</code>, and <code>Memory</code> values provide the maximum amount of each resource your job has used while running</li>
+</ul>
+<p>Another example of is the periodic update:</p>
+<div class="codehilite"><pre><span></span><code>006 (5739.000.000) 2020-07-10 10:45:20 Image size of job updated: 72
+    1  -  MemoryUsage of job (MB)
+    72  -  ResidentSetSize of job (KB)
+...
+</code></pre></div>
+
+<p>These updates record the amount of memory that the job is using on the execute machine. This can be helpful information, so that in future runs of the job, you can tell HTCondor how much memory you will need.</p>
+<p>The job termination event includes a lot of very useful information:</p>
+<div class="codehilite"><pre><span></span><code>005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+    (1) Normal termination (return value 0)
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+    0  -  Run Bytes Sent By Job
+    27848  -  Run Bytes Received By Job
+    0  -  Total Bytes Sent By Job
+    27848  -  Total Bytes Received By Job
+    Partitionable Resources :    Usage  Request Allocated
+       Cpus                 :                 1         1
+       Disk (KB)            :       40       30   4203309
+       Memory (MB)          :        1        1         1
+Job terminated of its own accord at 2023-07-10 10:46:11 with exit-code 0.
+...
+</code></pre></div>
+
+<p>Probably the most interesting information is:</p>
+<ul>
+<li>The <code>return value</code> or <code>exit code</code> (<code>0</code> here, means the executable completed and didn't indicate any internal errors; non-zero usually means failure)</li>
+<li>The total number of bytes transferred each way, which could be useful if your network is slow</li>
+<li>The <code>Partitionable Resources</code> table, especially disk and memory usage, which will inform larger submissions.</li>
+</ul>
+<p>There are many other kinds of events, but the ones above will occur in almost every job log.</p>
+<h2 id="understanding-when-job-log-events-are-written">Understanding When Job Log Events Are Written<a class="headerlink" href="#understanding-when-job-log-events-are-written" title="Permanent link">&para;</a></h2>
+<p>When are events written to the job log file? Let’s find out. Read through the entire procedure below before starting, because some parts of the process are time sensitive.</p>
+<ol>
+<li>Change the <code>sleep</code> job submit file, so that the job sleeps for 2 minutes (= 120 seconds)</li>
+<li>Submit the updated sleep job</li>
+<li>As soon as the <code>condor_submit</code> command finishes, hit the return key a few times, to create some blank lines</li>
+<li>
+<p>Right away, run a command to show the log file and <strong>keep showing</strong> updates as they occur:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>tail -f sleep.log
+</code></pre></div>
+
+</li>
+<li>
+<p>Watch the output carefully. When do events appear in the log file?</p>
+</li>
+<li>After the termination event appears, press Control-C to end the <code>tail</code> command and return to the shell prompt.</li>
+</ol>
+<h2 id="understanding-how-htcondor-writes-files">Understanding How HTCondor Writes Files<a class="headerlink" href="#understanding-how-htcondor-writes-files" title="Permanent link">&para;</a></h2>
+<p>When HTCondor writes the output, error, and log files, does it erase the previous contents of the file or does it add new lines onto the end? Let’s find out!</p>
+<p>For this exercise, we can use the <code>hostname</code> job from earlier.</p>
+<ol>
+<li>Edit the <code>hostname</code> submit file so that it uses new and unique filenames for output, error, and log files.<br />
+Alternatively, delete any existing output, error, and log files from previous runs of the <code>hostname</code> job.</li>
+<li>Submit the job three separate times in a row (there are better ways to do this, which we will cover in the next lecture)</li>
+<li>Wait for all three jobs to finish</li>
+<li>Examine the output file: How many hostnames are there? Did HTCondor erase the previous contents for each job, or add new lines?</li>
+<li>Examine the log file… carefully: What happened there? Pay close attention to the times and job IDs of the events.</li>
+</ol>
+<p>For further clarification about how HTCondor handles these files, reach out to your mentor or one of the other school staff.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

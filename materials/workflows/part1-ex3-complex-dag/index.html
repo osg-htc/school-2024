@@ -1,0 +1,631 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/workflows/part1-ex3-complex-dag/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex3 complex dag - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workflows-exercise-13-a-more-complex-dag" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex3 complex dag
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-job-submission-files" class="md-nav__link">
+    Make Your Job Submission Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Make Your Job Submission Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goatbrot1sub" class="md-nav__link">
+    goatbrot1.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goatbrot2sub" class="md-nav__link">
+    goatbrot2.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goatbrot3sub" class="md-nav__link">
+    goatbrot3.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goatbrot4sub" class="md-nav__link">
+    goatbrot4.sub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#montagesub" class="md-nav__link">
+    montage.sub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-dag" class="md-nav__link">
+    Make your DAG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-dag" class="md-nav__link">
+    Running the DAG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watch-your-dag" class="md-nav__link">
+    Watch Your DAG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-challenge" class="md-nav__link">
+    Bonus Challenge
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="workflows-exercise-13-a-more-complex-dag">Workflows Exercise 1.3: A More Complex DAG<a class="headerlink" href="#workflows-exercise-13-a-more-complex-dag" title="Permanent link">&para;</a></h1>
+<p>The objective of this exercise is to run a real set of jobs with DAGMan.</p>
+<h2 id="make-your-job-submission-files">Make Your Job Submission Files<a class="headerlink" href="#make-your-job-submission-files" title="Permanent link">&para;</a></h2>
+<p>We'll run our <code>goatbrot</code> example. If you didn't read about it yet, <a href="../part1-ex2-mandelbrot">please do so now</a>. We are going to make a DAG with four simultaneous jobs (<code>goatbrot</code>) and one final node to stitch them together (<code>montage</code>). This means we have five jobs. We're going to run <code>goatbrot</code> with more iterations (100,000) so each job will take longer to run.</p>
+<p>You can create your five jobs. The goatbrot jobs are very similar to each other, but they have slightly different parameters and output files.</p>
+<h3 id="goatbrot1sub">goatbrot1.sub<a class="headerlink" href="#goatbrot1sub" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>executable              = goatbrot
+arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
+log                     = goatbrot.log
+output                  = goatbrot.out.0.0
+error                   = goatbrot.err.0.0
+request_memory          = 1GB
+request_disk            = 1GB
+request_cpus            = 1
+queue
+</code></pre></div>
+
+<h3 id="goatbrot2sub">goatbrot2.sub<a class="headerlink" href="#goatbrot2sub" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>executable              = goatbrot
+arguments               = -i 100000 -c 0.75,0.75 -w 1.5 -s 500,500 -o tile_0_1.ppm
+log                     = goatbrot.log
+output                  = goatbrot.out.0.1
+error                   = goatbrot.err.0.1
+request_memory          = 1GB
+request_disk            = 1GB
+request_cpus            = 1
+queue
+</code></pre></div>
+
+<h3 id="goatbrot3sub">goatbrot3.sub<a class="headerlink" href="#goatbrot3sub" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>executable              = goatbrot
+arguments               = -i 100000 -c -0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_0.ppm
+log                     = goatbrot.log
+output                  = goatbrot.out.1.0
+error                   = goatbrot.err.1.0
+request_memory          = 1GB
+request_disk            = 1GB
+request_cpus            = 1
+queue
+</code></pre></div>
+
+<h3 id="goatbrot4sub">goatbrot4.sub<a class="headerlink" href="#goatbrot4sub" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>executable              = goatbrot
+arguments               = -i 100000 -c 0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_1.ppm
+log                     = goatbrot.log
+output                  = goatbrot.out.1.1
+error                   = goatbrot.err.1.1
+request_memory          = 1GB
+request_disk            = 1GB
+request_cpus            = 1
+queue
+</code></pre></div>
+
+<h3 id="montagesub">montage.sub<a class="headerlink" href="#montagesub" title="Permanent link">&para;</a></h3>
+<p>You should notice that the <code>transfer_input_files</code> statement refers to the files created by the other jobs.</p>
+<div class="codehilite"><pre><span></span><code>executable              = /usr/bin/montage
+arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandel-from-dag.jpg
+transfer_input_files    = tile_0_0.ppm,tile_0_1.ppm,tile_1_0.ppm,tile_1_1.ppm
+output                  = montage.out
+error                   = montage.err
+log                     = montage.log
+requirements            = OSG_OS_STRING == &quot;RHEL 8&quot;
+request_memory          = 1GB
+request_disk            = 1GB
+request_cpus            = 1
+queue
+</code></pre></div>
+
+<h2 id="make-your-dag">Make your DAG<a class="headerlink" href="#make-your-dag" title="Permanent link">&para;</a></h2>
+<p>In a file called <code>goatbrot.dag</code>, you have your DAG specification:</p>
+<div class="codehilite"><pre><span></span><code>JOB g1 goatbrot1.sub
+JOB g2 goatbrot2.sub
+JOB g3 goatbrot3.sub
+JOB g4 goatbrot4.sub
+JOB montage montage.sub
+PARENT g1 g2 g3 g4 CHILD montage
+</code></pre></div>
+
+<p>Ask yourself: do you know how we ensure that all the <code>goatbrot</code> commands can run simultaneously and all of them will complete before we run the montage job?</p>
+<h2 id="running-the-dag">Running the DAG<a class="headerlink" href="#running-the-dag" title="Permanent link">&para;</a></h2>
+<p>Submit your DAG:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_submit_dag goatbrot.dag
+<span class="go">-----------------------------------------------------------------------</span>
+<span class="go">File for submitting this DAG to Condor           : goatbrot.dag.condor.sub</span>
+<span class="go">Log of DAGMan debugging messages                 : goatbrot.dag.dagman.out</span>
+<span class="go">Log of Condor library output                     : goatbrot.dag.lib.out</span>
+<span class="go">Log of Condor library error messages             : goatbrot.dag.lib.err</span>
+<span class="go">Log of the life of condor_dagman itself          : goatbrot.dag.dagman.log</span>
+
+<span class="go">Submitting job(s).</span>
+<span class="go">1 job(s) submitted to cluster 71.</span>
+
+<span class="go">-----------------------------------------------------------------------</span>
+</code></pre></div>
+
+<h2 id="watch-your-dag">Watch Your DAG<a class="headerlink" href="#watch-your-dag" title="Permanent link">&para;</a></h2>
+<p>Let’s follow the progress of the whole DAG:</p>
+<ol>
+<li>
+<p>Use the <code>condor_watch_q</code> command to keep an eye on the running jobs. See more information about this tool <a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_watch_q.html">here</a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_watch_q
+</code></pre></div>
+
+<p><span style="color:RED"><strong>If you're quick enough, you may have seen DAGMan running as the lone job, before it submitted additional job nodes:</strong></span> </p>
+<div class="codehilite"><pre><span></span><code><span class="go">BATCH                IDLE  RUN  DONE  TOTAL  JOB_IDS</span>
+<span class="go">goatbrot.dag+222059     -    1     -      1  222059.0</span>
+
+<span class="go">[=============================================================================]</span>
+
+<span class="go">Total: 1 jobs; 1 running</span>
+
+<span class="go">Updated at 2021-07-28 13:52:57</span>
+</code></pre></div>
+
+<p><span style="color:RED"><strong>DAGMan has submitted the goatbrot jobs, but they haven't started running yet</strong></span></p>
+<div class="codehilite"><pre><span></span><code><span class="go">BATCH                IDLE  RUN  DONE  TOTAL  JOB_IDS</span>
+<span class="go">goatbrot.dag+222059     4    1     -      5  222059.0 ... 222063.0</span>
+
+<span class="go">[===============--------------------------------------------------------------]</span>
+
+<span class="go">Total: 5 jobs; 4 idle, 1 running</span>
+
+<span class="go">Updated at 2021-07-28 13:53:53</span>
+</code></pre></div>
+
+<p><span style="color:RED"><strong>They're running</strong></span> </p>
+<div class="codehilite"><pre><span></span><code><span class="go">BATCH                IDLE  RUN  DONE  TOTAL  JOB_IDS</span>
+<span class="go">goatbrot.dag+222059     -    5     -      5  222059.0 ... 222063.0</span>
+<span class="go">[=============================================================================]</span>
+
+<span class="go">Total: 5 jobs; 5 running</span>
+
+<span class="go">Updated at 2021-07-28 13:54:33</span>
+</code></pre></div>
+
+<p><span style="color:RED"><strong>They finished, but DAGMan hasn't noticed yet. It only checks periodically:</strong></span></p>
+<div class="codehilite"><pre><span></span><code><span class="go">BATCH                IDLE  RUN  DONE  TOTAL  JOB_IDS</span>
+<span class="go">goatbrot.dag+222059     -    1    4     -      5  222059.0 ... 222063.0</span>
+
+<span class="go">[##############################################################===============]</span>
+
+<span class="go">Total: 5 jobs; 4 completed, 1 running</span>
+
+<span class="go">Updated at 2021-07-28 13:55:13</span>
+</code></pre></div>
+
+<p>Eventually, you'll see the montage job submitted, then running, then leave the queue, and then DAGMan will leave the queue.</p>
+</li>
+<li>
+<p>Examine your results. For some reason, goatbrot prints everything to stderr, not stdout.</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>cat goatbrot.err.0.0 
+<span class="go">Complex image: Center: -0.75 + 0.75i Width: 1.5 Height: 1.5 Upper Left: -1.5 + 1.5i Lower Right: 0 + 0i</span>
+
+<span class="go">Output image: Filename: tile_0_0.ppm Width, Height: 500, 500 Theme: beej Antialiased: no</span>
+
+<span class="go">Mandelbrot: Max Iterations: 100000 Continuous: no</span>
+
+<span class="go">Goatbrot: Multithreading: not supported in this build</span>
+
+<span class="go">Completed: 100.0%</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Examine your log files (<code>goatbrot.log</code> and <code>montage.log</code>) and DAGMan output file (<code>goatbrot.dag.dagman.out</code>). Do they look as you expect? Can you see the progress of the DAG in the DAGMan output file?</p>
+</li>
+<li>As you did earlier, transfer the resulting <code>mandel-from-dag.jpg</code> to your computer so that you can view the image. Does the image look correct?</li>
+<li>Clean up your results by removing all of the <code>goatbrot.dag.*</code> files if you like. Be careful to not delete the <code>goatbrot.dag</code> file.</li>
+</ol>
+<h2 id="bonus-challenge">Bonus Challenge<a class="headerlink" href="#bonus-challenge" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Re-run your DAG. When jobs are running, try <code>condor_q -nobatch -dag</code>. What does it do differently?</li>
+<li>Challenge, if you have time: Make a bigger DAG by making more tiles in the same area.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

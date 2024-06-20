@@ -1,0 +1,586 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/osg/part1-ex3-hardware-diffs/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>OSG Exercise 1.3: Hardware Differences Between PATh and OSG - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osg-exercise-13-hardware-differences-between-path-and-osg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSG Exercise 1.3: Hardware Differences Between PATh and OSG
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checking-path-memory-availability" class="md-nav__link">
+    Checking PATh memory availability
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking PATh memory availability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yet-another-queue-syntax" class="md-nav__link">
+    Yet another queue syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-submit-file" class="md-nav__link">
+    Create the submit file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-the-local-jobs" class="md-nav__link">
+    Monitoring the local jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-ospool-memory-availability" class="md-nav__link">
+    Checking OSPool memory availability
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking OSPool memory availability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-the-remote-jobs" class="md-nav__link">
+    Monitoring the remote jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-the-results" class="md-nav__link">
+    Analyzing the results
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="osg-exercise-13-hardware-differences-between-path-and-osg">OSG Exercise 1.3: Hardware Differences Between PATh and OSG<a class="headerlink" href="#osg-exercise-13-hardware-differences-between-path-and-osg" title="Permanent link">&para;</a></h1>
+<p>The goal of this exercise is to compare hardware differences between the Monday cluster
+(the PATh Facility) and the Open Science Pool.
+Specifically, we will look at how easy it is to get access to resources
+in terms of the amount of memory that is requested.
+This will not be a very careful study,
+but should give you some idea of one way in which the pools are different.</p>
+<p>In the first two parts of the exercise,
+you will submit batches of jobs that differ only in how much memory each one requests.
+This is called this a <em>parameter sweep</em>, in that we are testing many possible values of a parameter.
+We will request memory from 8–64 GB, doubling the memory each time.
+One set of jobs will be submitted to the PATh Facility, and the other, identical set of jobs will be submitted to the OSPool.
+You will check the queue periodically to see how many jobs have completed and how many are still waiting to run.</p>
+<h2 id="checking-path-memory-availability">Checking PATh memory availability<a class="headerlink" href="#checking-path-memory-availability" title="Permanent link">&para;</a></h2>
+<p>In this first part, you will create the submit file that will be used for both the PATh and OSPool jobs,
+then submit the PATh set.</p>
+<h3 id="yet-another-queue-syntax">Yet another queue syntax<a class="headerlink" href="#yet-another-queue-syntax" title="Permanent link">&para;</a></h3>
+<p>Earlier, you learned about the <code>queue</code> statement
+and some of the different ways it can be invoked to submit multiple jobs.
+Similar to the <code>queue from</code> statement to submit jobs based on lines from a specific file,
+you can use <code>queue in</code> to submit jobs based on a list that is written directly in your submit file:</p>
+<div class="codehilite"><pre><span></span><code>queue &lt;# of jobs&gt; &lt;variable&gt; in (
+&lt;item 1&gt;
+&lt;item 2&gt;
+&lt;item 3&gt;
+...
+)
+</code></pre></div>
+
+<p>For example, to submit 6 total jobs that sleep for <code>5</code>, <code>5</code>, <code>10</code>, <code>10</code>, <code>15</code>, and <code>15</code> seconds,
+you could write the following submit file:</p>
+<div class="codehilite"><pre><span></span><code>executable = /bin/sleep
+
+request_cpus = 1
+request_memory = 1MB
+request_disk = 1MB
+
+queue 2 arguments in (
+5
+10
+15
+)
+</code></pre></div>
+
+<p>Try submitting this yourself and verify that all six jobs are in the queue,
+using the <code>condor_q -nobatch</code> command.</p>
+<h3 id="create-the-submit-file">Create the submit file<a class="headerlink" href="#create-the-submit-file" title="Permanent link">&para;</a></h3>
+<p>To create our parameter sweep,
+we will create a <strong>new</strong> submit file with the queue…in syntax
+and change the value of our parameter (<code>request_memory</code>) for each batch of jobs.</p>
+<ol>
+<li>Log in or switch back to <code>ap1.facility.path-cc.io</code> (yes, back to PATh!)</li>
+<li>Create and change into a new subdirectory called <code>osg-ex14</code></li>
+<li>
+<p>Create a submit file named <code>sleep.sub</code> that executes the command <code>/bin/sleep 300</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not remember all of the submit statements to write this file, or just to go faster,
+find a similar submit file from a previous exercise.
+Copy the file and rename it here, and make sure the argument to <code>sleep</code> is <code>300</code>.</p>
+</div>
+</li>
+<li>
+<p>Use the queue…in syntax to submit 10 jobs <em>each</em> for the following memory requests: 8, 16, 32, and 64&nbsp;GB.
+    There will be 40 jobs total: 10 jobs requesting 8&nbsp;GB, 10 requesting 16&nbsp;GB, etc.</p>
+</li>
+<li>Submit your jobs</li>
+</ol>
+<h3 id="monitoring-the-local-jobs">Monitoring the local jobs<a class="headerlink" href="#monitoring-the-local-jobs" title="Permanent link">&para;</a></h3>
+<p>Every few minutes, run <code>condor_q</code> and see how your sleep jobs are doing.
+To display the number of jobs remaining for each <code>request_memory</code> parameter specified, 
+run the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>condor_q &lt;Cluster ID&gt; -af RequestMemory <span class="p">|</span> sort -n <span class="p">|</span> uniq -c
+</code></pre></div>
+
+<p>The numbers in the left column are the number of jobs left of that type
+and the number on the right is the amount of memory you requested, in MB.
+Consider making a little table like the one below to track progress.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Memory</th>
+<th align="left">Remaining #1</th>
+<th align="left">Remaining #2</th>
+<th align="left">Remaining #3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">8 GB</td>
+<td align="left">10</td>
+<td align="left">6</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">16 GB</td>
+<td align="left">10</td>
+<td align="left">7</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">32 GB</td>
+<td align="left">10</td>
+<td align="left">8</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">64 GB</td>
+<td align="left">10</td>
+<td align="left">9</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>In the meantime, between checking on your local jobs, start the next section –
+but take a break every few minutes to switch back to <code>ap1</code> and record progress on your PATh jobs.</p>
+<h2 id="checking-ospool-memory-availability">Checking OSPool memory availability<a class="headerlink" href="#checking-ospool-memory-availability" title="Permanent link">&para;</a></h2>
+<p>Now you will do essentially the same thing on the OSPool.</p>
+<ol>
+<li>
+<p>Log in or switch to <code>ap40.uw.osg-htc.org</code></p>
+</li>
+<li>
+<p>Copy the <code>osg-ex14</code> directory from the <a href="#checking-chtc-memory-availability">section above</a>
+    from <code>ap1.facility.path-cc.io</code> to <code>ap40.uw.osg-htc.org</code></p>
+<p>If you get stuck during the copying process, refer to <a href="../part1-ex1-login-scp/">OSG exercise 1.1</a>.</p>
+</li>
+<li>
+<p>Submit the jobs to the OSPool</p>
+</li>
+</ol>
+<h3 id="monitoring-the-remote-jobs">Monitoring the remote jobs<a class="headerlink" href="#monitoring-the-remote-jobs" title="Permanent link">&para;</a></h3>
+<p>As you did in the first part, use <code>condor_q</code> to track how your sleep jobs are doing.
+It is fine to move on to the next exercise, but keep tracking the status of both sets of these jobs.
+After you are done with the <a href="../part1-ex4-software-diffs/">next exercise</a>,
+come back to this exercise and analyze the results.</p>
+<h2 id="analyzing-the-results">Analyzing the results<a class="headerlink" href="#analyzing-the-results" title="Permanent link">&para;</a></h2>
+<p>Have all of your jobs from this exercise completed on both PATh and the OSPool?
+How many jobs have completed thus far on PATh?
+How many have completed thus far on the OSPool?</p>
+<p>Due to the dynamic nature of the OSPool,
+the demand for higher memory jobs there may have resulted in a temporary increase in high-memory slots there.
+That being said, high-memory are a high-demand, low-availability resource in the OSPool
+so your 64&nbsp;GB jobs may have taken longer to run or complete.
+On the other hand, PATh has a fair number of 64&nbsp;GB (and greater) slots
+so all your jobs have a high chance of running.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

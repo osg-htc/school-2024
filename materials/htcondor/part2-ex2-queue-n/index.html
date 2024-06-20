@@ -1,0 +1,647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part2-ex2-queue-n/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part2 ex2 queue n - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#htc-exercise-22-use-queue-n-cluster-and-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part2 ex2 queue n
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-many-jobs-with-one-queue-statement" class="md-nav__link">
+    Running Many Jobs With One queue Statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-queue-n-with-output" class="md-nav__link">
+    Using queue N With Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-process-to-distinguish-jobs" class="md-nav__link">
+    Using $(Process) to Distinguish Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-cluster-to-separate-files-across-runs" class="md-nav__link">
+    Using $(Cluster) to Separate Files Across Runs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-process-and-cluster-in-other-statements" class="md-nav__link">
+    Using $(Process) and $(Cluster) in Other Statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-defining-jobbatchname-for-tracking" class="md-nav__link">
+    (Optional) Defining JobBatchName for Tracking
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="htc-exercise-22-use-queue-n-cluster-and-process">HTC Exercise 2.2: Use queue <em>N</em>, $(Cluster), and $(Process)<a class="headerlink" href="#htc-exercise-22-use-queue-n-cluster-and-process" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Suppose you have a program that you want to run many times with different arguments each time. With what you know so far, you have a couple of choices:</p>
+<ul>
+<li>Write one submit file; submit one job, change the argument in the submit file, submit another job, change the submit file, …</li>
+<li>Write many submit files that are nearly identical except for the program argument</li>
+</ul>
+<p>Neither of these options seems very satisfying. Fortunately, HTCondor's <code>queue</code> statement is here to help!</p>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The goal of the next several exercises is
+to learn to submit many jobs from a single HTCondor <code>queue</code> statement,
+and to control things like filenames and arguments on a per-job basis when doing so.</p>
+<h2 id="running-many-jobs-with-one-queue-statement">Running Many Jobs With One queue Statement<a class="headerlink" href="#running-many-jobs-with-one-queue-statement" title="Permanent link">&para;</a></h2>
+<p><strong>Example</strong> 
+Here is a C program that uses a stochastic (random) method to estimate the value of π. The single argument to the program is the number of samples to take. More samples should result in better estimates!</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/time.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+  <span class="k">struct</span> <span class="nc">timeval</span> <span class="n">my_timeval</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">inside_circle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pi_estimate</span><span class="p">;</span>
+
+  <span class="n">gettimeofday</span><span class="p">(</span><span class="o">&amp;</span><span class="n">my_timeval</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">srand48</span><span class="p">(</span><span class="n">my_timeval</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">^</span> <span class="n">my_timeval</span><span class="p">.</span><span class="n">tv_usec</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">iterations</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;usage: circlepi ITERATIONS</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">drand48</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">drand48</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(((</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">inside_circle</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">pi_estimate</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="n">inside_circle</span> <span class="o">/</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="n">iterations</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d iterations, %d inside; pi = %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">inside_circle</span><span class="p">,</span> <span class="n">pi_estimate</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>In a new directory for this exercise, create and save the code to a file named <code>circlepi.c</code></li>
+<li>
+<p>Compile the code (we will cover this in more detail during the Software lecture):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>gcc -o circlepi circlepi.c
+</code></pre></div>
+
+</li>
+<li>
+<p>Test the program with just 1000 samples:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>./circlepi <span class="m">1000</span>
+</code></pre></div>
+
+</li>
+</ol>
+<p>Now suppose that you want to run the program many times, to produce many estimates.
+To do so, we can tell HTCondor how many jobs to "queue up" via the <code>queue</code> statement
+we've been putting at the end of each of our submit files.
+Let’s see how it works:</p>
+<ol>
+<li>Write a normal submit file for this program<ul>
+<li>Pass 1 million (<code>1000000</code>) as the command line argument to <code>circlepi</code></li>
+<li>Make sure to include <code>log</code>, <code>output</code>, and <code>error</code> (with filenames like <code>circlepi.log</code>), and <code>request_*</code> lines</li>
+<li>At the end of the file, write <code>queue 3</code> instead of just <code>queue</code> ("queue 3 jobs" vs. "queue a job").</li>
+</ul>
+</li>
+<li>
+<p>Submit the file. Note the slightly different message from <code>condor_submit</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="go">3 job(s) submitted to cluster *NNNN*.</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Before the jobs execute, look at the job queue to see the multiple jobs</p>
+</li>
+</ol>
+<p>Here is some sample <code>condor_q -nobatch</code> output:</p>
+<div class="codehilite"><pre><span></span><code><span class="go"> ID       OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD</span>
+<span class="go">10228.0   cat             7/25 11:57   0+00:00:00 I  0    0.7 circlepi 1000000000</span>
+<span class="go">10228.1   cat             7/25 11:57   0+00:00:00 I  0    0.7 circlepi 1000000000</span>
+<span class="go">10228.2   cat             7/25 11:57   0+00:00:00 I  0    0.7 circlepi 1000000000</span>
+</code></pre></div>
+
+<p>In this sample, all three jobs are part of <strong>cluster</strong> <code>10228</code>, 
+but the first job was assigned <strong>process</strong> <code>0</code>, 
+the second job was assigned process <code>1</code>, 
+and the third one was assigned process <code>2</code>.
+(Programmers like to start counting from 0.)</p>
+<p>Now we can understand what the first column in the output, the <strong><em>job ID</em></strong>, represents.
+It is a job’s <em>cluster number</em>, a dot (<code>.</code>), and the job’s <em>process number</em>.
+So in the example above, the job ID of the second job is <code>10228.1</code>.</p>
+<p><strong>Pop Quiz:</strong> Do you remember how to ask HTCondor's queue to list the status of all of the jobs from one cluster? How about one specific job ID?</p>
+<h2 id="using-queue-n-with-output">Using queue <em>N</em> With Output<a class="headerlink" href="#using-queue-n-with-output" title="Permanent link">&para;</a></h2>
+<p>When all three jobs in your single cluster are finished, examine the resulting files.</p>
+<ul>
+<li>What is in the output file? </li>
+<li>What is in the error file? (hopefully it is empty!)</li>
+<li>What is in the log file? Look carefully at the job IDs in each event.</li>
+<li>Is this what you expected? Is it what you wanted? If the output is not what you expected, what do you think happened?</li>
+</ul>
+<h2 id="using-process-to-distinguish-jobs">Using $(Process) to Distinguish Jobs<a class="headerlink" href="#using-process-to-distinguish-jobs" title="Permanent link">&para;</a></h2>
+<p>As you saw with the experiment above, each job ended up overwriting the same output and error filenames in the submission directory.
+After all, we didn't tell it to behave any differently when it ran three jobs.</p>
+<p>We need a way to separate output (and error) files <em>per job that is queued</em>, not just for the whole cluster of jobs. Fortunately, HTCondor has a way to separate the files easily.</p>
+<p>When processing a submit file, HTCondor will replace any instance of <code>$(Process)</code> with the process number of the job, for each job that is queued. 
+For example, you can use the <code>$(Process)</code> variable to define a separate output file name for each job:</p>
+<div class="codehilite"><pre><span></span><code>output = my-output-file-$(Process).out
+queue 10
+</code></pre></div>
+
+<p>Even though the <code>output</code> filename is defined only once, HTCondor will create separate output filenames for each job:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First job</td>
+<td><code>my-output-file-0.out</code></td>
+</tr>
+<tr>
+<td>Second job</td>
+<td><code>my-output-file-1.out</code></td>
+</tr>
+<tr>
+<td>Third job</td>
+<td><code>my-output-file-2.out</code></td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Last (tenth) job</td>
+<td><code>my-output-file-9.out</code></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s see how this works for our program that estimates π.</p>
+<ol>
+<li>In your submit file, change the definitions of <code>output</code> and <code>error</code> to use <code>$(Process)</code> in the filename, similar to the example above.</li>
+<li>Delete any standard output, standard error, and log files from previous runs.</li>
+<li>Submit the updated file.</li>
+</ol>
+<p>When all three jobs are finished, examine the resulting files again.</p>
+<ul>
+<li>How many files are there of each type? What are their names?</li>
+<li>Is this what you expected? Is it what you wanted from the π estimation process?</li>
+</ul>
+<h2 id="using-cluster-to-separate-files-across-runs">Using $(Cluster) to Separate Files Across Runs<a class="headerlink" href="#using-cluster-to-separate-files-across-runs" title="Permanent link">&para;</a></h2>
+<p>With <code>$(Process)</code>, you can get separate output (and error) filenames for each job within a run. However, the next time you submit the same file, all of the output and error files are overwritten by new ones created by the new jobs. Maybe this is the behavior that you want. But sometimes, you may want to separate files by run, as well.</p>
+<p>In addition to <code>$(Process)</code>, there is also a <code>$(Cluster)</code> variable that you can use in your submit files. It works just like <code>$(Process)</code>, except it is replaced with the cluster number of the entire submission. Because the cluster number is the same for all jobs within a single submission, it does not separate files by job within a submission. But when used <strong>with</strong> <code>$(Process)</code>, it can be used to separate files by run. For example, consider this <code>output</code> statement:</p>
+<div class="codehilite"><pre><span></span><code>output = my-output-file-$(Cluster)-$(Process).out
+</code></pre></div>
+
+<p>For one particular run, it might result in output filenames like <code>my-output-file-2444-0.out</code>, <code>myoutput-file-2444-1.out</code>, <code>myoutput-file-2444-2.out</code>, etc.</p>
+<p>However, the next run would have different filenames, replacing <code>2444</code> with the new Cluster number of that run.</p>
+<h2 id="using-process-and-cluster-in-other-statements">Using $(Process) and $(Cluster) in Other Statements<a class="headerlink" href="#using-process-and-cluster-in-other-statements" title="Permanent link">&para;</a></h2>
+<p>The <code>$(Cluster)</code> and <code>$(Process)</code> variables can be used in any submit file statement, although they are useful in some kinds of submit file statements and not really for others. For example, consider using $(Cluster) or $(Process) in each of the below:</p>
+<ul>
+<li><code>log</code></li>
+<li><code>transfer_input_files</code></li>
+<li><code>transfer_output_files</code></li>
+<li><code>arguments</code></li>
+</ul>
+<p>Unfortunately, HTCondor does not easily let you perform math on the <code>$(Process)</code> number when using it. So, for example, if you use <code>$(Process)</code> as a numeric argument to a command, it will always result in jobs getting the arguments 0, 1, 2, and so on. If you have control over your program and the way in which it uses command-line arguments, then you are fine. Otherwise, you might need a solution like those in the next exercises.</p>
+<h2 id="optional-defining-jobbatchname-for-tracking">(Optional) Defining JobBatchName for Tracking<a class="headerlink" href="#optional-defining-jobbatchname-for-tracking" title="Permanent link">&para;</a></h2>
+<p>It is possible to define arbitrary attributes in your submit file, and that one purpose of such attributes is to track or report on different jobs separately. In this optional exercise, you will see how this technique can be used.</p>
+<p>Once again, we will use <code>sleep</code> jobs, so that your jobs remain in the queue long enough to experiment on.</p>
+<ol>
+<li>Create a submit file that runs <code>sleep 120</code>.</li>
+<li>
+<p>Instead of a single <code>queue</code> statement, write this:</p>
+<div class="codehilite"><pre><span></span><code>jobbatchname = 1
+queue 5
+</code></pre></div>
+
+</li>
+<li>
+<p>Submit the submit file to HTCondor. </p>
+</li>
+<li>
+<p>Now, quickly edit the submit file to instead say:</p>
+<div class="codehilite"><pre><span></span><code>jobbatchname = 2
+</code></pre></div>
+
+</li>
+<li>
+<p>Submit the file again.</p>
+</li>
+</ol>
+<p>Check on the submissions using a normal <code>condor_q</code> and <code>condor_q -nobatch</code>. Of course, your special attribute does not appear in the <code>condor_q -nobatch</code> output, but it is present in the <code>condor_q</code> output and in each job’s ClassAd. You can see the effect of the attribute by limiting your <code>condor_q</code> output to one type of job or another. First, run this command:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -constraint <span class="s1">&#39;JobBatchName == &quot;1&quot;&#39;</span>
+</code></pre></div>
+
+<p>Do you get the output that you expected? Using the example command above, how would you list your other five jobs?
+(There will be more on how to use HTCondor constraints in later exercises.)</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

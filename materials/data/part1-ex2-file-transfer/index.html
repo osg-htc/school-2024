@@ -1,0 +1,646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/data/part1-ex2-file-transfer/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex2 file transfer - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-exercise-12-transfer_input_files-transfer_output_files-and-remaps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex2 file transfer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-htcondor-file-transfer" class="md-nav__link">
+    Review: HTCondor File Transfer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-a-test-submit-file" class="md-nav__link">
+    Start with a test submit file
+  </a>
+  
+    <nav class="md-nav" aria-label="Start with a test submit file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implement-file-compression" class="md-nav__link">
+    Implement file compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-the-executable-and-input-files" class="md-nav__link">
+    List the executable and input files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict-memory-and-disk-requests-from-your-data" class="md-nav__link">
+    Predict memory and disk requests from your data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-test-job" class="md-nav__link">
+    Run the test job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer_output_files" class="md-nav__link">
+    transfer_output_files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer_output_remaps" class="md-nav__link">
+    transfer_output_remaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="data-exercise-12-transfer_input_files-transfer_output_files-and-remaps">Data Exercise 1.2: transfer_input_files, transfer_output_files, and remaps<a class="headerlink" href="#data-exercise-12-transfer_input_files-transfer_output_files-and-remaps" title="Permanent link">&para;</a></h1>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The objective of this exercise is to refresh yourself on HTCondor file
+transfer, to implement file compression, and to begin examining the
+memory and disk space used by your jobs in order to plan larger batches.
+We will also explore ways to deal with output data.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>The executable we'll use in this exercise and later today is the same
+<code>blastx</code> executable from previous exercises. Log in to ap40:</p>
+<div class="codehilite"><pre><span></span><code><span class="hll">$ ssh &lt;USERNAME&gt;@ap40.uw.osg-htc.org
+</span></code></pre></div>
+
+<p>Then change into the <code>blast-data</code> folder that you created in the
+previous exercise.</p>
+<h3 id="review-htcondor-file-transfer">Review: HTCondor File Transfer<a class="headerlink" href="#review-htcondor-file-transfer" title="Permanent link">&para;</a></h3>
+<p><img alt="OSG data transfer" src="../files/osgus18-day4-part2-ex2-data-transfer.jpg" /></p>
+<p>Recall that OSG does <strong>NOT</strong> have a shared filesystem! Instead,
+HTCondor <em>transfers</em> your executable and input files (specified with
+the <code>executable</code> and <code>transfer_input_files</code> submit file directives,
+respectively) to a working directory on the execute node, regardless of
+how these files were arranged on the submit node. In this exercise we'll
+use the same <code>blastx</code> example job that we used previously, but modify
+the submit file and test how much memory and disk space it uses on the
+execute node.</p>
+<h2 id="start-with-a-test-submit-file">Start with a test submit file<a class="headerlink" href="#start-with-a-test-submit-file" title="Permanent link">&para;</a></h2>
+<p>We've started a submit file for you, below, which you'll add to in the remaining steps.</p>
+<div class="codehilite"><pre><span></span><code>executable = 
+transfer_input_files = 
+output = test.out
+error = test.err
+log = test.log
+request_memory = 
+request_disk = 
+request_cpus = 1
+requirements = (OSGVO_OS_STRING == &quot;RHEL 8&quot;)
+queue
+</code></pre></div>
+
+<h3 id="implement-file-compression">Implement file compression<a class="headerlink" href="#implement-file-compression" title="Permanent link">&para;</a></h3>
+<p>In our first blast job from the Software exercises (<a href="../../software/part1-ex1-download">1.1</a>), the database files in the <code>pdbaa</code> directory were all transferred, as is, but we
+could instead transfer them as a single, compressed file using <code>tar</code>.
+For this version of the job, let's compress our blast database files to send them to the submit node as a single
+<code>tar.gz</code> file (otherwise known as a tarball), by following the below steps:</p>
+<ol>
+<li>
+<p>Change into the <code>pdbaa</code> directory and compress the database files into a single file called <code>pdbaa_files.tar.gz</code>
+    using the <code>tar</code> command.
+    Note that this file will be different from the <code>pdbaa.tar.gz</code> file that you used earlier, because it will only
+    contain the <code>pdbaa</code> files, and not the <code>pdbaa</code> directory, itself.)</p>
+<p>Remember, a typical command for creating a tar file is:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>tar -cvzf &lt;COMPRESSED FILENAME&gt; &lt;LIST OF FILES OR DIRECTORIES&gt;
+</code></pre></div>
+
+<p>Replacing <code>&lt;COMPRESSED FILENAME&gt;</code> with the name of the tarball that you would like to create and
+<code>&lt;LIST OF FILES OR DIRECTORIES&gt;</code> with a space-separated list of files and/or directories that you want inside pdbaa_files.tar.gz. 
+Move the resulting tarball to the <code>blast-data</code> directory.</p>
+</li>
+<li>
+<p>Create a wrapper script that will first decompress the <code>pdbaa_files.tar.gz</code> file, and then run blast.</p>
+<p>Because this file will now be our <code>executable</code> in the submit file, we'll also end up transferring the <code>blastx</code> executable
+with <code>transfer_input_files</code>.
+In the <code>blast-data</code> directory, create a new file, called <code>blast_wrapper.sh</code>, with the following contents:</p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+tar -xzvf pdbaa_files.tar.gz
+
+./blastx -db pdbaa -query mouse.fa -out mouse.fa.result
+
+rm pdbaa.*
+</code></pre></div>
+
+<p>Also remember to make the script executable: <code>chmod +x blast_wrapper.sh</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Extra Files!</p>
+<p>The last line removes the resulting database files that came from <code>pdbaa_files.tar.gz</code>, as these files would
+otherwise be copied back to the submit server as perceived output since they're "new" files that HTCondor
+didn't transfer over as input.</p>
+</div>
+</li>
+</ol>
+<h3 id="list-the-executable-and-input-files">List the executable and input files<a class="headerlink" href="#list-the-executable-and-input-files" title="Permanent link">&para;</a></h3>
+<p>Make sure to update the submit file with the following:</p>
+<ul>
+<li>Add the new <code>executable</code> (the wrapper script you created above)</li>
+<li>In <code>transfer_input_files</code>, list the <code>blastx</code> binary, the <code>pdbaa_files.tar.gz</code> file, and the input query file.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Commas, commas everywhere!</p>
+<p>Remember that <code>transfer_input_files</code> accepts a comma separated list of files, and that you need to list the full
+location of the <code>blastx</code> executable (<code>blastx</code>).
+There will be no arguments, since the arguments to the <code>blastx</code> command are now captured in the wrapper script.</p>
+</div>
+<h3 id="predict-memory-and-disk-requests-from-your-data">Predict memory and disk requests from your data<a class="headerlink" href="#predict-memory-and-disk-requests-from-your-data" title="Permanent link">&para;</a></h3>
+<p>Also, think about how much memory and disk to request for this job.
+It's good to start with values that are a little higher than you think a test job will need, but think about:</p>
+<ul>
+<li>How much memory <code>blastx</code> would use if it loaded all of the database files <em>and</em> the query input file into memory.</li>
+<li>How much disk space will be necessary on the execute server for the executable, all input files, and all output
+    files (hint: the log file only exists on the submit node).</li>
+<li>Whether you'd like to request some extra memory or disk space, just in case</li>
+</ul>
+<p>Look at the <code>log</code> file for your <code>blastx</code> job from Software exercise (<a href="../../software/part1-ex1-download">1.1</a>), and compare the memory and disk "Usage" to what you predicted
+from the files.
+Make sure to update the submit file with more accurate memory and disk requests. You may still want to request slightly
+more than the job actually used. </p>
+<h2 id="run-the-test-job">Run the test job<a class="headerlink" href="#run-the-test-job" title="Permanent link">&para;</a></h2>
+<p>Once you have finished editing the submit file, go ahead and submit the job.
+It should take a few minutes to complete, and then you can check to make sure that no unwanted files (especially the
+<code>pdbaa</code> database files) were copied back at the end of the job.</p>
+<p>Run a <strong><code>du -sh</code></strong> on the directory with this job's input.
+How does it compare to the directory from Software exercise (<a href="../../software/part1-ex1-download">1.1</a>), and why?</p>
+<h2 id="transfer_output_files">transfer_output_files<a class="headerlink" href="#transfer_output_files" title="Permanent link">&para;</a></h2>
+<p>So far, we have used HTCondor's new file detection to transfer back
+the newly created files. An alternative is to be explicit, using the
+<code>transfer_output_files</code> attribute in the submit file. The upside to this
+approach is that you can pick to only transfer back a subset of the
+created files. The downside is that you have to know which files are
+created.</p>
+<p>The first exercise is to modify the submit file from the previous
+example, and add a line like (remember, before the <code>queue</code>):</p>
+<div class="codehilite"><pre><span></span><code>transfer_output_files = mouse.fa.result
+</code></pre></div>
+
+<p>You may also remove the last line in the <code>blast_wrapper.sh</code>, the
+<code>rm pdbaa.*</code> as extra files are no longer an issue - those files
+will be ignored because we used <code>transfer_output_files</code>.</p>
+<p>Submit the job, and make sure everything works. Did you get
+any <code>pdbaa.*</code> files back?</p>
+<p>The next thing we should try is to see what happens if the
+file we specify does not exist. Modify your submit file,
+and change the <code>transfer_output_files</code> to:</p>
+<div class="codehilite"><pre><span></span><code>transfer_output_files = elephant.fa.result
+</code></pre></div>
+
+<p>Submit the job and see how it behaves. Did it finish successfully?</p>
+<h2 id="transfer_output_remaps">transfer_output_remaps<a class="headerlink" href="#transfer_output_remaps" title="Permanent link">&para;</a></h2>
+<p>Related to <code>transfer_output_files</code> is <code>transfer_output_remaps</code>,
+which allows us to rename outputs, or map the outputs to 
+a different storage system (will be explored in the next
+module).</p>
+<p>The format of the <code>transfer_output_remaps</code> attribute is a
+list of remaps, each remap taking the form of <code>src=dst</code>. 
+The destination can be a local path, or a URL. For example:</p>
+<div class="codehilite"><pre><span></span><code>transfer_output_remaps = &quot;myresults.dat = s3://destination-server.com/myresults.dat&quot;
+</code></pre></div>
+
+<p>If you have more than one remap, you can separate them with
+<code>;</code></p>
+<p>By now, your <code>blast-data</code> directory is probably starting
+to look messy with a mix of submit files, input data,
+log file and output data all intermingled. One improvement
+could be to map our outputs to a separate directory. Create
+a new directory named <code>science-results</code>. </p>
+<p>Add a <code>transfer_output_remaps</code> line to the submit file.
+It is common to place this line right after the
+<code>transfer_output_files</code> line. Change the 
+<code>transfer_output_files</code> back to <code>mouse.fa.result</code>.
+Example:</p>
+<div class="codehilite"><pre><span></span><code>transfer_output_files = mouse.fa.result
+transfer_output_remaps =
+</code></pre></div>
+
+<p>Fill out the remap line, mapping <code>mouse.fa.result</code> to the
+destination <code>science-results/mouse.fa.result</code>. Remember
+that the <code>transfer_output_remaps</code> value requires double
+quotes around it.</p>
+<p>Submit the job, and wait for it to complete. Was there
+any errors? Can you find mouse.fa.result?</p>
+<h2 id="conclusions">Conclusions<a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<p>In this exercise, you:</p>
+<ul>
+<li>Used your data requirements knowledge from the <a href="../part1-ex1-data-needs">previous exercise</a> to write a job.</li>
+<li>Executed the job on a remote worker node and took note of the data usage.</li>
+<li>Used <code>transfer_input_files</code> to transfer inputs</li>
+<li>Used <code>transfer_output_files</code> to transfer outputs</li>
+<li>Used <code>transfer_output_remaps</code> to map outputs to a different destination</li>
+</ul>
+<p>When you've completed the above, continue with the <a href="../part1-ex3-blast-split">next exercise</a>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

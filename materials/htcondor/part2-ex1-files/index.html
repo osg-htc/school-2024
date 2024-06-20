@@ -1,0 +1,615 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part2-ex1-files/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part2 ex1 files - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#htc-exercise-21-work-with-input-and-output-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part2 ex1 files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-a-job-sandbox" class="md-nav__link">
+    Viewing a Job Sandbox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-job-with-input-files" class="md-nav__link">
+    Running a Job With Input Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-output-files" class="md-nav__link">
+    Transferring Output Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferring-specific-output-files" class="md-nav__link">
+    Transferring Specific Output Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thinking-about-progress-so-far" class="md-nav__link">
+    Thinking About Progress So Far
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="htc-exercise-21-work-with-input-and-output-files">HTC Exercise 2.1: Work With Input and Output Files<a class="headerlink" href="#htc-exercise-21-work-with-input-and-output-files" title="Permanent link">&para;</a></h1>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The goal of this exercise is make input files available to your job on the execute machine and to return output files back created in your job back to you on the access point. This small change significantly adds to the kinds of jobs that you can run.</p>
+<h2 id="viewing-a-job-sandbox">Viewing a Job Sandbox<a class="headerlink" href="#viewing-a-job-sandbox" title="Permanent link">&para;</a></h2>
+<p>Before you learn to transfer files to and from your job, it is good to understand a bit more about the environment in which your job runs.
+When the HTCondor <code>starter</code> process prepares to run your job, it creates a new directory for your job and all of its files.
+We call this directory the <em>job sandbox</em>, because it is your job’s private space to play.
+Let’s see what is in the job sandbox for a minimal job with no special input or output files.</p>
+<ol>
+<li>
+<p>Save the script below in a file named <code>sandbox.sh</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="nb">echo</span> <span class="s1">&#39;Date: &#39;</span> <span class="sb">`</span>date<span class="sb">`</span>
+<span class="nb">echo</span> <span class="s1">&#39;Host: &#39;</span> <span class="sb">`</span>hostname<span class="sb">`</span> 
+<span class="nb">echo</span> <span class="s1">&#39;Sandbox: &#39;</span> <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> 
+ls -alF
+<span class="c1"># END</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Create a submit file for this script and submit it.</p>
+</li>
+<li>When the job finishes, look at the contents of the output file.</li>
+</ol>
+<p>In the output file, note the <code>Sandbox:</code> line: That is the full path to your job sandbox for the run. It was created just for your job, and it was removed as soon as your job finished.</p>
+<p>Next, look at the output that appears after the <code>Sandbox:</code> line; it is the output from the <code>ls</code> command in the script. It shows all of the files in your job sandbox, as they existed at the end of the execution of <code>sandbox.sh</code>. The number of files that you see can change depending on the HTC system you are using, but some of the files you should always see are:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.chirp.config</code></td>
+<td>Configuration for an advanced feature</td>
+</tr>
+<tr>
+<td><code>sandbox.sh</code></td>
+<td>Your executable</td>
+</tr>
+<tr>
+<td><code>.job.ad</code></td>
+<td>The job ClassAd</td>
+</tr>
+<tr>
+<td><code>.machine.ad</code></td>
+<td>The machine ClassAd</td>
+</tr>
+<tr>
+<td><code>_condor_stderr</code></td>
+<td>Saved standard error from the job</td>
+</tr>
+<tr>
+<td><code>_condor_stdout</code></td>
+<td>Saved standard output from the job</td>
+</tr>
+<tr>
+<td><code>tmp/</code>, <code>var/tmp/</code></td>
+<td>Directories in which to put temporary files</td>
+</tr>
+</tbody>
+</table>
+<p>So, HTCondor wrote copies of the job and machine ads (for use by the job, if desired), transferred your executable (<code>sandbox.sh</code>), ran it, and saved its standard output and standard error into files. Notice that your submit file, which was in the same directory on the access point machine as your executable, was <strong>not</strong> transferred, nor were any other files that happened to be in directory with the submit file.</p>
+<p>Now that we know something about the sandbox, we can transfer more files to and from it.</p>
+<h2 id="running-a-job-with-input-files">Running a Job With Input Files<a class="headerlink" href="#running-a-job-with-input-files" title="Permanent link">&para;</a></h2>
+<p>Next, you will run a job that requires an input file. Remember, the initial job sandbox will contain only the job executable, unless you tell HTCondor explicitly about every other file that needs to be transferred to the job.</p>
+<p>Here is a Python script that takes the name of an input file (containing one word per line) from the command line, counts the number of times each (lowercased) word occurs in the text, and prints out the final list of words and their counts.</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Usage: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1"> DATA&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">input_filename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">my_file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">my_file</span><span class="p">:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="n">words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">words</span><span class="p">[</span><span class="n">word</span><span class="p">]</span><span class="si">:</span><span class="s1">8d</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<ol>
+<li>Create and save the Python script in a file named <code>freq.py</code>.</li>
+<li>
+<p>Download the input file for the script (263K lines, ~1.4 MB) and save it in your submit directory:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osgschool20/intro-2.1-words.txt
+</code></pre></div>
+
+</li>
+<li>
+<p>Create a submit file for the <code>freq.py</code> executable.</p>
+</li>
+<li>
+<p>Add a line called <code>transfer_input_files =</code> to tell HTCondor to transfer the input file to the job:</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = intro-2.1-words.txt
+</code></pre></div>
+
+<p>As with all submit file commands, it does not matter where this line goes, as long as it comes before the word <code>queue</code>.</p>
+</li>
+<li>
+<p>Since we want HTCondor to pass an argument to our Python executable, we need to remember to add an <code>arguments =</code> line in our submit file so that HTCondor knows to pass an argument to the job. Set this <code>arguments =</code> line equal to the argument to the Python script (i.e., the name the input file).</p>
+</li>
+<li>Submit the job to HTCondor, wait for it to finish, and check the output!</li>
+</ol>
+<p>If things do not work the first time, keep trying! At this point in the exercises, we are telling you less and less explicitly how to do steps that you have done before. If you get stuck, ask for help in the Slack channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to transfer more than one input file, list all of them on a single <code>transfer_input_files</code> command,
+separated by commas.
+For example, if there are three input files:</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = a.txt, b.txt, c.txt
+</code></pre></div>
+
+</div>
+<h2 id="transferring-output-files">Transferring Output Files<a class="headerlink" href="#transferring-output-files" title="Permanent link">&para;</a></h2>
+<p>So far, we have relied on programs that send their output to the standard output and error streams, which HTCondor captures, saves, and returns back to the submit directory. But what if your program writes one or more files for its output? How do you tell HTCondor to bring them back?</p>
+<p>Let’s start by exploring what happens to files that a job creates in the sandbox.
+We will use a very simple method for creating a new file: we will copy an input file to another name.</p>
+<ol>
+<li>Find or create a small input file (it is fine to use any small file from a previous exercise).</li>
+<li>Create a submit file that transfers the input file and copies it to another name (as if doing <code>/bin/cp input.txt output.txt</code> on the command line)<ul>
+<li>Make the output filename different than any filenames that are in your submit directory</li>
+<li>What is the <code>executable</code> line?</li>
+<li>What is the <code>arguments</code> line?</li>
+<li>How do you tell HTCondor to transfer the input file?</li>
+<li>As always, use <code>output</code>, <code>error</code>, and <code>log</code> filenames that are different from previous exercises</li>
+</ul>
+</li>
+<li>Submit the job and wait for it to finish.</li>
+</ol>
+<p>What happened? Can you tell what HTCondor did with the output file that was created (did it end up back on the access point?), after it was created in the job sandbox? Look carefully at the list of files in your submit directory now.</p>
+<h2 id="transferring-specific-output-files">Transferring Specific Output Files<a class="headerlink" href="#transferring-specific-output-files" title="Permanent link">&para;</a></h2>
+<p>As you saw in the last exercise, by default HTCondor transfers files that are created in the job sandbox back to the submit directory when the job finishes. In fact, HTCondor will also transfer back <strong>changed</strong> input files, too. But, this only works for files that are in the top-level sandbox directory, and <strong>not</strong> for ones contained in subdirectories.</p>
+<p>What if you want to bring back only <strong>some</strong> output files, or output files contained in subdirectories?</p>
+<p>Here is a shell script that creates several files, including a copy of an input file in a new subdirectory:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> INPUT&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span>
+date &gt; output-timestamp.txt
+cal &gt; output-calendar.txt
+mkdir subdirectory
+cp <span class="nv">$1</span> subdirectory/backup-<span class="nv">$1</span>
+</code></pre></div>
+
+<p>First, let’s confirm that HTCondor does not bring back the output file (which starts with the prefix <code>backup-</code>) in the subdirectory:</p>
+<ol>
+<li>Create a file called <code>output.sh</code> and save the above shell script in this file.</li>
+<li>Write a submit file that transfers any input file and runs <code>output.sh</code> on it (remember to include an <code>arguments =</code> line and pass the input filename as an argument).</li>
+<li>Submit the job, wait for it to finish, and examine the contents of your submit directory.</li>
+</ol>
+<p>Suppose you decide that you want only the timestamp output file and all files in the subdirectory, but not the calendar output file. You can tell HTCondor to only transfer these specific files back to the submission directory using <code>transfer_output_files =</code>:</p>
+<div class="codehilite"><pre><span></span><code>transfer_output_files = output-timestamp.txt, subdirectory/
+</code></pre></div>
+
+<p>When using <code>transfer_output_files =</code>, HTCondor will only transfer back the files you name - all other files will be ignored and deleted at the end of a job. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the trailing slash (<code>/</code>) on the subdirectory?
+That tells HTCondor to transfer back <strong>the files contained in the subdirectory, but not the directory itself</strong>;
+the files will be written directly into the submit directory.
+If you want HTCondor to transfer back an entire directory, leave off the trailing slash.</p>
+</div>
+<ol>
+<li>Remove all output files from the previous run, including <code>output-timestamp.txt</code> and <code>output-calendar.txt</code>.</li>
+<li>Copy the previous submit file that ran <code>output.sh</code> and add the <code>transfer_output_files</code> line from above.</li>
+<li>Submit the job, wait for it to finish, and examine the contents of your submit directory.</li>
+</ol>
+<p>Did it work as you expected?</p>
+<h2 id="thinking-about-progress-so-far">Thinking About Progress So Far<a class="headerlink" href="#thinking-about-progress-so-far" title="Permanent link">&para;</a></h2>
+<p>At this point, you can do just about everything that you need in order to run jobs on a HTC pool. You can identify the executable, arguments, and input files, and you can get output back from the job. This is a big achievement!</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>There are many more details about HTCondor’s file transfer mechanism not covered here.
+For more information, read <a href="https://htcondor.readthedocs.io/en/latest/users-manual/file-transfer.html">"Submitting Jobs Without a Shared Filesystem"</a> in the HTCondor Manual.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

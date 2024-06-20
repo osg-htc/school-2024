@@ -1,0 +1,602 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part1-ex8-queue/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex8 queue - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bonus-htc-exercise-18-explore-condor_q" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex8 queue
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-jobs" class="md-nav__link">
+    Selecting Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-a-job-classad" class="md-nav__link">
+    Viewing a Job ClassAd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-my-job-not-running" class="md-nav__link">
+    Why Is My Job Not Running?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-automatic-formatting-output" class="md-nav__link">
+    Bonus: Automatic Formatting Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="bonus-htc-exercise-18-explore-condor_q">Bonus HTC Exercise 1.8: Explore condor_q<a class="headerlink" href="#bonus-htc-exercise-18-explore-condor_q" title="Permanent link">&para;</a></h1>
+<p>The goal of this exercise is try out some of the most common options to the <code>condor_q</code> command, so that you can view jobs effectively.</p>
+<p>The main part of this exercise should take just a few minutes, but if you have more time later, come back and work on the extension ideas at the end to become a <code>condor_q</code> expert!</p>
+<h2 id="selecting-jobs">Selecting Jobs<a class="headerlink" href="#selecting-jobs" title="Permanent link">&para;</a></h2>
+<p>The <code>condor_q</code> program has many options for selecting which jobs are listed. You have already seen that the default mode is to show only your jobs in "batch" mode:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q
+</code></pre></div>
+
+<p>You've seen that you can view all jobs (all users) in the submit node's queue by using the <code>-all</code> argument:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -all
+</code></pre></div>
+
+<p>And you've seen that you can view more details about queued jobs, with each separate job on a single line using the <code>-nobatch</code> option:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -nobatch
+<span class="gp">username@learn $ </span>condor_q -all -nobatch
+</code></pre></div>
+
+<p>Did you know you can also name one or more user IDs on the command line, in which case jobs for all of the named users are listed at once?</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;USERNAME1&gt; &lt;USERNAME2&gt; &lt;USERNAME3&gt;
+</code></pre></div>
+
+<p>To list just the jobs associated with a single cluster number:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;CLUSTER&gt;
+</code></pre></div>
+
+<p>For example, if you want to see the jobs in cluster 5678 (i.e., <code>5678.0</code>, <code>5678.1</code>, etc.), you use <code>condor_q 5678</code>.</p>
+<p>To list a specific job (i.e., cluster.process, as in 5678.0):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;JOB.ID&gt;
+</code></pre></div>
+
+<p>For example, to see job ID 5678.1, you use <code>condor_q 5678.1</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can name more than one cluster, job ID, or combination thereof on the command line, in which case jobs for
+<strong>all</strong> of the named clusters and/or job IDs are listed.</p>
+</div>
+<p>Let’s get some practice using <code>condor_q</code> selections!</p>
+<ol>
+<li>Using a previous exercise, submit several <code>sleep</code> jobs.</li>
+<li>List all jobs in the queue — are there others besides your own?</li>
+<li>Practice using all forms of <code>condor_q</code> that you have learned:<ul>
+<li>List just your jobs, with and without batching.</li>
+<li>List a specific cluster.</li>
+<li>List a specific job ID.</li>
+<li>Try listing several users at once.</li>
+<li>Try listing several clusters and job IDs at once.</li>
+</ul>
+</li>
+<li>When there are a variety of jobs in the queue, try combining a username and a different user's cluster or job ID in the same command — what happens?</li>
+</ol>
+<h2 id="viewing-a-job-classad">Viewing a Job ClassAd<a class="headerlink" href="#viewing-a-job-classad" title="Permanent link">&para;</a></h2>
+<p>You may have wondered why it is useful to be able to list a single job ID using <code>condor_q</code>. By itself, it may not be that useful. But, in combination with another option, it is very useful!</p>
+<p>If you add the <code>-long</code> option to <code>condor_q</code> (or its short form, <code>-l</code>), it will show the complete ClassAd for each selected job, instead of the one-line summary that you have seen so far. Because job ClassAds may have 80–90 attributes (or more), it probably makes the most sense to show the ClassAd for a single job at a time. And you know how to show just one job! Here is what the command looks like:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -long &lt;JOB.ID&gt;
+</code></pre></div>
+
+<p>The output from this command is long and complex. Most of the attributes that HTCondor adds to a job are arcane and uninteresting for us now. But here are some examples of common, interesting attributes taken directly from <code>condor_q</code> output (except with some line breaks added to the <code>Requirements</code> attribute):</p>
+<div class="codehilite"><pre><span></span><code>MyType = &quot;Job&quot;
+Err = &quot;sleep.err&quot;
+UserLog = &quot;/home/cat/intro-2.1-queue/sleep.log&quot;
+Requirements = ( IsOSGSchoolSlot =?= true ) &amp;&amp;
+        ( TARGET.Arch == &quot;X86_64&quot; ) &amp;&amp;
+        ( TARGET.OpSys == &quot;LINUX&quot; ) &amp;&amp;
+        ( TARGET.Disk &gt;= RequestDisk ) &amp;&amp;
+        ( TARGET.Memory &gt;= RequestMemory ) &amp;&amp;
+        ( TARGET.HasFileTransfer )
+ClusterId = 2420
+WhenToTransferOutput = &quot;ON_EXIT&quot;
+Owner = &quot;cat&quot;
+CondorVersion = &quot;$CondorVersion: 8.5.5 May 03 2016 BuildID: 366162 $&quot;
+Out = &quot;sleep.out&quot;
+Cmd = &quot;/bin/sleep&quot;
+Arguments = &quot;120&quot;
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attributes are listed in no particular order and may change from time to time.
+Do not assume anything about the order of attributes in <code>condor_q</code> output.</p>
+</div>
+<p><strong>See what you can find in a job ClassAd from your own job.</strong></p>
+<ol>
+<li>Using a previous exercise, submit a <code>sleep</code> job that sleeps for at least 3 minutes (180 seconds).</li>
+<li>
+<p>Before the job executes, capture its ClassAd and save to a file:</p>
+<div class="codehilite"><pre><span></span><code><span class="go">condor_q -l &lt;JOB.ID&gt; &gt; classad-1.txt</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>After the job starts execution but before it finishes, capture its ClassAd again and save to a file</p>
+<div class="codehilite"><pre><span></span><code><span class="go">condor_q -l &lt;JOB.ID&gt; &gt; classad-2.txt</span>
+</code></pre></div>
+
+</li>
+</ol>
+<p>Now examine each saved ClassAd file. Here are a few things to look for:</p>
+<ul>
+<li>Can you find attributes that came from your submit file? (E.g., Cmd, Arguments, Out, Err, UserLog, and so forth)</li>
+<li>Can you find attributes that could have come from your submit file, but that HTCondor added for you? (E.g., Requirements)</li>
+<li>How many of the following attributes can you guess the meaning of?<ul>
+<li>DiskUsage</li>
+<li>ImageSize</li>
+<li>BytesSent</li>
+<li>JobStatus</li>
+</ul>
+</li>
+</ul>
+<h2 id="why-is-my-job-not-running">Why Is My Job Not Running?<a class="headerlink" href="#why-is-my-job-not-running" title="Permanent link">&para;</a></h2>
+<p>Sometimes, you submit a job and it just sits in the queue in Idle state, never running. It can be difficult to figure out why a job never matches and runs. Fortunately, HTCondor can give you some help.</p>
+<p>To ask HTCondor why your job is not running, add the <code>-better-analyze</code> option to <code>condor_q</code> for the specific job. For example, for job ID 2423.0, the command is:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -better-analyze <span class="m">2423</span>.0
+</code></pre></div>
+
+<p>Of course, replace the job ID with your own.</p>
+<p>Let’s submit a job that will never run and see what happens. Here is the submit file to use:</p>
+<div class="codehilite"><pre><span></span><code>executable = /bin/hostname
+output = norun.out
+error = norun.err
+log = norun.log
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+request_disk = 10MB
+request_memory = 8TB
+queue
+</code></pre></div>
+
+<p>(Do you see what I did?)</p>
+<ol>
+<li>Save and submit this file.</li>
+<li>Run <code>condor_q -better-analyze</code> on the job ID.</li>
+</ol>
+<p>There is a lot of output, but a few items are worth highlighting. Here is a sample from my own job (with some lines omitted):</p>
+<div class="codehilite"><pre><span></span><code>-- Schedd: learn.chtc.wisc.edu : &lt;128.104.100.148:9618?...
+...
+
+Job 98096.000 defines the following attributes:
+
+    RequestDisk = 10240
+    RequestMemory = 8388608
+
+The Requirements expression for job 98096.000 reduces to these conditions:
+
+
+         Slots
+Step    Matched  Condition
+-----  --------  ---------
+[1]       11227  Target.OpSysMajorVer == 7
+[9]       13098  TARGET.Disk &gt;= RequestDisk
+[11]          0  TARGET.Memory &gt;= RequestMemory
+
+No successful match recorded.
+Last failed match: Fri Jul 12 15:36:30 2019
+
+Reason for last match failure: no match found
+
+98096.000:  Run analysis summary ignoring user priority.  Of 710 machines,
+    710 are rejected by your job&#39;s requirements
+      0 reject your job because of their own requirements
+      0 match and are already running your jobs
+      0 match but are serving other users
+      0 are able to run your job
+...
+</code></pre></div>
+
+<p>At the end of the summary, <code>condor_q</code> provides a breakdown of how <strong>machines</strong> and their own requirements match against my own job's requirements. 710 total machines were considered above, and <strong>all</strong> of them were rejected based on <strong>my job's requirements</strong>. In other words, I am asking for something that is not available. But what?</p>
+<p>Further up in the output, there is an analysis of the job's requirements, along with how many slots within the pool match each of those requirements. The example above reports that 13098 slots match our small disk request request, but <strong>none</strong> of the slots matched the <code>TARGET.Memory &gt;= RequestMemory</code> condition. The output also reports the value used for the <code>RequestMemory</code> attribute: my job asked for <strong>8 terabytes</strong> of memory (8,388,608 MB) -- of course no machines matched that part of the expression! That's a lot of memory on today's machines.</p>
+<p>The output from <code>condor_q -analyze</code> (and <code>condor_q -better-analyze</code>) may be helpful or it may not be, depending on your exact case. The example above was constructed so that it would be obvious what the problem was. But in many cases, this is a good place to start looking if you are having problems matching.</p>
+<h2 id="bonus-automatic-formatting-output">Bonus: Automatic Formatting Output<a class="headerlink" href="#bonus-automatic-formatting-output" title="Permanent link">&para;</a></h2>
+<p><strong>Do this exercise only if you have time, though it's pretty awesome!</strong></p>
+<p>There is a way to select the specific job attributes you want <code>condor_q</code> to tell you about with the <code>-autoformat</code> or <code>-af</code> option. In this case, HTCondor decides for you how to format the data you ask for from job ClassAd(s). 
+(To tell HTCondor how to specially format this information, yourself, you could use the <code>-format</code> option, which we're not covering.)</p>
+<p>To use autoformatting, use the <code>-af</code> option followed by the attribute name, for each attribute that you want to output:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -all -af Owner ClusterId Cmd
+<span class="go">moate 2418 /share/test.sh</span>
+<span class="go">cat 2421 /bin/sleep</span>
+<span class="go">cat 2422 /bin/sleep</span>
+</code></pre></div>
+
+<p><strong>Bonus Question</strong>: If you wanted to print out the <code>Requirements</code> expression of a job, how would you do that with <code>-af</code>? Is the output what you expected? (HINT: for ClassAd attributes like "Requirements" that are long expressions, instead of plain values, you can use <code>-af:r</code> to view the expressions, instead of what it's current evaluation.)</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>As suggested above, if you want to learn more about <code>condor_q</code>, you can do some reading:</p>
+<ul>
+<li>Read the <code>condor_q</code> man page or HTCondor Manual section (same text) to learn about more options</li>
+<li>Read about ClassAd attributes in Appendix A of the HTCondor Manual</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,574 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/software/part5-ex2-python/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part5 ex2 python - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-exercise-52-using-python-pre-built" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part5 ex2 python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-job-for-pre-building" class="md-nav__link">
+    Interactive Job for Pre-Building
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-script" class="md-nav__link">
+    Python Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapper-script" class="md-nav__link">
+    Wrapper Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-file" class="md-nav__link">
+    Submit File
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: #008; } </style>
+
+<h1 id="software-exercise-52-using-python-pre-built">Software Exercise 5.2: Using Python, Pre-Built<a class="headerlink" href="#software-exercise-52-using-python-pre-built" title="Permanent link">&para;</a></h1>
+<p>In this exercise, you will install Python, package your installation, and then use it to run jobs. It should take about 20 minutes.</p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p><strong>Objective</strong>: Install software (Python) to a folder and run it in a job using a wrapper script. </p>
+<p><strong>Why learn this?</strong>: This is very similar to the <a href="../part5-ex1-prepackaged/">previous exercise</a>. </p>
+<h2 id="interactive-job-for-pre-building">Interactive Job for Pre-Building<a class="headerlink" href="#interactive-job-for-pre-building" title="Permanent link">&para;</a></h2>
+<p>The first step in our job process is building a Python installation that we can package up.</p>
+<ol>
+<li>Create a directory for this exercise on the Access Point and <code>cd</code> into it.</li>
+<li>
+<p>Download the Python source code from <a href="https://www.python.org/">https://www.python.org/</a>. </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>wget https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
+</code></pre></div>
+
+</li>
+<li>
+<p>First, we have to determine how to install Python to a specific location in our working directory.</p>
+<ol>
+<li>Untar the Python source tarball (<code>tar -xzf Python-3.10.5.tgz</code>) and look at the <code>README.rst</code> file in the <code>Python-3.10.5</code> directory (<code>cd Python-3.10.5</code>).  You'll want to look for the "Build Instructions" header.  What will the main installation steps be?  What command is required for the final installation?  Once you've tried to answer these questions, move to the next step.</li>
+<li>
+<p>There are some basic installation instructions near the top of the <code>README</code>. Based on that short introduction, we can see the main steps of installation will be: </p>
+<div class="codehilite"><pre><span></span><code>./configure
+make
+make test
+sudo make install
+</code></pre></div>
+
+<p>This three-stage process (configure, make, make install) is a common  way to install many software packages.   The default installation  location for Python requires <code>sudo</code> (administrative privileges) to install. However, we'd like to install to a specific location in the working directory  so that we can compress that installation directory into a tarball. </p>
+</li>
+<li>
+<p>You can often use an option called <code>-prefix</code> with the <code>configure</code> script to change the default installation directory. Let's see if the Python <code>configure</code> script has this option by using the "help" option (as suggested in the <code>README.rst</code> file): </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span>./configure --help
+</code></pre></div>
+
+<p>Sure enough, there's a list of all the different options that can be passed to the <code>configure</code> script, which includes <code>--prefix</code>.  (To see the <code>--prefix</code> option, you may need to scroll towards the top of the output.)  Therefore, we can use the  <code>$PWD</code> command in order to set the path correctly to a custom installation directory. </p>
+</li>
+</ol>
+</li>
+<li>
+<p>Now let's actually install Python!</p>
+<ol>
+<li>
+<p><strong>From the original working directory</strong>, create a directory to hold the installation. </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span><span class="nb">cd</span>  ../
+<span class="gp">username@host $ </span>mkdir python310
+</code></pre></div>
+
+</li>
+<li>
+<p>Move into the <code>Python-3.10.5</code> directory and run the installation commands. These may take a few minutes each. </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span><span class="nb">cd</span> Python-3.10.5
+<span class="gp">username@host $ </span>./configure --prefix<span class="o">=</span><span class="nv">$PWD</span>/../python310
+<span class="gp">username@host $ </span>make
+<span class="gp">username@host $ </span>make install
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The installation instructions in the <code>README.rst</code> file have a <code>make test</code> step 
+between the <code>make</code> and <code>make install</code> steps.  As this step isn't strictly necessary (and takes a long time), it's been omitted above.  </p>
+</div>
+</li>
+<li>
+<p>If I move back to the main job working directory, and look in the <code>python</code> subdirectory, I should see a Python installation. </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span><span class="nb">cd</span> ..
+<span class="gp">username@host $ </span>ls python310/
+<span class="go">bin  include  lib  share</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>I have successfully created a self-contained Python installation. Now it just needs to be tarred up! </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span>tar -czf prebuilt_python.tar.gz python310/
+</code></pre></div>
+
+</li>
+</ol>
+</li>
+<li>
+<p>We might want to know how we installed Python for later reference.  Enter the following commands to save our history to a file: </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span><span class="nb">history</span> &gt; python_install.txt
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="python-script">Python Script<a class="headerlink" href="#python-script" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Create a script with the following lines called <code>fib.py</code>. </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usage: </span><span class="si">%s</span><span class="s1"> MAXIMUM&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">maximum</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">n2</span> <span class="o">&lt;=</span> <span class="n">maximum</span><span class="p">:</span>
+    <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The greatest Fibonacci number up to </span><span class="si">%d</span><span class="s1"> is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">maximum</span><span class="p">,</span> <span class="n">n1</span><span class="p">))</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>What command line arguments does this script take? Try running it on the submit server.</p>
+</li>
+</ol>
+<h2 id="wrapper-script">Wrapper Script<a class="headerlink" href="#wrapper-script" title="Permanent link">&para;</a></h2>
+<p>We now have our Python installation and our Python script - we just need to write a wrapper script to run them.</p>
+<ol>
+<li>What steps do you think the wrapper script needs to perform? Create a file called <code>run_fib.sh</code> and write them out in plain English before moving to the next step.</li>
+<li>Our script will need to<ol>
+<li>untar our <code>prebuilt_python.tar.gz</code> file</li>
+<li>access the <code>python</code> command from our installation to run our <code>fib.py</code> script</li>
+</ol>
+</li>
+<li>Try turning your plain English steps into commands that the computer can run.</li>
+<li>
+<p>Your final <code>run_fib.sh</code> script should look something like this: </p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+tar -xzf prebuilt_python.tar.gz 
+python310/bin/python3 fib.py <span class="m">90</span>
+</code></pre></div>
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+tar -xzf prebuilt_python.tar.gz 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/python310/bin:<span class="nv">$PATH</span> 
+python3 fib.py <span class="m">90</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Make sure your <code>run_fib.sh</code> script is executable.</p>
+</li>
+</ol>
+<h2 id="submit-file">Submit File<a class="headerlink" href="#submit-file" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Make a copy of a previous submit file in your local directory (the submit file from 
+the <a href="../part4-ex2-wrapper">Use a Wrapper Script exercise</a> might be a good candidate). What changes need to be made to run this Python job? </p>
+</li>
+<li>
+<p>Modify your submit file, then make sure you've included the key lines below: </p>
+<div class="codehilite"><pre><span></span><code>executable = run_fib.sh
+transfer_input_files = fib.py, prebuilt_python.tar.gz
+</code></pre></div>
+
+</li>
+<li>
+<p>Submit the job using <code>condor_submit</code>. </p>
+</li>
+<li>
+<p>Check the <code>.out</code> file to see if the job completed.</p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

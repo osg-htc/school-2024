@@ -1,0 +1,680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/workflows/part1-ex1-simple-dag/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex1 simple dag - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workflows-exercise-11-coordinating-a-set-of-jobs-with-a-simple-dag" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex1 simple dag
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dagman" class="md-nav__link">
+    What is DAGMan?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-simple-dag" class="md-nav__link">
+    Submitting a Simple DAG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    Challenge
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css">
+  pre em { font-style: normal; background-color: yellow; }
+  pre strong { font-style: normal; font-weight: bold; color: \#008; }
+</style>
+
+<h1 id="workflows-exercise-11-coordinating-a-set-of-jobs-with-a-simple-dag">Workflows Exercise 1.1: Coordinating a Set of Jobs With a Simple DAG<a class="headerlink" href="#workflows-exercise-11-coordinating-a-set-of-jobs-with-a-simple-dag" title="Permanent link">&para;</a></h1>
+<p>The objective of this exercise is to learn the very basics of running a set of jobs, where our set is just one job.</p>
+<h2 id="what-is-dagman">What is DAGMan?<a class="headerlink" href="#what-is-dagman" title="Permanent link">&para;</a></h2>
+<p>In short, DAGMan lets you submit complex sequences of jobs as long as they can be expressed as a directed acylic graph.
+For example, you may wish to run a large parameter sweep but before the sweep run you need to prepare your data.  After
+the sweep runs, you need to collate the results.  This might look like this, assuming you want to sweep over five
+parameters:</p>
+<p><img alt="simple DAG" src="../files/osgvsp20-workflows-part1-ex1-simple-dag.gif" /></p>
+<p>DAGMan has many abilities, such as throttling jobs, recovery from failures, and more.  More information about DAGMan can
+be found at <a href="https://htcondor.readthedocs.io/en/latest/automated-workflows/index.html">in the HTCondor manual</a>.</p>
+<h2 id="submitting-a-simple-dag">Submitting a Simple DAG<a class="headerlink" href="#submitting-a-simple-dag" title="Permanent link">&para;</a></h2>
+<p>For our job, we will return briefly to the <code>sleep</code> program, name it <code>job.sub</code></p>
+<div class="codehilite"><pre><span></span><code>executable              = /bin/sleep
+arguments               = 4
+log                     = simple.log
+output                  = simple.out
+error                   = simple.error
+request_memory = 1GB
+request_disk = 1GB
+request_cpus = 1
+queue
+</code></pre></div>
+
+<p>We are going to get a bit more sophisticated in submitting our jobs now.  Let's have three windows open.  In one window,
+you'll submit the job.  In another you will watch the queue, and in the third you will watch what DAGMan does.</p>
+<p>First we will create the most minimal DAG that can be created: a DAG with just one node.  Put this into a file named
+<code>simple.dag</code>.</p>
+<div class="codehilite"><pre><span></span><code>JOB Simple job.sub
+</code></pre></div>
+
+<p>In your first window, submit the DAG:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>condor_submit_dag simple.dag
+<span class="go">-----------------------------------------------------------------------</span>
+<span class="go">File for submitting this DAG to Condor           : simple.dag.condor.sub</span>
+<span class="go">Log of DAGMan debugging messages                 : simple.dag.dagman.out</span>
+<span class="go">Log of Condor library output                     : simple.dag.lib.out</span>
+<span class="go">Log of Condor library error messages             : simple.dag.lib.err</span>
+<span class="go">Log of the life of condor_dagman itself          : simple.dag.dagman.log</span>
+
+<span class="go">Submitting job(s).</span>
+<span class="go">1 job(s) submitted to cluster 61.</span>
+<span class="go">-----------------------------------------------------------------------</span>
+</code></pre></div>
+
+<p>In the second window, check the queue (what you see may be slightly different):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>condor_q -nobatch -wide:80
+
+<span class="go">-- Submitter: learn.chtc.wisc.edu : &lt;128.104.100.55:9618?sock=28867_10e4_2&gt; : learn.chtc.wisc.edu</span>
+<span class="go"> ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               </span>
+<span class="go">  61.0   roy             6/21 22:51   0+00:03:47 R  0   0.3  condor_dagman     </span>
+<span class="go">  62.0   roy             6/21 22:51   0+00:00:03 R  0   0.7  simple 4 10      </span>
+
+<span class="go">2 jobs; 0 completed, 0 removed, 0 idle, 2 running, 0 held, 0 suspended</span>
+</code></pre></div>
+
+<p>In the third window, watch what DAGMan does (what you see may be slightly different):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>tail -f --lines<span class="o">=</span><span class="m">500</span> simple.dag.dagman.out
+<span class="go">08/02/23 15:44:57 ******************************************************</span>
+<span class="go">08/02/23 15:44:57 ** condor_scheduniv_exec.271100.0 (CONDOR_DAGMAN) STARTING UP</span>
+<span class="go">08/02/23 15:44:57 ** /usr/bin/condor_dagman</span>
+<span class="go">08/02/23 15:44:57 ** SubsystemInfo: name=DAGMAN type=DAGMAN(9) class=CLIENT(2)</span>
+<span class="go">08/02/23 15:44:57 ** Configuration: subsystem:DAGMAN local:&lt;NONE&gt; class:CLIENT</span>
+<span class="go">08/02/23 15:44:57 ** $CondorVersion: 10.7.0 2023-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $</span>
+<span class="go">08/02/23 15:44:57 ** $CondorPlatform: x86_64_AlmaLinux8 $</span>
+<span class="go">08/02/23 15:44:57 ** PID = 2340103</span>
+<span class="go">08/02/23 15:44:57 ** Log last touched time unavailable (No such file or directory)</span>
+<span class="go">08/02/23 15:44:57 ******************************************************</span>
+<span class="go">08/02/23 15:44:57 Daemon Log is logging: D_ALWAYS D_ERROR D_STATUS</span>
+<span class="go">08/02/23 15:44:57 DaemonCore: No command port requested.</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_USE_STRICT setting: 1</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_VERBOSITY setting: 3</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG_CACHE_SIZE setting: 5242880</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG_CACHE_ENABLE setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_SUBMIT_DELAY setting: 0</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_SUBMIT_ATTEMPTS setting: 6</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_STARTUP_CYCLE_DETECT setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_SUBMITS_PER_INTERVAL setting: 100</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_AGGRESSIVE_SUBMIT setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_USER_LOG_SCAN_INTERVAL setting: 5</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_QUEUE_UPDATE_INTERVAL setting: 300</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_PRIORITY setting: 0</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_SUPPRESS_NOTIFICATION setting: True</span>
+<span class="go">08/02/23 15:44:57 allow_events (DAGMAN_ALLOW_EVENTS) setting: 114</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_RETRY_SUBMIT_FIRST setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_RETRY_NODE_FIRST setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOBS_IDLE setting: 1000</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOBS_SUBMITTED setting: 0</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_PRE_SCRIPTS setting: 20</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_POST_SCRIPTS setting: 20</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_HOLD_SCRIPTS setting: 20</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MUNGE_NODE_NAMES setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_PROHIBIT_MULTI_JOBS setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_SUBMIT_DEPTH_FIRST setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_ALWAYS_RUN_POST setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_CONDOR_SUBMIT_EXE setting: /usr/bin/condor_submit</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_USE_DIRECT_SUBMIT setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_APPEND_VARS setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_ABORT_DUPLICATES setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_ABORT_ON_SCARY_SUBMIT setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_PENDING_REPORT_INTERVAL setting: 600</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_AUTO_RESCUE setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_RESCUE_NUM setting: 100</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_WRITE_PARTIAL_RESCUE setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_NODE_LOG setting: @(DAG_DIR)/@(DAG_FILE).nodes.log</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_GENERATE_SUBDAG_SUBMITS setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOB_HOLDS setting: 100</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_HOLD_CLAIM_TIME setting: 20</span>
+<span class="go">08/02/23 15:44:57 ALL_DEBUG setting: </span>
+<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG setting: </span>
+<span class="go">08/02/23 15:44:57 DAGMAN_SUPPRESS_JOB_LOGS setting: False</span>
+<span class="go">08/02/23 15:44:57 DAGMAN_REMOVE_NODE_JOBS setting: True</span>
+<span class="go">08/02/23 15:44:57 DAGMAN will adjust edges after parsing</span>
+<span class="go">08/02/23 15:44:57 argv[0] == &quot;condor_scheduniv_exec.271100.0&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[1] == &quot;-Lockfile&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[2] == &quot;simple.dag.lock&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[3] == &quot;-AutoRescue&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[4] == &quot;1&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[5] == &quot;-DoRescueFrom&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[6] == &quot;0&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[7] == &quot;-Dag&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[8] == &quot;simple.dag&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[9] == &quot;-Suppress_notification&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[10] == &quot;-CsdVersion&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[11] == &quot;$CondorVersion: 10.7.0 2023-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[12] == &quot;-Dagman&quot;</span>
+<span class="go">08/02/23 15:44:57 argv[13] == &quot;/usr/bin/condor_dagman&quot;</span>
+<span class="go">08/02/23 15:44:57 Default node log file is: &lt;/home/mats.rynge/dagman-1/./simple.dag.nodes.log&gt;</span>
+<span class="go">08/02/23 15:44:57 DAG Lockfile will be written to simple.dag.lock</span>
+<span class="go">08/02/23 15:44:57 DAG Input file is simple.dag</span>
+<span class="go">08/02/23 15:44:57 Parsing 1 dagfiles</span>
+<span class="go">08/02/23 15:44:57 Parsing simple.dag ...</span>
+<span class="go">08/02/23 15:44:57 Adjusting edges</span>
+<span class="go">08/02/23 15:44:57 Dag contains 1 total jobs</span>
+<span class="go">08/02/23 15:44:57 Bootstrapping...</span>
+<span class="go">08/02/23 15:44:57 Number of pre-completed nodes: 0</span>
+<span class="go">08/02/23 15:44:57 MultiLogFiles: truncating log file /home/mats.rynge/dagman-1/./simple.dag.nodes.log</span>
+<span class="go">08/02/23 15:44:57 DAG status: 0 (DAG_STATUS_OK)</span>
+<span class="go">08/02/23 15:44:57 Of 1 nodes total:</span>
+<span class="go">08/02/23 15:44:57  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile</span>
+<span class="go">08/02/23 15:44:57   ===     ===      ===     ===     ===        ===      ===      ===</span>
+<span class="go">08/02/23 15:44:57     0       0        0       0       1          0        0        0</span>
+<span class="go">08/02/23 15:44:57 0 job proc(s) currently held</span>
+<span class="go">08/02/23 15:44:57 Registering condor_event_timer...</span>
+<span class="go">08/02/23 15:44:58 Submitting HTCondor Node Simple job(s)...</span>
+</code></pre></div>
+
+<p><span style="color:RED"><strong>Here's where the job is submitted</strong></span></p>
+<div class="codehilite"><pre><span></span><code>08/02/23 15:44:58 Submitting HTCondor Node Simple job(s)...
+08/02/23 15:44:58 Submitting node Simple from file job.sub using direct job submission
+08/02/23 15:44:58       assigned HTCondor ID (271101.0.0)
+08/02/23 15:44:58 Just submitted 1 job this cycle...
+</code></pre></div>
+
+<p><span style="color:RED"><strong>Here's where DAGMan noticed that the job is running</strong></span></p>
+<div class="codehilite"><pre><span></span><code>08/02/23 15:45:18 Event: ULOG_EXECUTE for HTCondor Node Simple (271101.0.0) {08/02/23 15:45:14}
+08/02/23 15:45:18 Number of idle job procs: 0
+</code></pre></div>
+
+<p><span style="color:RED"><strong>Here's where DAGMan noticed that the job finished.</strong></span></p>
+<div class="codehilite"><pre><span></span><code>08/02/23 15:45:23 Event: ULOG_JOB_TERMINATED for HTCondor Node Simple (271101.0.0) {08/02/23 15:45:19}
+08/02/23 15:45:23 Number of idle job procs: 0
+08/02/23 15:45:23 Node Simple job proc (271101.0.0) completed successfully.
+08/02/23 15:45:23 Node Simple job completed
+08/02/23 15:45:23 DAG status: 0 (DAG_STATUS_OK)
+08/02/23 15:45:23 Of 1 nodes total:
+08/02/23 15:45:23  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile
+08/02/23 15:45:23   ===     ===      ===     ===     ===        ===      ===      ===
+08/02/23 15:45:23     1       0        0       0       0          0        0        0
+</code></pre></div>
+
+<p><span style="color:RED"><strong>Here's where DAGMan noticed that all the work is done.</strong></span></p>
+<div class="codehilite"><pre><span></span><code>08/02/23 15:45:23 All jobs Completed!
+08/02/23 15:45:23 Note: 0 total job deferrals because of -MaxJobs limit (0)
+08/02/23 15:45:23 Note: 0 total job deferrals because of -MaxIdle limit (1000)
+08/02/23 15:45:23 Note: 0 total job deferrals because of node category throttles
+08/02/23 15:45:23 Note: 0 total PRE script deferrals because of -MaxPre limit (20) or DEFER
+08/02/23 15:45:23 Note: 0 total POST script deferrals because of -MaxPost limit (20) or DEFER
+08/02/23 15:45:23 Note: 0 total HOLD script deferrals because of -MaxHold limit (20) or DEFER
+</code></pre></div>
+
+<p>Now verify your results:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>cat simple.log
+<span class="go">000 (271101.000.000) 2023-08-02 15:44:58 Job submitted from host: &lt;128.105.68.92:9618?addrs=128.105.68.92-9618+[2607-f388-2200-100-eaeb-d3ff-fe40-111c]-9618&amp;alias=ap40.uw.osg-htc.org&amp;noUDP&amp;sock=schedd_35391_dc5c&gt;</span>
+<span class="go">    DAG Node: Simple</span>
+<span class="go">...</span>
+<span class="go">040 (271101.000.000) 2023-08-02 15:45:13 Started transferring input files</span>
+<span class="go">        Transferring to host: &lt;10.136.81.233:37425?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#23067238%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-73b6]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector10#1512850&amp;PrivNet=comp-cc-0463.gwave.ics.psu.edu&amp;addrs=10.136.81.233-37425&amp;alias=comp-cc-0463.gwave.ics.psu.edu&amp;noUDP&gt;</span>
+<span class="go">...</span>
+<span class="go">040 (271101.000.000) 2023-08-02 15:45:13 Finished transferring input files</span>
+<span class="go">...</span>
+<span class="go">021 (271101.000.000) 2023-08-02 15:45:14 Warning from starter on slot1_4@glidein_2635188_104012775@comp-cc-0463.gwave.ics.psu.edu:</span>
+<span class="go">        PREPARE_JOB (prepare-hook) succeeded (reported status 000): Using default Singularity image /cvmfs/singularity.opensciencegrid.org/htc/rocky:8-cuda-11.0.3</span>
+<span class="go">...</span>
+<span class="go">001 (271101.000.000) 2023-08-02 15:45:14 Job executing on host: &lt;10.136.81.233:39645?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector10#1506459%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-73b4]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector10#1506644&amp;PrivNet=comp-cc-0463.gwave.ics.psu.edu&amp;addrs=10.136.81.233-39645&amp;alias=comp-cc-0463.gwave.ics.psu.edu&amp;noUDP&gt;</span>
+<span class="go">        SlotName: slot1_4@comp-cc-0463.gwave.ics.psu.edu</span>
+<span class="go">        CondorScratchDir = &quot;/localscratch/condor/execute/dir_2635172/glide_uZ6qXM/execute/dir_3252113&quot;</span>
+<span class="go">        Cpus = 1</span>
+<span class="go">        Disk = 2699079</span>
+<span class="go">        GLIDEIN_ResourceName = &quot;PSU-LIGO&quot;</span>
+<span class="go">        Memory = 1024</span>
+<span class="go">...</span>
+<span class="go">006 (271101.000.000) 2023-08-02 15:45:19 Image size of job updated: 2296464</span>
+<span class="go">        47  -  MemoryUsage of job (MB)</span>
+<span class="go">        47684  -  ResidentSetSize of job (KB)</span>
+<span class="go">...</span>
+<span class="go">040 (271101.000.000) 2023-08-02 15:45:19 Started transferring output files</span>
+<span class="go">...</span>
+<span class="go">040 (271101.000.000) 2023-08-02 15:45:19 Finished transferring output files</span>
+<span class="go">...</span>
+<span class="go">005 (271101.000.000) 2023-08-02 15:45:19 Job terminated.</span>
+<span class="go">        (1) Normal termination (return value 0)</span>
+<span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage</span>
+<span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage</span>
+<span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage</span>
+<span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage</span>
+<span class="go">        0  -  Run Bytes Sent By Job</span>
+<span class="go">        38416  -  Run Bytes Received By Job</span>
+<span class="go">        0  -  Total Bytes Sent By Job</span>
+<span class="go">        38416  -  Total Bytes Received By Job</span>
+<span class="go">        Partitionable Resources :    Usage  Request Allocated </span>
+<span class="go">           Cpus                 :                 1         1 </span>
+<span class="go">           Disk (KB)            :      149  1048576   2699079 </span>
+<span class="go">           Memory (MB)          :       47     1024      1024 </span>
+
+<span class="go">        Job terminated of its own accord at 2023-08-02T20:45:19Z with exit-code 0.</span>
+<span class="go">...</span>
+</code></pre></div>
+
+<p>Looking at DAGMan's various files, we see that DAGMan itself ran as a job (specifically, a "scheduler" universe job).</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>ls simple.dag.*
+<span class="go">simple.dag.condor.sub  simple.dag.dagman.log  simple.dag.dagman.out  simple.dag.lib.err  simple.dag.lib.out </span>
+
+<span class="gp">username@ap40 $ </span>cat simple.dag.condor.sub
+<span class="gp"># </span>Filename: simple.dag.condor.sub
+<span class="gp"># </span>Generated by condor_submit_dag simple.dag 
+<span class="go">universe        = scheduler</span>
+<span class="go">executable      = /usr/bin/condor_dagman</span>
+<span class="go">getenv          = CONDOR_CONFIG,_CONDOR_*,PATH,PYTHONPATH,PERL*,PEGASUS_*,TZ,HOME,USER,LANG,LC_ALL</span>
+<span class="go">output          = simple.dag.lib.out</span>
+<span class="go">error           = simple.dag.lib.err</span>
+<span class="go">log             = simple.dag.dagman.log</span>
+<span class="go">remove_kill_sig = SIGUSR1</span>
+<span class="go">+OtherJobRemoveRequirements     = &quot;DAGManJobId =?= $(cluster)&quot;</span>
+<span class="gp"># </span>Note: default on_exit_remove expression:
+<span class="gp"># </span><span class="o">(</span> <span class="nv">ExitSignal</span> <span class="o">=</span>?<span class="o">=</span> <span class="m">11</span> <span class="o">||</span> <span class="o">(</span><span class="nv">ExitCode</span> <span class="o">=</span>!<span class="o">=</span> UNDEFINED <span class="o">&amp;&amp;</span> ExitCode &gt;<span class="o">=</span><span class="m">0</span> <span class="o">&amp;&amp;</span> ExitCode &lt;<span class="o">=</span> <span class="m">2</span><span class="o">))</span>
+<span class="gp"># </span>attempts to ensure that DAGMan is automatically
+<span class="gp"># </span>requeued by the schedd <span class="k">if</span> it exits abnormally or
+<span class="gp"># </span>is killed <span class="o">(</span>e.g., during a reboot<span class="o">)</span>.
+<span class="go">on_exit_remove  = (ExitSignal =?= 11 || (ExitCode =!= UNDEFINED &amp;&amp; ExitCode &gt;=0 &amp;&amp; ExitCode &lt;= 2))</span>
+<span class="go">copy_to_spool   = False</span>
+<span class="go">arguments       = &quot;-p 0 -f -l . -Lockfile simple.dag.lock -AutoRescue 1 -DoRescueFrom 0 -Dag simple.dag -Suppress_notification -CsdVersion $CondorVersion:&#39; &#39;10.7.0&#39; &#39;2023-07-10&#39; &#39;BuildID:&#39; &#39;659788&#39; &#39;PackageID:&#39; &#39;10.7.0-0.659788&#39; &#39;RC&#39; &#39;$ -Dagman /usr/bin/condor_dagman&quot;</span>
+<span class="go">environment     = &quot;_CONDOR_DAGMAN_LOG=simple.dag.dagman.out _CONDOR_MAX_DAGMAN_LOG=0 _CONDOR_SCHEDD_ADDRESS_FILE=/var/lib/condor/spool/.schedd_address _CONDOR_SCHEDD_DAEMON_AD_FILE=/var/lib/condor/spool/.schedd_classad&quot;</span>
+<span class="go">queue</span>
+</code></pre></div>
+
+<p>If you want to clean up some of these files (you may not want to, at least not yet), run:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>rm simple.dag.*
+</code></pre></div>
+
+<h2 id="challenge">Challenge<a class="headerlink" href="#challenge" title="Permanent link">&para;</a></h2>
+<ul>
+<li>What is the scheduler universe? Why does DAGMan use it?</li>
+</ul>
+<details><summary>Show hint</summary><ol>
+<li>
+<p>HTCondor has several <a href="https://htcondor.readthedocs.io/en/latest/users-manual/choosing-an-htcondor-universe.html">universes</a> </p>
+</li>
+<li>
+<p>What would happen to your DAGMan workflow if the access point has to be rebooted?</p>
+</li>
+<li>
+<p>Jobs in the HTCondor queue are "managed" - they are always tracked, and restarted automatically if needed</p>
+</li>
+</ol>
+</details>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,508 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/osg/part1-ex2-submit-osg/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>OSG Exercise 1.2: Running Jobs in OSPool - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osg-exercise-12-running-jobs-in-ospool" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSG Exercise 1.2: Running Jobs in OSPool
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-in-the-world-are-my-jobs" class="md-nav__link">
+    Where in the world are my jobs?
+  </a>
+  
+    <nav class="md-nav" aria-label="Where in the world are my jobs?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geolocating-several-execution-points" class="md-nav__link">
+    Geolocating several Execution Points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collating-your-results" class="md-nav__link">
+    Collating your results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-your-results" class="md-nav__link">
+    Mapping your results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-exercise" class="md-nav__link">
+    Next exercise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-challenge-cleaning-up-your-submit-directory" class="md-nav__link">
+    Extra Challenge: Cleaning up your submit directory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="osg-exercise-12-running-jobs-in-ospool">OSG Exercise 1.2: Running Jobs in OSPool<a class="headerlink" href="#osg-exercise-12-running-jobs-in-ospool" title="Permanent link">&para;</a></h1>
+<p>The goal of this exercise is to map the physical locations of some Execution Points in the OSPool.
+We will provide the executable and associated data,
+so your job will be to write a submit file that queues multiple jobs.
+Once complete, you will manually collate the results.</p>
+<h2 id="where-in-the-world-are-my-jobs">Where in the world are my jobs?<a class="headerlink" href="#where-in-the-world-are-my-jobs" title="Permanent link">&para;</a></h2>
+<p>To find the physical location of the computers your jobs our running on, you will use a method called <em>geolocation</em>.
+Geolocation uses a registry to match a computer’s network address to an approximate latitude and longitude.</p>
+<h3 id="geolocating-several-execution-points">Geolocating several Execution Points<a class="headerlink" href="#geolocating-several-execution-points" title="Permanent link">&para;</a></h3>
+<p>Now, let’s try to remember some basic HTCondor ideas from the HTC exercises:</p>
+<ol>
+<li>Log in to <code>ap40.uw.osg-htc.org</code> if you have not yet.</li>
+<li>Create and change into a new folder for this exercise, for example <code>osg-ex12</code></li>
+<li>
+<p>Download the geolocation code:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>wget http://proxy.chtc.wisc.edu/SQUID/osgschool21/location-wrapper.sh <span class="se">\</span>
+<span class="go">       http://proxy.chtc.wisc.edu/SQUID/osgschool21/wn-geoip.tar.gz</span>
+</code></pre></div>
+
+<p>You will be using <code>location-wrapper.sh</code> as your executable and <code>wn-geoip.tar.gz</code> as an input file.</p>
+</li>
+<li>
+<p>Create a submit file that queues <strong>fifty</strong> jobs that run <code>location-wrapper.sh</code>,
+    transfers <code>wn-geoip.tar.gz</code> as an input file,
+    and uses the <code>$(Process)</code> macro to write different <code>output</code> and <code>error</code> files.
+    Also, add the following requirement to the submit file (it’s not important to know what it does):</p>
+<div class="codehilite"><pre><span></span><code>requirements = (HAS_CVMFS_oasis_opensciencegrid_org == TRUE) &amp;&amp; (IsOsgVoContainer =!= True)
+</code></pre></div>
+
+<p>Try to do this step without looking at materials from the earlier exercises.
+But if you are stuck, see <a href="../../htcondor/part2-ex2-queue-n/">HTC Exercise 2.2</a>.</p>
+</li>
+<li>
+<p>Submit your jobs and wait for the results</p>
+</li>
+</ol>
+<h3 id="collating-your-results">Collating your results<a class="headerlink" href="#collating-your-results" title="Permanent link">&para;</a></h3>
+<p>Now that you have your results, it’s time to summarize them.
+Rather than inspecting each output file individually,
+you can use the <code>cat</code> command to print the results from all of your output files at once.
+If all of your output files have the format <code>location-#.out</code> (e.g., <code>location-10.out</code>),
+your command will look something like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>cat location-*.out
+</code></pre></div>
+
+<p>The <code>*</code> is a wildcard so the above cat command runs on all files that start with <code>location-</code> and end in <code>.out</code>.
+Additionally, you can use <code>cat</code> in combination with the <code>sort</code> and <code>uniq</code> commands using "pipes" (<code>|</code>)
+to print only the unique results:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>cat location-*.out <span class="p">|</span> sort <span class="p">|</span> uniq
+</code></pre></div>
+
+<h2 id="mapping-your-results">Mapping your results<a class="headerlink" href="#mapping-your-results" title="Permanent link">&para;</a></h2>
+<p>To visualize the locations of the Execution Points that your jobs ran on,
+you will be using <a href="http://www.mapcustomizer.com/">http://www.mapcustomizer.com/</a>.
+Copy and paste the collated results into the text box that pops up
+when clicking on the 'Bulk Entry' button on the right-hand side.
+Where did your jobs run?</p>
+<h2 id="next-exercise">Next exercise<a class="headerlink" href="#next-exercise" title="Permanent link">&para;</a></h2>
+<p>Once completed, move onto the next exercise: <a href="../part1-ex3-hardware-diffs/">Hardware Differences in the OSG</a></p>
+<h2 id="extra-challenge-cleaning-up-your-submit-directory">Extra Challenge: Cleaning up your submit directory<a class="headerlink" href="#extra-challenge-cleaning-up-your-submit-directory" title="Permanent link">&para;</a></h2>
+<p>If you run <code>ls</code> in the directory from which you submitted your job, you may see that you now have thousands of files!
+Proper data management starts to become a requirement as you start to develop true HTC workflows;
+it may be helpful to separate your submit files, code, and input data from your output data.</p>
+<ol>
+<li>
+<p>Try editing your submit file so that all your output and error files are saved to separate directories within your
+    submit directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
+<p>Experiment with fewer job submissions until you’re confident you have it right,
+then go back to submitting 500 jobs.
+Remember: Test small and scale up!</p>
+</div>
+</li>
+<li>
+<p>Submit your file and track the status of your jobs.</p>
+</li>
+</ol>
+<p>Did your jobs complete successfully with output and error files saved in separate directories?
+If not, can you find any useful information in the job logs or hold messages?
+If you get stuck, review the <a href="../../">slides from Tuesday</a>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

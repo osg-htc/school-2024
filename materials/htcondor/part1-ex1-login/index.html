@@ -1,0 +1,498 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/htcondor/part1-ex1-login/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part1 ex1 login - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#htc-exercise-11-log-in-and-look-around" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part1 ex1 login
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-goal" class="md-nav__link">
+    Exercise Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-in" class="md-nav__link">
+    Logging In
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-commands" class="md-nav__link">
+    Running Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-your-workspace" class="md-nav__link">
+    Organizing Your Workspace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#showing-the-version-of-htcondor" class="md-nav__link">
+    Showing the Version of HTCondor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-materials" class="md-nav__link">
+    Reference Materials
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="htc-exercise-11-log-in-and-look-around">HTC Exercise 1.1: Log In and Look Around<a class="headerlink" href="#htc-exercise-11-log-in-and-look-around" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>There are different High Throughput Computing (HTC) systems at universities, government facilities, and other institutions around the world, and they may have different user experiences. For example, some systems have dedicated resources (which means your job will be guaranteed a certain amount of resources/time to complete), while other systems have opportunistic, backfill resources (which means your job can take advantage of some resources, but those resources could be removed at any time). Other systems have a mix of dedicated and opportunistic resources. </p>
+<p>Durring the OSG School, you will practice on two different HTC systems: the "<a href="https://path-cc.io/facility/">PATh Facility</a>" and "<a href="https://osg-htc.org/services/open_science_pool.html">OSG's Open Science Pool (OSPool)</a>". This will help prepare you for working on a variety of different HTC systems. </p>
+<ul>
+<li>PATh Facility: The PATh Facility provides researchers with <strong>dedicated HTC resources and the ability to run larger and longer jobs</strong>. The HTC execute pool is composed of approximately 30,000 cores and 36 A100 GPUs. </li>
+<li>OSG's Open Science Pool: The OSPool provides researchers with <strong>opportunitistic resources and the ability to run many smaller and shorter jobs silmnulatinously</strong>. The OSPool is composed of approximately 60,000+ cores and dozens of different GPUs. </li>
+</ul>
+<h2 id="exercise-goal">Exercise Goal<a class="headerlink" href="#exercise-goal" title="Permanent link">&para;</a></h2>
+<p>The goal of this first exercise is to log in to the PATh Facility access point and look around a little bit, which will take only a few minutes. </p>
+<p><strong>If you have trouble getting SSH access to the submit server, ask the instructors right away! Gaining access is critical for all remaining exercises.</strong></p>
+<h2 id="logging-in">Logging In<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
+<p>Today, you will use a High Throughput Computing system known as the "<a href="https://path-cc.io/facility/">PATh Facility</a>". The PATh Facility provides users with dedicated resources and longer runtimes than OSG's Open Science Pool. </p>
+<p>You will login to the access point of the PATh Facility, which is called <code>ap1.facility.path-cc.io</code> using the username you previously created. </p>
+<p>To log in, use a <a href="http://en.wikipedia.org/wiki/Secure_Shell">Secure Shell</a> (SSH) client.</p>
+<ul>
+<li>From a Mac or Linux computer, start the Terminal app and run the below <code>ssh</code> command, replacing &lt;USERNAME> with your username:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="hll">$ ssh &lt;USERNAME&gt;@ap1.facility.path-cc.io
+</span></code></pre></div>
+
+<ul>
+<li>On Windows, we recommend a free client called <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>,
+    but any SSH client should be fine.</li>
+</ul>
+<p><strong>If you need help finding or using an SSH client, ask the instructors for help right away</strong>!</p>
+<h2 id="running-commands">Running Commands<a class="headerlink" href="#running-commands" title="Permanent link">&para;</a></h2>
+<p>In the exercises, we will show commands that you are supposed to type or copy into the command line, like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>hostname
+<span class="go">ap1.facility.path-cc.io</span>
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the first line of the example above, the <code>username@ap1 $</code> part is meant to show the Linux command-line prompt.
+You do not type this part! Further, your actual prompt probably is a bit different, and that is expected.
+So in the example above, the command that you type at your own prompt is just the eight characters <code>hostname</code>.
+The second line of the example, without the prompt, shows the output of the command; you do not type this part,
+either.</p>
+</div>
+<p>Here are a few other commands that you can try (the examples below do not show the output from each command):</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>whoami
+<span class="gp">username@ap1 $ </span>date
+<span class="gp">username@ap1 $ </span>uname -a
+</code></pre></div>
+
+<p>A suggestion for the day: try typing into the command line as many of the commands as you can.
+Copy-and-paste is fine, of course, but <strong>you WILL learn more if you take the time to type each command yourself.</strong></p>
+<h2 id="organizing-your-workspace">Organizing Your Workspace<a class="headerlink" href="#organizing-your-workspace" title="Permanent link">&para;</a></h2>
+<p>You will be doing many different exercises over the next few days, many of them on this access point. Each exercise may use many files, once finished. To avoid confusion, it may be useful to create a separate directory for each exercise.</p>
+<p>For instance, for the rest of this exercise, you may wish to create and use a directory named <code>intro-1.1-login</code>, or something like that.</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>mkdir intro-1.1-login
+<span class="gp">username@ap1 $ </span><span class="nb">cd</span> intro-1.1-login
+</code></pre></div>
+
+<h2 id="showing-the-version-of-htcondor">Showing the Version of HTCondor<a class="headerlink" href="#showing-the-version-of-htcondor" title="Permanent link">&para;</a></h2>
+<p>HTCondor is installed on this server. But what version? You can ask HTCondor itself:</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_version
+<span class="gp">$</span>CondorVersion: <span class="m">10</span>.7.0 <span class="m">2023</span>-07-10 BuildID: <span class="m">659788</span> PackageID: <span class="m">10</span>.7.0-0.659788 RC $
+<span class="gp">$</span>CondorPlatform: x86_64_AlmaLinux8 $
+</code></pre></div>
+
+<p>As you can see from the output, we are using HTCondor 10.7.0.</p>
+<h2 id="reference-materials">Reference Materials<a class="headerlink" href="#reference-materials" title="Permanent link">&para;</a></h2>
+<p>Here are a few links to reference materials that might be interesting after the school (or perhaps during).</p>
+<ul>
+<li><a href="https://htcondor.readthedocs.io/en/latest/">HTCondor manuals</a>; it is probably best to read the manual corresponding to the version of HTCondor that you use. That link points to the latest version of the manual, but you can switch versions using the toggle in the lower left corner of that page.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

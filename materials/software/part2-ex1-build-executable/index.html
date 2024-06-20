@@ -1,0 +1,560 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/school-2024/materials/software/part2-ex1-build-executable/">
+      
+      <link rel="icon" href="../../../assets/OSG_Logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Part2 ex1 build executable - OSG School 2024</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/osg.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-exercise-21-build-an-htc-friendly-executable" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OSG School 2024" class="md-header__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSG School 2024
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part2 ex1 build executable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OSG School 2024" class="md-nav__button md-logo" aria-label="OSG School 2024" data-md-component="logo">
+      
+  <img src="../../../assets/OSG_Logo.svg" alt="logo">
+
+    </a>
+    OSG School 2024
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Logistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Logistics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/" class="md-nav__link">
+        General information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Travel
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Travel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Travel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/travel-planning/" class="md-nav__link">
+        Travel planning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/visas/" class="md-nav__link">
+        Visa requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logistics/hotel/" class="md-nav__link">
+        Hotel information
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-header" class="md-nav__link">
+    Add a Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incorporate-arguments" class="md-nav__link">
+    Incorporate Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-work" class="md-nav__link">
+    Your Work
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: \#008; } </style>
+
+<h1 id="software-exercise-21-build-an-htc-friendly-executable">Software Exercise 2.1 Build an HTC-Friendly Executable<a class="headerlink" href="#software-exercise-21-build-an-htc-friendly-executable" title="Permanent link">&para;</a></h1>
+<p><strong>Objective</strong>: Modify an existing script to include arguments and headers. </p>
+<p><strong>Why learn this?</strong>: A little bit of preparation can make it easier to reuse the 
+same script over and over to run many jobs. </p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Download and unzip a set of Protein Data Bank (PDB) files: </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/alkanes.tar.gz
+<span class="gp">$ </span>tar -xzf alkanes.tar.gz
+</code></pre></div>
+
+</li>
+<li>
+<p>For these exercises, we are going to run a command that counts the number of 
+atoms in the PDB file . Run it now as an example: </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>grep ATOM cubane.pdb <span class="p">|</span> wc -l &gt; atoms_cubane.pdb
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="add-a-header">Add a Header<a class="headerlink" href="#add-a-header" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>To create a basic script, you can put the command above into a file 
+called <code>get_atoms.sh</code>. To make it clear what language we expect to use to 
+run the script, we will add the following header on the first line: <code>`#!/bin/bash</code></p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+grep ATOM cubane.pdb | wc -l &gt; atoms_cubane.pdb
+</code></pre></div>
+
+<p>The "header" of <code>#!/bin/bash</code> will tell the computer that this is a bash shell script 
+and can be run in the same way that  you would run individual commands on the command line. 
+We use <code>/bin/bash</code> instead of just <code>bash</code> because that is the full path to the <code>bash</code> 
+software file. (Run <code>which bash</code> to check!)</p>
+<div class="admonition note">
+<p class="admonition-title">Other languages</p>
+<p>We can use the same principle for any scripting language. For example, the header for a Python script 
+could be either <code>#!/usr/bin/python3</code> or <code>#!/usr/bin/env python3</code>. Similar logic works 
+for perl, R, julia and other scripting languages. </p>
+</div>
+</li>
+<li>
+<p>Can you now run the script? </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>./get_atoms.sh
+</code></pre></div>
+
+</li>
+<li>
+<p>This gives "permission denied." Let's add executable permissions to the script 
+and try again: </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>chmod +x get_atoms.sh
+<span class="gp">$ </span>./get_atoms.sh
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="incorporate-arguments">Incorporate Arguments<a class="headerlink" href="#incorporate-arguments" title="Permanent link">&para;</a></h2>
+<p>Can you imagine trying to run this script on all of our pdb files? It would be tedious
+to edit it for each one, even for only six inputs. Instead, we should add arguments 
+to the script to make it easy to reuse the script. 
+Any information in a script or executable that is going to change or vary across 
+jobs or analyses should likely be turned into an argument that is specified on the command line. </p>
+<ol>
+<li>
+<p>In our example above, which pieces of the script are likely to change or vary? </p>
+</li>
+<li>
+<p>The name of the input file (<code>cubane.pdb</code>) and output file (<code>atoms_cubane.pdb</code>) should 
+be turned into arguments. Can you envision what our script should look like if we ran it 
+with input arguments? </p>
+</li>
+<li>
+<p>Let's say we want to be able to run the following command: </p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>./get_atoms.sh cubane.pdb atoms_cubane.pdb
+</code></pre></div>
+
+<p>In order to get arguments from the command line into the script, you have 
+to use special variables in the script. In bash, these are <code>$1</code> (for the first 
+argument), <code>$2</code> (for the second argument) and so on. Try to figure out where 
+these should go in our <code>get_atoms.sh</code> script. </p>
+<div class="admonition note">
+<p class="admonition-title">Other Languages</p>
+<p>Each language is going to have its own syntax for reading command line 
+arguments into the script. In Python, <code>sys.argv</code> is a basic method, and more 
+advanced libraries like <code>argparse</code> can be used. In R, the <code>commandArgs()</code> function 
+can do this. Google "command line arguments in ______" to find the right 
+syntax for your language of choice!</p>
+</div>
+</li>
+<li>
+<p>A first pass at adding arguments might look like this: </p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+grep ATOM $1 | wc -l &gt; $2
+</code></pre></div>
+
+<p>Try running it as described above. Does it work? </p>
+</li>
+<li>
+<p>While we now have arguments, we have lost some of the readability of our script. The 
+numbers <code>$1</code> and <code>$2</code> are not very meaningful in themselves! Let's rewrite the script to 
+assign the arguments to meaningful variable names: </p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+PDB_INPUT=$1
+PDB_ATOM_OUTPUT=$2
+
+grep ATOM ${PDB_INPUT} | wc -l &gt; ${PDB_ATOM_OUTPUT}
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Why curly brackets?</p>
+<p>You'll notice above that we started using curly brackets around our variables. 
+While you technically don't need them (<code>$PDB_INPUT</code> would also be fine), using 
+them makes the name of the variable (compared to other text) completely clear. 
+This is especially useful when combining variables with underscores. </p>
+</div>
+</li>
+<li>
+<p>There is one final place where we could optimize this script. If we want our output 
+files to always have the same naming convention, based on the input file name, then 
+we shouldn't have a separate argument for that -- it's asking for typos. Instead, we 
+should use variables inside the script to construct the output file name, based on the 
+input file. That will look like this: </p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+PDB_INPUT=$1
+PDB_ATOM_OUTPUT=atoms_${PDB_INPUT}
+
+grep ATOM ${PDB_INPUT} | wc -l &gt; ${PDB_ATOM_OUTPUT}
+</code></pre></div>
+
+<p>You may want to construct other variables, like paths and filenames in this way. But 
+it depends on how you want to use the script! If we want the flexibility of specifying 
+a custom output file name, then we should undo this last change so it can be 
+treated as a separate argument. </p>
+</li>
+</ol>
+<h2 id="your-work">Your Work<a class="headerlink" href="#your-work" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Are you using a scripting language where you could add a header to your main script? 
+If so, what should it be? </p>
+</li>
+<li>
+<p>What items in your main code or commands are changing? Do you need to add arguments 
+to your code? </p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/OSGSchool" target="_blank" rel="noopener" title="OSG School on Twitter" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
