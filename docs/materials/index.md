@@ -1,12 +1,17 @@
 # OSG School Materials
 
-## School Overview and Intro
+In progress. Will be posted near the start of the School. 
 
+
+## School Overview and Intro
+<!--
 View the slides:
 [PDF](welcome/files/osgus23-day1-part1-welcome-timc.pdf)
+-->
+
 
 ## Intro to HTC and HTCondor Job Execution
-
+<!--
 ### Intro to HTC Slides
 
 Intro to HTC: [PDF](htcondor/files/osgus23-intro-to-htc.pdf)
@@ -16,9 +21,7 @@ Worksheet: [PDF](htcondor/files/osgus23-htc-worksheet.pdf)
 ### Intro to HTCondor Slides
 
 View the slides: [PDF](htcondor/files/osgus23-htc-htcondor.pdf)
-<!--
 [PowerPoint](htcondor/files/osgus22-htc-htcondor.pptx))
--->
 
 ### Intro Exercises 1: Running and Viewing Simple Jobs (Strongly Recommended)
 
@@ -46,9 +49,10 @@ View the Slides ([PDF](htcondor/files/osgus23-htc-htcondor-multiple-jobs.pdf))
 - [Exercise 2.2: Use `queue N`, `$(Cluster)`, and `$(Process)`](htcondor/part2-ex2-queue-n.md)
 - [Exercise 2.3: Use `queue from` with custom variables](htcondor/part2-ex3-queue-from.md)
 - [Bonus Exercise 2.4: Use `queue matching` with a custom variable](htcondor/part2-ex4-queue-matching.md)
-
+-->
 
 ## OSG
+<!--
 
 View the slides:
 [PDF](osg/files/osgus23-day2-part1-osg-timc.pdf)
@@ -59,9 +63,11 @@ View the slides:
 - [Exercise 1.2: Running jobs in the OSPool](osg/part1-ex2-submit-osg.md)
 - [Exercise 1.3: Hardware differences between PATh and OSG](osg/part1-ex3-hardware-diffs.md)
 - [Exercise 1.4: Software differences in OSPool](osg/part1-ex4-software-diffs.md)
+-->
+
 
 ## Troubleshooting
-
+<!--
 Slides: ([PDF](troubleshooting/files/OSGUS2023_troubleshooting.pdf),
 [PowerPoint](troubleshooting/files/OSGUS2023_troubleshooting.pptx))
 
@@ -69,9 +75,11 @@ Slides: ([PDF](troubleshooting/files/OSGUS2023_troubleshooting.pdf),
 
 - [Exercise 1.1: Troubleshooting Jobs](troubleshooting/part1-ex1-troubleshooting.md)
 - [Exercise 1.2: Job Retry](troubleshooting/part1-ex2-job-retry.md)
+-->
+
 
 ## Software
-
+<!--
 Slides: [PDF](software/files/osgus23-software.pdf)
 
 ### Software Exercises 1: Exploring Containers
@@ -102,10 +110,11 @@ Slides: [PDF](software/files/osgus23-software.pdf)
 - [Exercise 5.2: Compiling Python and Running Jobs](software/part5-ex2-python.md)
 - [Exercise 5.3: Using Conda Environments](software/part5-ex3-conda.md)
 - [Exercise 5.4: Compiling and Running a Simple Code](software/part5-ex4-compiling.md)
+-->
 
 
 ## Data
-
+<!--
 View the slides
 ([PDF](data/files/osgus23-data.pdf),
 [PowerPoint](data/files/osgus23-data.pptx))
@@ -120,10 +129,11 @@ View the slides
 
 - [Exercise 2.1: OSDF for inputs](data/part2-ex1-osdf-inputs.md)
 - [Exercise 2.2: OSDF for outputs](data/part2-ex2-osdf-outputs.md)
+-->
 
 
 ## Scaling Up
-
+<!--
 View the slides
 ([PDF](scaling/files/osgus23-scaling-out.pdf))
 
@@ -133,9 +143,11 @@ View the slides
 -   [Exercise 1.2: Investigating Job Attributes](scaling/part1-ex2-job-attributes.md)
 -   [Exercise 1.3: Getting Job Information from Log Files](scaling/part1-ex3-log-files.md)
 
+-->
+
 
 ## Workflows with DAGMan
-
+<!--
 View the slides
 ([PDF](workflows/files/osgus23-dagman.pdf),
 [PowerPoint](workflows/files/osgus23-dagman.pptx))
@@ -148,10 +160,11 @@ View the slides
 - [Exercise 1.4: Handling jobs that fail with DAGMan](workflows/part1-ex4-failed-dag.md)
 - [Exercise 1.5: Workflow Challenges](workflows/part1-ex5-challenges.md)
 
+-->
+
+
 ## Extra Topics
-
-<!-- BEGIN EXTRA TOPICS THAT ARE NOT READY YET
-
+<!--
 
 ### Containers (and GPUs?)
 
@@ -163,7 +176,6 @@ View the slides
 - [Exercise 1.2: Running a CPU job](gpus/part1-ex2-cpu-jobs.md)
 - [Exercise 1.3: Running a GPU job](gpus/part1-ex3-gpu-jobs.md)
 
-END EXTRA TOPICS THAT ARE NOT READY YET -->
 
 ### Self-checkpointing for long-running jobs
 
@@ -187,7 +199,10 @@ View the slides
 
 View the slides: [PDF](facilitation/files/osgus23-facilitation-campuses.pdf)
 
-## Final Talks
+-->
 
+## Final Talks
+<!--
 *   Philosophy: (slides coming soon)
 *   Final thoughts: [PDF](final/files/osgus23-day5-part6-forward-timc.pdf)
+-->
