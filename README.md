@@ -51,11 +51,11 @@ If you are adding materials it will look like so:
 nav:
   - Materials:
     - <Category0> Exercises:
-      - Exercise 1.1:               materials/<category0>/part1-ex1-<exercise-name>.md
-      - Exercise 1.2:               materials/<category0>/part1-ex2-<exercise-name>.md
+      - 1.1 Short Name:               materials/<category0>/part1-ex1-<exercise-name>.md
+      - 1.2 Short Name:               materials/<category0>/part1-ex2-<exercise-name>.md
     - <Category1> Exercises:
-      - Exercise 1.1:               materials/<category1>/part1-ex1-<exercise-name>.md
-      - Exercise 1.2:               materials/<category1>/part1-ex2-<exercise-name>.md
+      - 1.1 Short Name:               materials/<category1>/part1-ex1-<exercise-name>.md
+      - 1.2 Short Name:               materials/<category1>/part1-ex2-<exercise-name>.md
 ```
 
 **Note:** This is generated in order so the order of the categories should correspond to the material overview page. 
