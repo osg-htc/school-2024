@@ -63,8 +63,8 @@ it. If you want to do this all from the command line, the sequence will
 look like this (using `wget` as the download command.) 
 
         :::console
-        user@login $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.14.0+-x64-linux.tar.gz
-        user@login $ tar -xzf ncbi-blast-2.14.0+-x64-linux.tar.gz
+        user@login $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.15.0+-x64-linux.tar.gz
+        user@login $ tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz
 
 1.  We're going to be using the `blastx` binary in our job. Where is it
 in the directory you just decompressed?
@@ -124,7 +124,7 @@ directory of our downloaded BLAST directory. We need to use the
 `arguments` line in the submit file to express the rest of the command. 
     
             :::file
-            executable = ncbi-blast-2.13.0+/bin/blastx
+            executable = ncbi-blast-2.15.0+/bin/blastx
             arguments = -db pdbaa/pdbaa -query mouse.fa -out results.txt
 
     * The BLAST program requires our input file and database, so they
