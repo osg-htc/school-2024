@@ -66,7 +66,7 @@ we will create a **new** submit file with the queue…in syntax
 and change the value of our parameter (`request_memory`) for each batch of jobs.
 
 1.  Log in or switch back to `ap1.facility.path-cc.io` (yes, back to PATh!)
-1.  Create and change into a new subdirectory called `osg-ex14`
+1.  Create and change into a new subdirectory called `osg-ex13`
 1.  Create a submit file named `sleep.sub` that executes the command `/bin/sleep 300`.
 
     !!! note
@@ -108,7 +108,7 @@ Now you will do essentially the same thing on the OSPool.
 
 1.  Log in or switch to `ap40.uw.osg-htc.org`
 
-1.  Copy the `osg-ex14` directory from the [section above](#checking-chtc-memory-availability)
+1.  Copy the `osg-ex13` directory from the [section above](#checking-chtc-memory-availability)
     from `ap1.facility.path-cc.io` to `ap40.uw.osg-htc.org`
 
     If you get stuck during the copying process, refer to [OSG exercise 1.1](part1-ex1-login-scp.md).
