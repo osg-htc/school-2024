@@ -34,7 +34,7 @@ Our wrapper script will be a bash script that runs several commands.
         :::bash
         #!/bin/bash
         
-        ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt 
+        ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt 
 
 
 Submit File Changes
@@ -53,7 +53,7 @@ We now need to make some changes to our submit file.
 1. Note that since the `blastx` program is no longer listed as the executable, it will be need to be included in `transfer_input_files`. Instead of transferring just that program, we will transfer the original downloaded `tar.gz` file. To achieve efficiency, we'll also transfer the <span style="color:BLUE">pdbaa database</span> as the original `tar.gz` file instead of as the unzipped folder: 
 
         :::console
-        transfer_input_files = pdbaa.tar.gz, mouse.fa, ncbi-blast-2.12.0+-x64-linux.tar.gz
+        transfer_input_files = pdbaa.tar.gz, mouse.fa, ncbi-blast-2.15.0+-x64-linux.tar.gz
 
 1. If you really want to be on top of things, look at the log file for the last exercise, and update your memory and disk requests to be just slightly above the actual "Usage" values in the log. 
 
@@ -73,10 +73,10 @@ Now that our database and BLAST software are being transferred to the job as `ta
         :::bash
         #!/bin/bash
         
-        tar -xzf ncbi-blast-2.12.0+-x64-linux.tar.gz 
+        tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz 
         tar -xzf pdbaa.tar.gz
 
-        ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
+        ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
 
 1.  While not strictly necessary, it's a good idea to enable executable permissions on the wrapper script, like so: 
 
