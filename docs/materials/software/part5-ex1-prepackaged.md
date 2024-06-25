@@ -7,7 +7,7 @@ status: testing
 Software Exercise 5.1: Pre-package a Research Code
 ==========================================
 
-**Objective**: Install software (HHMER) to a folder and run it in a job using a wrapper script. 
+**Objective**: Install software (HMMER) to a folder and run it in a job using a wrapper script. 
 
 **Why learn this?**: If not using a container, this is a template for how to create 
 a portable software installation using your own files, especially if the software 
@@ -45,7 +45,7 @@ for this example, we are going to compile directly on the Access Point
 
         :::console
 		username@host $ tar -zxf hmmer.tar.gz
-		username@host $ cd hmmer-3.3.2
+		username@host $ cd hmmer-3.4
 
 1.  Now we can follow the second set of installation instructions. For the prefix, we'll use the variable `$PWD` to capture the name of our current working directory and then a relative path to the `hmmer-build` directory we created in step 1: 
 
@@ -112,7 +112,7 @@ We're almost ready! We need two more pieces to run a HMMER job.
 run the job. You already have these files back in the directory where you unpacked the source code:
 
 		:::console
-		username@ap1 $ ls hmmer-3.3.2/tutorial
+		username@ap1 $ ls hmmer-3.4/tutorial
 		7LESS_DROME    fn3.hmm  globins45.fa  globins4.sto  MADE1.hmm  Pkinase.hmm
 		dna_target.fa  fn3.sto  globins4.hmm  HBB_HUMAN     MADE1.sto  Pkinase.sto
 
@@ -124,7 +124,7 @@ run the job. You already have these files back in the directory where you unpack
 
         :::file
         executable = run_hmmer.sh
-        transfer_input_files = hmmer-build.tar.gz, hmmer-3.3.2/tutorial/
+        transfer_input_files = hmmer-build.tar.gz, hmmer-3.4/tutorial/
 
     A wrapper script will always be a job's `executable`.
     When using a wrapper script, you must also always remember to transfer the software/source code using
