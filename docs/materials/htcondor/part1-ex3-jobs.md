@@ -10,7 +10,7 @@ HTC Exercise 1.3: Run Jobs!
 Exercise Goal
 -------------
 
-The goal of this exercise is to submit jobs to HTCondor and have them run on the PATh Facility. This is a huge step in learning to use an HTC system!
+The goal of this exercise is to submit jobs to HTCondor and have them run on the OSPool. This is a huge step in learning to use an HTC system!
 
 **This exercise will take longer than the first two, short ones. If you are having any problems getting the jobs to run, please ask the instructors! It is very important that you know how to run jobs.**
 
@@ -27,6 +27,8 @@ executable = /bin/hostname
 output = hostname.out
 error = hostname.err
 log = hostname.log
+
+requirements = (OSGVO_OS_STRING == "UBUNTU 20" || OSGVO_OS_STRING == "UBUNTU 22")
 
 request_cpus = 1
 request_memory = 1GB
@@ -58,7 +60,7 @@ Note that we are not using the `arguments` or `transfer_input_files` lines that 
 Double-check your submit file, so that it matches the text above. Then, tell HTCondor to run your job:
 
 ``` console
-username@ap1 $ condor_submit hostname.sub
+username@ap40 $ condor_submit hostname.sub
 Submitting job(s).
 1 job(s) submitted to cluster NNNN.
 ```
@@ -76,7 +78,7 @@ You may not even catch the job in the `R` running state, because the `hostname` 
 After the job finishes, check for the `hostname` output in `hostname.out`, which is where job information printed to the terminal screen will be printed for the job.
 
 ``` console
-username@ap1 $ cat hostname.out
+username@ap40 $ cat hostname.out
 e171.chtc.wisc.edu
 ```
 
@@ -87,13 +89,13 @@ The `hostname.err` file should be empty, unless there were issues running the `h
 Very often, when you run a command on the command line, it includes arguments (i.e. options) after the program name, as in the below examples:
 
 ``` console
-username@ap1 $ sleep 60
+username@ap40 $ sleep 60
 ```
 
 In an HTCondor submit file, the program (or 'executable') name goes in the `executable` statement and **all remaining arguments** go into an `arguments` statement. For example, if the full command is:
 
 ``` console
-username@ap1 $ sleep 60
+username@ap40 $ sleep 60
 ```
 
 Then in the submit file, we would put the location of the "sleep" program (you can find it with `which sleep`) as the job `executable`, and `60` as the job `arguments`:
@@ -154,12 +156,12 @@ or perhaps a shell script of commands that you'd like to run within a job. In th
 1. Add executable permissions to the file (so that it can be run as a program):
 
         :::console
-        username@ap1 $ chmod +x test-script.sh
+        username@ap40 $ chmod +x test-script.sh
 
 1. Test your script from the command line:
 
         :::console
-        username@ap1 $ ./test-script.sh hello 42 
+        username@ap40 $ ./test-script.sh hello 42 
         Date: Mon Jul 17 10:02:20 CDT 2017 
         Host: learn.chtc.wisc.edu 
         System: Linux x86_64 GNU/Linux 
