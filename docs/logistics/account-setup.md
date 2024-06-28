@@ -25,6 +25,7 @@ To receive access, you will go through the following steps:
 
 1. Visit this account registration page: 
 	* [Register for an account here](https://registry.cilogon.org/registry/co_petitions/start/coef:496)
+	
 You will be redirected to the CILogon sign in page. Select your institution and use your institutional credentials to login. You will use these credentials later to login so it is important to remember the institution you use at this step. If your institution is **not**
 in the list of available institutions, we recommend using Google. 
    
