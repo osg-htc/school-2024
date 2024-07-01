@@ -59,13 +59,13 @@
     <tr>
         <td>10:45</td>
         <td>12:15</td>
-        <td><span class="before-dot text-pink">Exercises: HTCondor bases (1.n series)</span>/td>
+        <td><span class="before-dot text-pink">Exercises: HTCondor bases (1.n series)</span></td>
         <td>-</td>
     </tr>
     <tr>
         <td>12:15</td>
         <td>13:15</td>
-        <td>Lunch, Computer Sciences (Room TBD)</td>
+        <td>Lunch, Computer Sciences (Staff to direct)</td>
         <td>-</td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@
     <tr>
         <td>12:15</td>
         <td>13:30</td>
-        <td>Lunch, Computer Sciences (Room TBD)</td>
+        <td>Lunch, Computer Sciences (Staff to direct)</td>
         <td>-</td>
     </tr>
     <tr>
@@ -241,7 +241,13 @@
     <tr>
         <td>11:00</td>
         <td>12:00</td>
-        <td>Showcase Part 1</td>
+        <td>
+          HTC Showcase Part 1<br>
+          &#9654; <span style="color: rgb(173, 81, 12);">Speaker 1</span>;<br>
+          <div style="margin-left: 2ex;">“TBD”</div>
+          &#9654; <span style="color: rgb(173, 81, 12);">Speaker 2</span>;<br>
+          <div style="margin-left: 2ex;">“TBD”</div>
+          </td>
         <td>-</td>
     </tr>
     <tr>
@@ -254,7 +260,7 @@
         <td>12:30</td>
         <td>13:45</td>
         <td>
-            Lunch, Computer Sciences (Room TBD)<br>
+            Lunch, Computer Sciences (Staff to direct)<br>
             Optional Domain Lunches: Christina (math); Rachel (biology); Andrew/Amber (chemistry); Ian (ML); Tim (physics &amp; astronomy)
         </td> 
         <td>-</td>
@@ -322,7 +328,7 @@
     <tr>
       <td>12:00</td>
       <td>13:15</td>
-      <td>Lunch, Computer Sciences (Room TBD)</td>
+      <td>Lunch, Computer Sciences (Staff to direct)</td>
       <td>-</td>
     </tr>
     <tr>
@@ -423,7 +429,7 @@
       <td>11:50</td>
       <td>13:00</td>
       <td>
-        Lunch, Computer Sciences (Room TBD)<br>
+        Lunch, Computer Sciences (Staff to direct)<br>
         Optional: Introduction to Research Computing Facilitation
       </td>
       <td>Christina</td>
@@ -465,13 +471,13 @@
     </tr>
     <tr>
       <td>16:00</td>
-      <td>16:30</td>
+      <td>16:45</td>
       <td>HTC and HTCondor Philosophy</td>
       <td>Greg?</td>
     </tr>
     <tr>
-      <td>16:30</td>
-      <td>17:00</td>
+      <td>16:45</td>
+      <td>17:15</td>
       <td><span class="before-dot text-light-blue">Lecture: Forward</span></td>
       <td>Tim C.</td>
     </tr>
