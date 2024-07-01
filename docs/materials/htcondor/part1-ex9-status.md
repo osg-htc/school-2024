@@ -19,7 +19,7 @@ The `condor_status` program has many options for selecting which slots are liste
 Another convenient option is to list only those slots that are available now:
 
 ``` console
-username@learn $ condor_status -avail
+username@ap1 $ condor_status -avail
 ```
 
 Of course, the individual execute machines only report their slots to the collector at certain time intervals, so this list will not reflect the up-to-the-second reality of all slots. But this limitation is true of all `condor_status` output, not just with the `-avail` option.
@@ -27,25 +27,25 @@ Of course, the individual execute machines only report their slots to the collec
 Similar to `condor_q`, you can limit the slots that are listed in two easy ways. To list just the slots on a specific machine:
 
 ``` console
-username@learn $ condor_status <hostname>
+username@ap1 $ condor_status <hostname>
 ```
 
 For example, if you want to see the slots on `e2337.chtc.wisc.edu` (in the CHTC pool):
 
 ``` console
-username@learn $ condor_status e2337.chtc.wisc.edu
+username@ap1 $ condor_status e2337.chtc.wisc.edu
 ```
 
 To list a specific slot on a machine:
 
 ``` console
-username@learn $ condor_status <slot>@<hostname>
+username@ap1 $ condor_status <slot>@<hostname>
 ```
 
 For example, to see the “first” slot on the machine above:
 
 ``` console
-username@learn $ condor_status slot1@e2337.chtc.wisc.edu
+username@ap1 $ condor_status slot1@e2337.chtc.wisc.edu
 ```
 
 !!! note
@@ -68,7 +68,7 @@ Viewing a Slot ClassAd
 Just as with `condor_q`, you can use `condor_status` to view the complete ClassAd for a given slot (often confusingly called the “machine” ad):
 
 ``` console
-username@learn $ condor_status -long <slot>@<hostname>
+username@ap1 $ condor_status -long <slot>@<hostname>
 ```
 
 Because slot ClassAds may have 150–200 attributes (or more), it probably makes the most sense to show the ClassAd for a single slot at a time, as shown above.
@@ -91,7 +91,7 @@ Memory = 1024
 
 As you may be able to tell, there is a mix of attributes about the machine as a whole (hence the name “machine ad”) and about the slot in particular.
 
-Go ahead and examine a machine ClassAd now. I suggest looking at one of the slots on, say, `e2337.chtc.wisc.edu` because of its relatively simple configuration.
+Go ahead and examine a machine ClassAd now.
 
 Viewing Slots by ClassAd Expression
 -----------------------------------
@@ -101,7 +101,7 @@ Often, it is helpful to view slots that meet some particular criteria. For examp
 For example, suppose we want to list all slots that are running Scientific Linux 7 (operating system) and have at least 16 GB memory available. Note that memory is reported in units of Megabytes. The command is:
 
 ``` console
-username@learn $ condor_status -constraint 'OpSysAndVer == "CentOS7" && Memory >= 16000'
+username@ap1 $ condor_status -constraint 'OpSysAndVer == "CentOS7" && Memory >= 16000'
 ```
 
 !!! note
@@ -109,7 +109,7 @@ username@learn $ condor_status -constraint 'OpSysAndVer == "CentOS7" && Memory >
     In the example above, the single quotes (`'`) are for the shell, so that the entire expression is passed to
     `condor_status` untouched, and the double quotes (`"`) surround a string value within the expression itself.
 
-Currently on CHTC, there are only a few slots that meet these criteria (our high-memory servers, mainly used for metagenomics assemblies).
+Currently on PATh, there are only a few slots that meet these criteria (our high-memory servers, mainly used for metagenomics assemblies).
 
 If you are interested in learning more about writing ClassAd expressions, look at section 4.1 and especially 4.1.4 of the HTCondor Manual. This is definitely advanced material, so if you do not want to read it, that is fine. But if you do, take some time to practice writing expressions for the `condor_status -constraint` command.
 
@@ -125,7 +125,7 @@ The `condor_status` command accepts the same `-autoformat` (`-af`) options that 
 For example, I was curious about the host name and operating system of the slots with more than 32GB of memory:
 
 ``` console
-username@learn $ condor_status -af Machine -af OpSysAndVer -constraint 'Memory >= 32000'
+username@ap1 $ condor_status -af Machine -af OpSysAndVer -constraint 'Memory >= 32000'
 ```
 
 If you like, spend a few minutes now or later experimenting with `condor_status` formatting.
