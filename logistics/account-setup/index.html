@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apply-for-ospool-access" class="md-skip">
+        <a href="#apply-for-computing-access" class="md-skip">
           Skip to content
         </a>
       
@@ -186,12 +186,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Logistics
@@ -279,6 +281,27 @@
   
 
           
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Account setup
+      </a>
+      
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -303,75 +326,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apply-for-ospool-access_1" class="md-nav__link">
-    Apply for OSPool Access
-  </a>
-  
-    <nav class="md-nav" aria-label="Apply for OSPool Access">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-request-access-to-uwosg-htcorg-access-points" class="md-nav__link">
-    1. Request Access to uw.osg-htc.org Access Points
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-account-approval-by-a-research-computing-facilitator" class="md-nav__link">
-    2. Account Approval by a Research Computing Facilitator
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-log-in" class="md-nav__link">
-    3. Log in
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Log in">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-1-log-in-via-web-authentication" class="md-nav__link">
-    Option 1: Log in via Web Authentication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-2-log-in-via-ssh-key-pair-authentication" class="md-nav__link">
-    Option 2: Log in via SSH Key Pair Authentication
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    Known Issues
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -387,115 +341,16 @@
   .hi { font-weight: bold; color: #FF6600; }
 </style>
 
-<h1 id="apply-for-ospool-access">Apply for OSPool Access<a class="headerlink" href="#apply-for-ospool-access" title="Permanent link">&para;</a></h1>
+<h1 id="apply-for-computing-access">Apply for Computing Access<a class="headerlink" href="#apply-for-computing-access" title="Permanent link">&para;</a></h1>
 <p>We will be using two different Access Points during the OSG School - 
 <code>ap40.uw.osg-htc.org</code> and <code>ap1.facility.path-cc.io</code>. </p>
+<p>As soon as possible please request your account access using this link: <a href="https://registry.cilogon.org/registry/co_petitions/start/coef:496">OSG School Account Registration</a></p>
+<p>Instructions on setting up your account can be found using this guide: 
+<a href="https://portal.osg-htc.org/documentation/overview/account_setup/ap7-access/">Log in to uw.osg-htc.org Access Points</a></p>
 <p>We strongly recommend going through the registration process and trying to 
 log in <strong>before</strong> the School, ideally before your OSG orientation session. </p>
-<p>If you run into problems, check out the <a href="#known-issues">known issues</a> section below and/or 
+<p>If you run into problems 
 contact us at <a href="mailto:support@osg-htc.org">support@osg-htc.org</a>.</p>
-<h2 id="apply-for-ospool-access_1">Apply for OSPool Access<a class="headerlink" href="#apply-for-ospool-access_1" title="Permanent link">&para;</a></h2>
-<p>To receive access, you will go through the following steps: </p>
-<ol>
-<li>Apply for an account through a system called "COManage"</li>
-<li>Have your account approved by an OSG Team member</li>
-<li>Log in to <code>ap40.uw.osg-htc.org</code> and <code>ap1.facility.path-cc.io</code></li>
-</ol>
-<h3 id="1-request-access-to-uwosg-htcorg-access-points">1. Request Access to <code>uw.osg-htc.org</code> Access Points<a class="headerlink" href="#1-request-access-to-uwosg-htcorg-access-points" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Visit this account registration page: <ul>
-<li><a href="https://registry.cilogon.org/registry/co_petitions/start/coef:496">Register for an account here</a></li>
-</ul>
-</li>
-</ol>
-<p>You will be redirected to the CILogon sign in page. Select your institution and use your institutional credentials to login. You will use these credentials later to login so it is important to remember the institution you use at this step. If your institution is <strong>not</strong>
-in the list of available institutions, we recommend using Google. </p>
-<div class="codehilite"><pre><span></span><code>  &lt;img src=&quot;https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/cilogon.png&quot; class= &quot;img-fluid&quot;/&gt;
-</code></pre></div>
-
-<ol>
-<li>
-<p>Once you sign in, you will be redirected to the User Enrollment page. Click "Begin" and enter your name and email address in the following page. In many cases, this information will be automatically populated. If desired, it is possible to manually edit any information automatically filled in. Once you have entered your information, click "SUBMIT".</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/comanage-enrollment-form.png" class= "img-fluid"/></p>
-</li>
-<li>
-<p>After submitting your application, you will receive an email from <a href="mailto:registry@cilogon.org">registry@cilogon.org</a> to verify your email address. Click the link listed in the email to be redirected to a page confirm your invitation details. Click the "ACCEPT" button to complete this step.</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/comanage-email-verification-form.png" class= "img-fluid"/></p>
-</li>
-</ol>
-<h3 id="2-account-approval-by-a-research-computing-facilitator">2. Account Approval by a Research Computing Facilitator<a class="headerlink" href="#2-account-approval-by-a-research-computing-facilitator" title="Permanent link">&para;</a></h3>
-<p>The Research Computing Facilitation team will approve accounts 2-3 times per week. 
-When your account is approved, you will receive an email confirming your access. </p>
-<h3 id="3-log-in">3. Log in<a class="headerlink" href="#3-log-in" title="Permanent link">&para;</a></h3>
-<p>Once your account has been added to the <code>ap40.uw.osg-htc.org</code> access point, you will be able to log in using a terminal or SSH program. Logging in requires authenticating your credientials using one of two options: <strong>web authentication</strong> or <strong>SSH key pair authentication</strong>. We recommend trying one of these options before your OSG School 
-orientation, so you can troubleshoot as needed during your orientation. </p>
-<h4 id="option-1-log-in-via-web-authentication">Option 1: Log in via Web Authentication<a class="headerlink" href="#option-1-log-in-via-web-authentication" title="Permanent link">&para;</a></h4>
-<p>Logging in via web authentication requires no preparatory steps beyond having access to an internet browser. </p>
-<p>To authenticate using this approach: </p>
-<ol>
-<li>
-<p>Open a terminal and type <code>ssh username@ap40.uw.osg-htc.org</code>, being sure to replace <code>username</code> with your <code>uw.osg-htc.org</code> username. Upon hitting enter, the following text should appear with a unique, but similar, URL: </p>
-<div class="codehilite"><pre><span></span><code>Authenticate at
------------------
-https://cilogon.org/device/?user_code=FF4-ZX6-9LK
------------------
-Type &#39;Enter&#39; when you authenticate.
-</code></pre></div>
-
-</li>
-<li>
-<p>Copy the <code>https://</code> link, paste it into a web browser, and hit enter.  </p>
-</li>
-<li>
-<p>You will be redirected to a new page where you will be prompted to login using your institutional credentials. Once you have done so, a new page will appear with the following text: "You have successfully approved the user code. Please return to your device for further instructions."</p>
-</li>
-<li>
-<p>Return to your terminal, and type 'Enter' to complete the login process. </p>
-</li>
-</ol>
-<h4 id="option-2-log-in-via-ssh-key-pair-authentication">Option 2: Log in via SSH Key Pair Authentication<a class="headerlink" href="#option-2-log-in-via-ssh-key-pair-authentication" title="Permanent link">&para;</a></h4>
-<p>It is also possible to authenticate using an SSH key pair, if you prefer. Logging in using SSH keys does not require access to an internet browser to log into <code>ap40.uw.osg-htc.org</code> or <code>ap1.facility.path-cc.io</code>. </p>
-<p>The process below describes how to upload a public key to the registration website. It assumes that a private/public key pair has already been generated. If you need to generate a key pair, see this <a href="https://portal.osg-htc.org/documentation/overview/account_setup/generate-add-sshkey">OSG guide</a>. </p>
-<ol>
-<li>
-<p>Return to the <a href="https://registry.cilogon.org/">Registration Page</a> and log in using your institutional credentials if prompted.</p>
-</li>
-<li>
-<p>Click your name at the top right. In the dropdown box, click "My Profile (OSG)" button.</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/ssh-homepage-dropdown.png" class= "img-fluid"/></p>
-</li>
-<li>
-<p>On the right hand side of your profile, click "Authenticators" link.</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/ssh-edit-profile.png" class= "img-fluid"/></p>
-</li>
-<li>
-<p>On the authenticators page, click the "Manage" button.</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/ssh-authenticator-select.png" class= "img-fluid"/></p>
-</li>
-<li>
-<p>On the new SSH Keys page, click "Add SSH Key" and browse your computer to upload your public SSH key.</p>
-<p><img src="https://raw.githubusercontent.com/osg-htc/user-documentation/main/documentation/assets/ap7-images/ssh-key-list.png" class= "img-fluid"/></p>
-</li>
-</ol>
-<p>You can now log in to <code>ap40.uw.osg-htc.org</code> from the terminal, using <code>ssh username@ap40.uw.osg-htc.org</code>. When you log in, instead of being prompted with a web link, you should either authenticate automatically or be asked for your ssh key passphrase to complete logging in.</p>
-<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Existing Account</p>
-<ul>
-<li>Error message: <code>SORID "http://cilogon.org/serverA/users/20186" is already associated with EnvSource</code></li>
-<li>Try logging into <a href="https://registry.cilogon.org/">COmanage</a>. If you can log in, 
-email us with your name and we will add you to the appropriate group. </li>
-</ul>
-</li>
-<li>
-<p>Privacy enhancing plugins</p>
-<ul>
-<li>Error message: <code>Identifier (SORID) variable "REDIRECT_OIDC CLAIM sub" not set</code></li>
-<li>We have seen this happen when a user has various "privacy enhancing" plugins installed in the browser and it blocks the necessary flow from fully happening. Try a different web browser without any plugins installed. </li>
-</ul>
-</li>
-</ul>
                 
               
               
@@ -511,6 +366,25 @@ email us with your name and we will add you to the appropriate group. </li>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../hotel/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Hotel information
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
