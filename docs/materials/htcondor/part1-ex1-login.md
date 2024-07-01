@@ -52,7 +52,7 @@ In the exercises, we will show commands that you are supposed to type or copy in
 
 ``` console
 username@ap1 $ hostname
-ap1.facility.path-cc.io
+path-ap2001
 ```
 
 !!! note
@@ -92,7 +92,7 @@ HTCondor is installed on this server. But what version? You can ask HTCondor its
 
 ``` console
 username@ap1 $ condor_version
-$CondorVersion: 10.7.0 2023-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $
+$CondorVersion: 23.9.0 2024-06-27 BuildID: 742143 PackageID: 23.9.0-0.742143 GitSHA: 68fde429 RC $
 $CondorPlatform: x86_64_AlmaLinux8 $
 ```
 
