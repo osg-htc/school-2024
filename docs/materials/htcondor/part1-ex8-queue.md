@@ -17,32 +17,32 @@ Selecting Jobs
 The `condor_q` program has many options for selecting which jobs are listed. You have already seen that the default mode is to show only your jobs in "batch" mode:
 
 ``` console
-username@learn $ condor_q
+username@ap1 $ condor_q
 ```
 
 You've seen that you can view all jobs (all users) in the submit node's queue by using the `-all` argument:
 
 ``` console
-username@learn $ condor_q -all
+username@ap1 $ condor_q -all
 ```
 
 And you've seen that you can view more details about queued jobs, with each separate job on a single line using the `-nobatch` option:
 
 ``` console
-username@learn $ condor_q -nobatch
-username@learn $ condor_q -all -nobatch
+username@ap1 $ condor_q -nobatch
+username@ap1 $ condor_q -all -nobatch
 ```
 
 Did you know you can also name one or more user IDs on the command line, in which case jobs for all of the named users are listed at once?
 
 ``` console
-username@learn $ condor_q <USERNAME1> <USERNAME2> <USERNAME3>
+username@ap1 $ condor_q <USERNAME1> <USERNAME2> <USERNAME3>
 ```
 
 To list just the jobs associated with a single cluster number:
 
 ``` console
-username@learn $ condor_q <CLUSTER>
+username@ap1 $ condor_q <CLUSTER>
 ```
 
 For example, if you want to see the jobs in cluster 5678 (i.e., `5678.0`, `5678.1`, etc.), you use `condor_q 5678`.
@@ -50,7 +50,7 @@ For example, if you want to see the jobs in cluster 5678 (i.e., `5678.0`, `5678.
 To list a specific job (i.e., cluster.process, as in 5678.0):
 
 ``` console
-username@learn $ condor_q <JOB.ID>
+username@ap1 $ condor_q <JOB.ID>
 ```
 
 For example, to see job ID 5678.1, you use `condor_q 5678.1`.
@@ -79,7 +79,7 @@ You may have wondered why it is useful to be able to list a single job ID using 
 If you add the `-long` option to `condor_q` (or its short form, `-l`), it will show the complete ClassAd for each selected job, instead of the one-line summary that you have seen so far. Because job ClassAds may have 80–90 attributes (or more), it probably makes the most sense to show the ClassAd for a single job at a time. And you know how to show just one job! Here is what the command looks like:
 
 ``` console
-username@learn $ condor_q -long <JOB.ID>
+username@ap1 $ condor_q -long <JOB.ID>
 ```
 
 The output from this command is long and complex. Most of the attributes that HTCondor adds to a job are arcane and uninteresting for us now. But here are some examples of common, interesting attributes taken directly from `condor_q` output (except with some line breaks added to the `Requirements` attribute):
@@ -138,7 +138,7 @@ Sometimes, you submit a job and it just sits in the queue in Idle state, never r
 To ask HTCondor why your job is not running, add the `-better-analyze` option to `condor_q` for the specific job. For example, for job ID 2423.0, the command is:
 
 ``` console
-username@learn $ condor_q -better-analyze 2423.0
+username@ap1 $ condor_q -better-analyze 2423.0
 ```
 
 Of course, replace the job ID with your own.
@@ -166,7 +166,7 @@ There is a lot of output, but a few items are worth highlighting. Here is a samp
 
 ``` file
 
--- Schedd: learn.chtc.wisc.edu : <128.104.100.148:9618?...
+-- Schedd: ap1.facility.path-cc.io : <128.105.68.66:9618?...
 ...
 
 Job 98096.000 defines the following attributes:
@@ -215,7 +215,7 @@ There is a way to select the specific job attributes you want `condor_q` to tell
 To use autoformatting, use the `-af` option followed by the attribute name, for each attribute that you want to output:
 
 ``` console
-username@learn $ condor_q -all -af Owner ClusterId Cmd
+username@ap1 $ condor_q -all -af Owner ClusterId Cmd
 moate 2418 /share/test.sh
 cat 2421 /bin/sleep
 cat 2422 /bin/sleep
@@ -228,7 +228,7 @@ References
 
 As suggested above, if you want to learn more about `condor_q`, you can do some reading:
 
--   Read the `condor_q` man page or HTCondor Manual section (same text) to learn about more options
--   Read about ClassAd attributes in Appendix A of the HTCondor Manual
+-   Read the `condor_q` man page or [HTCondor Manual section](https://htcondor.readthedocs.io/en/latest/man-pages/condor_q.html) (same text) to learn about more options
+-   Read about [ClassAd attributes](https://htcondor.readthedocs.io/en/latest/classad-attributes/job-classad-attributes.html) in the HTCondor Manual
 
 
