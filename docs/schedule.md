@@ -17,7 +17,7 @@
     <tr>
         <td>8:00</td>
         <td>8:45</td>
-        <td>Breakfast is getting served in Computer Sciences 1240</td>
+        <td>Breakfast, Computer Sciences 1240</td>
         <td>-</td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@
     <tr>
         <td>12:15</td>
         <td>13:15</td>
-        <td>Lunch is getting served in Computer Sciences (Room TBD)</td>
+        <td>Lunch, Computer Sciences (Room TBD)</td>
         <td>-</td>
     </tr>
     <tr>
@@ -126,7 +126,7 @@
     <tr>
         <td>8:00</td>
         <td>8:45</td>
-        <td>Breakfast is getting served in ____</td>
+        <td>Breakfast, Computer Sciences 1240</td>
         <td>-</td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@
     <tr>
         <td>12:15</td>
         <td>13:30</td>
-        <td>Lunch is getting served in _____</td>
+        <td>Lunch, Computer Sciences (Room TBD)</td>
         <td>-</td>
     </tr>
     <tr>
@@ -217,7 +217,7 @@
     <tr>
         <td>8:00</td>
         <td>8:45</td>
-        <td>Breakfast is getting served in ____</td>
+        <td>Breakfast, Computer Sciences 1240</td>
         <td>-</td>
     </tr>
     <tr>
@@ -254,7 +254,7 @@
         <td>12:30</td>
         <td>13:45</td>
         <td>
-            Lunch is getting served in ____<br>
+            Lunch, Computer Sciences (Room TBD)<br>
             Optional Domain Lunches: Christina (math); Rachel (biology); Andrew/Amber (chemistry); Ian (ML); Tim (physics &amp; astronomy)
         </td> 
         <td>-</td>
@@ -292,7 +292,7 @@
     <tr>
         <td>8:00</td>
         <td>8:45</td>
-        <td>Breakfast is getting served in ____</td>
+        <td>Breakfast, Computer Sciences 1240</td>
         <td>-</td>
     </tr>
     <tr>
@@ -322,7 +322,7 @@
     <tr>
       <td>12:00</td>
       <td>13:15</td>
-      <td>Lunch is getting served ____</td>
+      <td>Lunch, Computer Sciences (Room TBD)</td>
       <td>-</td>
     </tr>
     <tr>
@@ -380,7 +380,7 @@
     <tr>
         <td>8:00</td>
         <td>8:45</td>
-        <td>Breakfast is getting served in ____</td>
+        <td>Breakfast, Computer Sciences 1240</td>
         <td>-</td>
     </tr>
     <tr>
@@ -423,7 +423,7 @@
       <td>11:50</td>
       <td>13:00</td>
       <td>
-        Lunch is getting served in ____<br>
+        Lunch, Computer Sciences (Room TBD)<br>
         Optional: Introduction to Research Computing Facilitation
       </td>
       <td>Christina</td>
