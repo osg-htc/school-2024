@@ -159,13 +159,13 @@ or perhaps a shell script of commands that you'd like to run within a job. In th
 1. Test your script from the command line:
 
         :::console
-        username@ap1 $ ./test-script.sh hello 42 
-        Date: Mon Jul 17 10:02:20 CDT 2017 
-        Host: learn.chtc.wisc.edu 
-        System: Linux x86_64 GNU/Linux 
+        username@ap1 $ ./test-script.sh hello 42
+        Date:  Mon Jul 1 14:03:56 CDT 2024
+        Host:  path-ap2001
+        System:  Linux x86_64 GNU/Linux
         Program: ./test-script.sh
         Args: hello 42
-        ls: hostname.sub montage hostname.err hostname.log hostname.out test-script.sh
+        ls:  hostname.err hostname.log hostname.out hostname.sub sleep.log sleep.sub test-script.sh
 
     This step is **really** important! If you cannot run your executable from the command-line, HTCondor probably cannot run it on another machine, either. 
     Further, debugging problems like this one is surprisingly difficult. 
