@@ -33,7 +33,7 @@ queue
 Submit the DAG again:
 
 ``` console
-username@learn $ condor_submit_dag goatbrot.dag
+username@ap40 $ condor_submit_dag goatbrot.dag
 -----------------------------------------------------------------------
 File for submitting this DAG to Condor           : goatbrot.dag.condor.sub
 Log of DAGMan debugging messages                 : goatbrot.dag.dagman.out
@@ -49,50 +49,50 @@ Submitting job(s).
 Use watch to watch the jobs until they finish. In a separate window, use `tail --lines=500 -f goatbrot.dag.dagman.out` to watch what DAGMan does.
 
 ``` console
-06/22/12 17:57:41 Setting maximum accepts per cycle 8.
-06/22/12 17:57:41 ******************************************************
-06/22/12 17:57:41 ** condor_scheduniv_exec.77.0 (CONDOR_DAGMAN) STARTING UP
-06/22/12 17:57:41 ** /usr/bin/condor_dagman
-06/22/12 17:57:41 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
-06/22/12 17:57:41 ** Configuration: subsystem:DAGMAN local:<NONE> class:DAEMON
-06/22/12 17:57:41 ** $CondorVersion: 7.7.6 Apr 16 2012 BuildID: 34175 PRE-RELEASE-UWCS $
-06/22/12 17:57:41 ** $CondorPlatform: x86_64_rhap_5.7 $
-06/22/12 17:57:41 ** PID = 26867
-06/22/12 17:57:41 ** Log last touched time unavailable (No such file or directory)
-06/22/12 17:57:41 ******************************************************
-06/22/12 17:57:41 Using config source: /etc/condor/condor_config
-06/22/12 17:57:41 Using local config sources: 
-06/22/12 17:57:41    /etc/condor/config.d/00-chtc-global.conf
-06/22/12 17:57:41    /etc/condor/config.d/01-chtc-submit.conf
-06/22/12 17:57:41    /etc/condor/config.d/02-chtc-flocking.conf
-06/22/12 17:57:41    /etc/condor/config.d/03-chtc-jobrouter.conf
-06/22/12 17:57:41    /etc/condor/config.d/04-chtc-blacklist.conf
-06/22/12 17:57:41    /etc/condor/config.d/99-osg-ss-group.conf
-06/22/12 17:57:41    /etc/condor/config.d/99-roy-extras.conf
-06/22/12 17:57:41    /etc/condor/condor_config.local
+06/22/24 17:57:41 Setting maximum accepts per cycle 8.
+06/22/24 17:57:41 ******************************************************
+06/22/24 17:57:41 ** condor_scheduniv_exec.77.0 (CONDOR_DAGMAN) STARTING UP
+06/22/24 17:57:41 ** /usr/bin/condor_dagman
+06/22/24 17:57:41 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
+06/22/24 17:57:41 ** Configuration: subsystem:DAGMAN local:<NONE> class:DAEMON
+06/22/24 17:57:41 ** $CondorVersion: 23.9.0 2024-07-02 BuildID: 742617 PackageID: 23.9.0-0.742617 GitSHA: 5acb07ea RC $
+06/22/24 17:57:41 ** $CondorPlatform: x86_64_AlmaLinux9 $
+06/22/24 17:57:41 ** PID = 26867
+06/22/24 17:57:41 ** Log last touched time unavailable (No such file or directory)
+06/22/24 17:57:41 ******************************************************
+06/22/24 17:57:41 Using config source: /etc/condor/condor_config
+06/22/24 17:57:41 Using local config sources: 
+06/22/24 17:57:41    /etc/condor/config.d/00-chtc-global.conf
+06/22/24 17:57:41    /etc/condor/config.d/01-chtc-submit.conf
+06/22/24 17:57:41    /etc/condor/config.d/02-chtc-flocking.conf
+06/22/24 17:57:41    /etc/condor/config.d/03-chtc-jobrouter.conf
+06/22/24 17:57:41    /etc/condor/config.d/04-chtc-blacklist.conf
+06/22/24 17:57:41    /etc/condor/config.d/99-osg-ss-group.conf
+06/22/24 17:57:41    /etc/condor/config.d/99-roy-extras.conf
+06/22/24 17:57:41    /etc/condor/condor_config.local
 ```
 Below is where DAGMan realizes that the montage node failed:
 
 ```console
-06/22/12 18:08:42 Event: ULOG_EXECUTE for Condor Node montage (82.0.0)
-06/22/12 18:08:42 Number of idle job procs: 0
-06/22/12 18:08:42 Event: ULOG_IMAGE_SIZE for Condor Node montage (82.0.0)
-06/22/12 18:08:42 Event: ULOG_JOB_TERMINATED for Condor Node montage (82.0.0)
-06/22/12 18:08:42 Node montage job proc (82.0.0) failed with status 1.
-06/22/12 18:08:42 Number of idle job procs: 0
-06/22/12 18:08:42 Of 5 nodes total:
-06/22/12 18:08:42  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
-06/22/12 18:08:42   ===     ===      ===     ===     ===        ===      ===
-06/22/12 18:08:42     4       0        0       0       0          0        1
-06/22/12 18:08:42 0 job proc(s) currently held
-06/22/12 18:08:42 Aborting DAG...
-06/22/12 18:08:42 Writing Rescue DAG to goatbrot.dag.rescue001...
-06/22/12 18:08:42 Note: 0 total job deferrals because of -MaxJobs limit (0)
-06/22/12 18:08:42 Note: 0 total job deferrals because of -MaxIdle limit (0)
-06/22/12 18:08:42 Note: 0 total job deferrals because of node category throttles
-06/22/12 18:08:42 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
-06/22/12 18:08:42 Note: 0 total POST script deferrals because of -MaxPost limit (0)
-06/22/12 18:08:42 **** condor_scheduniv_exec.77.0 (condor_DAGMAN) pid 26867 EXITING WITH STATUS 1
+06/22/24 18:08:42 Event: ULOG_EXECUTE for Condor Node montage (82.0.0)
+06/22/24 18:08:42 Number of idle job procs: 0
+06/22/24 18:08:42 Event: ULOG_IMAGE_SIZE for Condor Node montage (82.0.0)
+06/22/24 18:08:42 Event: ULOG_JOB_TERMINATED for Condor Node montage (82.0.0)
+06/22/24 18:08:42 Node montage job proc (82.0.0) failed with status 1.
+06/22/24 18:08:42 Number of idle job procs: 0
+06/22/24 18:08:42 Of 5 nodes total:
+06/22/24 18:08:42  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/22/24 18:08:42   ===     ===      ===     ===     ===        ===      ===
+06/22/24 18:08:42     4       0        0       0       0          0        1
+06/22/24 18:08:42 0 job proc(s) currently held
+06/22/24 18:08:42 Aborting DAG...
+06/22/24 18:08:42 Writing Rescue DAG to goatbrot.dag.rescue001...
+06/22/24 18:08:42 Note: 0 total job deferrals because of -MaxJobs limit (0)
+06/22/24 18:08:42 Note: 0 total job deferrals because of -MaxIdle limit (0)
+06/22/24 18:08:42 Note: 0 total job deferrals because of node category throttles
+06/22/24 18:08:42 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
+06/22/24 18:08:42 Note: 0 total POST script deferrals because of -MaxPost limit (0)
+06/22/24 18:08:42 **** condor_scheduniv_exec.77.0 (condor_DAGMAN) pid 26867 EXITING WITH STATUS 1
 ```
 
 DAGMan notices that one of the jobs failed because its exit code was non-zero. DAGMan ran as much of the DAG as possible and logged enough information to continue the run when the situation is resolved. Do you see the part where it wrote the rescue DAG?
@@ -100,10 +100,10 @@ DAGMan notices that one of the jobs failed because its exit code was non-zero. D
 Look at the rescue DAG file. It's called a partial DAG because it indicates what part of the DAG has already been completed.
 
 ``` console
-username@learn $ cat goatbrot.dag.rescue001
+username@ap40 $ cat goatbrot.dag.rescue001
 # Rescue DAG file, created after running
 #   the goatbrot.dag DAG file
-# Created 6/22/2012 23:08:42 UTC
+# Created 6/22/2024 23:08:42 UTC
 # Rescue DAG version: 2.0.1 (partial)
 #
 # Total number of Nodes: 5
@@ -135,7 +135,7 @@ queue
 Now we can re-submit our original DAG and DAGMan will pick up where it left off. It will automatically notice the rescue DAG. If you didn't fix the problem, DAGMan would generate another rescue DAG.
 
 ``` console
-username@learn $ condor_submit_dag goatbrot.dag
+username@ap40 $ condor_submit_dag goatbrot.dag
 Running rescue DAG 1
 -----------------------------------------------------------------------
 File for submitting this DAG to Condor           : goatbrot.dag.condor.sub
@@ -148,47 +148,47 @@ Submitting job(s).
 1 job(s) submitted to cluster 83.
 -----------------------------------------------------------------------
 
-username@learn $ tail -f goatbrot.dag.dagman.out
-06/23/12 11:30:53 ******************************************************
-06/23/12 11:30:53 ** condor_scheduniv_exec.83.0 (CONDOR_DAGMAN) STARTING UP
-06/23/12 11:30:53 ** /usr/bin/condor_dagman
-06/23/12 11:30:53 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
-06/23/12 11:30:53 ** Configuration: subsystem:DAGMAN local:<NONE> class:DAEMON
-06/23/12 11:30:53 ** $CondorVersion: 7.7.6 Apr 16 2012 BuildID: 34175 PRE-RELEASE-UWCS $
-06/23/12 11:30:53 ** $CondorPlatform: x86_64_rhap_5.7 $
-06/23/12 11:30:53 ** PID = 28576
-06/23/12 11:30:53 ** Log last touched 6/22 18:08:42
-06/23/12 11:30:53 ******************************************************
-06/23/12 11:30:53 Using config source: /etc/condor/condor_config
+username@ap40 $ tail -f goatbrot.dag.dagman.out
+06/23/24 11:30:53 ******************************************************
+06/23/24 11:30:53 ** condor_scheduniv_exec.83.0 (CONDOR_DAGMAN) STARTING UP
+06/23/24 11:30:53 ** /usr/bin/condor_dagman
+06/23/24 11:30:53 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
+06/23/24 11:30:53 ** Configuration: subsystem:DAGMAN local:<NONE> class:DAEMON
+06/23/24 11:30:53 ** $CondorVersion: 23.9.0 2024-07-02 BuildID: 742617 PackageID: 23.9.0-0.742617 GitSHA: 5acb07ea RC $
+06/23/24 11:30:53 ** $CondorPlatform: x86_64_AlmaLinux9 $
+06/23/24 11:30:53 ** PID = 28576
+06/23/24 11:30:53 ** Log last touched 6/22 18:08:42
+06/23/24 11:30:53 ******************************************************
+06/23/24 11:30:53 Using config source: /etc/condor/condor_config
 ...
 ```
 
 <span style="color:RED">**Here is where DAGMAN notices that there is a rescue DAG**</span>
 
 ```hl_lines="3"
-06/23/12 11:30:53 Parsing 1 dagfiles
-06/23/12 11:30:53 Parsing goatbrot.dag ...
-06/23/12 11:30:53 Found rescue DAG number 1; running goatbrot.dag.rescue001 in combination with normal DAG file
-06/23/12 11:30:53 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-06/23/12 11:30:53 USING RESCUE DAG goatbrot.dag.rescue001
-06/23/12 11:30:53 Dag contains 5 total jobs
+06/23/24 11:30:53 Parsing 1 dagfiles
+06/23/24 11:30:53 Parsing goatbrot.dag ...
+06/23/24 11:30:53 Found rescue DAG number 1; running goatbrot.dag.rescue001 in combination with normal DAG file
+06/23/24 11:30:53 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+06/23/24 11:30:53 USING RESCUE DAG goatbrot.dag.rescue001
+06/23/24 11:30:53 Dag contains 5 total jobs
 ```
 
 <span style="color:RED">**Shortly thereafter it sees that four jobs have already finished.**</span>
 
 ```console
-06/23/12 11:31:05 Bootstrapping...
-06/23/12 11:31:05 Number of pre-completed nodes: 4
-06/23/12 11:31:05 Registering condor_event_timer...
-06/23/12 11:31:06 Sleeping for one second for log file consistency
-06/23/12 11:31:07 MultiLogFiles: truncating log file /home/roy/condor/goatbrot/montage.log
+06/23/24 11:31:05 Bootstrapping...
+06/23/24 11:31:05 Number of pre-completed nodes: 4
+06/23/24 11:31:05 Registering condor_event_timer...
+06/23/24 11:31:06 Sleeping for one second for log file consistency
+06/23/24 11:31:07 MultiLogFiles: truncating log file /home/roy/condor/goatbrot/montage.log
 ```
 
 <span style="color:RED">**Here is where DAGMan resubmits the montage job and waits for it to complete.**</span>
 
 ```console
-06/23/12 11:31:07 Submitting Condor Node montage job(s)...
-06/23/12 11:31:07 submitting: condor_submit 
+06/23/24 11:31:07 Submitting Condor Node montage job(s)...
+06/23/24 11:31:07 submitting: condor_submit 
       -a dag_node_name' '=' 'montage 
       -a +DAGManJobId' '=' '83 
       -a DAGManJobId' '=' '83 
@@ -197,48 +197,48 @@ username@learn $ tail -f goatbrot.dag.dagman.out
       -a FAILED_COUNT' '=' '0 
       -a +DAGParentNodeNames' '=' '"g1,g2,g3,g4" 
       montage.sub
-06/23/12 11:31:07 From submit: Submitting job(s).
-06/23/12 11:31:07 From submit: 1 job(s) submitted to cluster 84.
-06/23/12 11:31:07   assigned Condor ID (84.0.0)
-06/23/12 11:31:07 Just submitted 1 job this cycle...
-06/23/12 11:31:07 Currently monitoring 1 Condor log file(s)
-06/23/12 11:31:07 Event: ULOG_SUBMIT for Condor Node montage (84.0.0)
-06/23/12 11:31:07 Number of idle job procs: 1
-06/23/12 11:31:07 Of 5 nodes total:
-06/23/12 11:31:07  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
-06/23/12 11:31:07   ===     ===      ===     ===     ===        ===      ===
-06/23/12 11:31:07     4       0        1       0       0          0        0
-06/23/12 11:31:07 0 job proc(s) currently held
-06/23/12 11:40:22 Currently monitoring 1 Condor log file(s)
-06/23/12 11:40:22 Event: ULOG_EXECUTE for Condor Node montage (84.0.0)
-06/23/12 11:40:22 Number of idle job procs: 0
-06/23/12 11:40:22 Event: ULOG_IMAGE_SIZE for Condor Node montage (84.0.0)
-06/23/12 11:40:22 Event: ULOG_JOB_TERMINATED for Condor Node montage (84.0.0)
+06/23/24 11:31:07 From submit: Submitting job(s).
+06/23/24 11:31:07 From submit: 1 job(s) submitted to cluster 84.
+06/23/24 11:31:07   assigned Condor ID (84.0.0)
+06/23/24 11:31:07 Just submitted 1 job this cycle...
+06/23/24 11:31:07 Currently monitoring 1 Condor log file(s)
+06/23/24 11:31:07 Event: ULOG_SUBMIT for Condor Node montage (84.0.0)
+06/23/24 11:31:07 Number of idle job procs: 1
+06/23/24 11:31:07 Of 5 nodes total:
+06/23/24 11:31:07  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/23/24 11:31:07   ===     ===      ===     ===     ===        ===      ===
+06/23/24 11:31:07     4       0        1       0       0          0        0
+06/23/24 11:31:07 0 job proc(s) currently held
+06/23/24 11:40:22 Currently monitoring 1 Condor log file(s)
+06/23/24 11:40:22 Event: ULOG_EXECUTE for Condor Node montage (84.0.0)
+06/23/24 11:40:22 Number of idle job procs: 0
+06/23/24 11:40:22 Event: ULOG_IMAGE_SIZE for Condor Node montage (84.0.0)
+06/23/24 11:40:22 Event: ULOG_JOB_TERMINATED for Condor Node montage (84.0.0)
 ```
 
 <span style="color:RED">**This is where the montage finished.**</span>
 
 ```console
-06/23/12 11:40:22 Node montage job proc (84.0.0) completed successfully.
-06/23/12 11:40:22 Node montage job completed
-06/23/12 11:40:22 Number of idle job procs: 0
-06/23/12 11:40:22 Of 5 nodes total:
-06/23/12 11:40:22  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
-06/23/12 11:40:22   ===     ===      ===     ===     ===        ===      ===
-06/23/12 11:40:22     5       0        0       0       0          0        0
-06/23/12 11:40:22 0 job proc(s) currently held
+06/23/24 11:40:22 Node montage job proc (84.0.0) completed successfully.
+06/23/24 11:40:22 Node montage job completed
+06/23/24 11:40:22 Number of idle job procs: 0
+06/23/24 11:40:22 Of 5 nodes total:
+06/23/24 11:40:22  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/23/24 11:40:22   ===     ===      ===     ===     ===        ===      ===
+06/23/24 11:40:22     5       0        0       0       0          0        0
+06/23/24 11:40:22 0 job proc(s) currently held
 ```
 
 <span style="color:RED">**And here DAGMan decides that the work is all done.**</span>
 
 ```console
-06/23/12 11:40:22 All jobs Completed!
-06/23/12 11:40:22 Note: 0 total job deferrals because of -MaxJobs limit (0)
-06/23/12 11:40:22 Note: 0 total job deferrals because of -MaxIdle limit (0)
-06/23/12 11:40:22 Note: 0 total job deferrals because of node category throttles
-06/23/12 11:40:22 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
-06/23/12 11:40:22 Note: 0 total POST script deferrals because of -MaxPost limit (0)
-06/23/12 11:40:22 **** condor_scheduniv_exec.83.0 (condor_DAGMAN) pid 28576 EXITING WITH STATUS 0
+06/23/24 11:40:22 All jobs Completed!
+06/23/24 11:40:22 Note: 0 total job deferrals because of -MaxJobs limit (0)
+06/23/24 11:40:22 Note: 0 total job deferrals because of -MaxIdle limit (0)
+06/23/24 11:40:22 Note: 0 total job deferrals because of node category throttles
+06/23/24 11:40:22 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
+06/23/24 11:40:22 Note: 0 total POST script deferrals because of -MaxPost limit (0)
+06/23/24 11:40:22 **** condor_scheduniv_exec.83.0 (condor_DAGMAN) pid 28576 EXITING WITH STATUS 0
 ```
 
 Success! Now go ahead and clean up.
