@@ -16,8 +16,8 @@ the basic options and syntax of the "build" or definition file.
 |---------|
 | [Bootstrap/From](#where-to-start) | 
 | [%files](#files-needed-for-building-or-running) | 
-| [%files](#commnds-to-install) | 
-| [%files](#environment) | 
+| [%post](#commands-to-install) | 
+| [%env](#environment) | 
 
 
 Where to start
