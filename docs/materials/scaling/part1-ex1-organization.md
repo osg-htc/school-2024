@@ -16,7 +16,7 @@ Make sure you are logged into `ap40.uw.osg-htc.org`.
 
 To get the files for this exercise:
 
-1.  Type `wget https://github.com/osg-htc/user-school-2023/raw/main/docs/materials/scaling/files/osgus23-day4-ex11-organizing-files.tar.gz` to download the tarball.
+1.  Type `wget https://github.com/osg-htc/school-2024/raw/main/docs/materials/scaling/files/osgus23-day4-ex11-organizing-files.tar.gz` to download the tarball.
 1.  As you learned earlier, expand this tarball file; it will create a `organizing-files` directory.
 1.  Change to that directory, or create a separate one for this exercise and copy the files in.
 
