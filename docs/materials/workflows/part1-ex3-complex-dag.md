@@ -146,7 +146,7 @@ Let’s follow the progress of the whole DAG:
 
         Total: 1 jobs; 1 running
 
-        Updated at 2021-07-28 13:52:57
+        Updated at 2024-07-28 13:52:57
 
     <span style="color:RED">**DAGMan has submitted the goatbrot jobs, but they haven't started running yet**</span>
     
@@ -158,7 +158,7 @@ Let’s follow the progress of the whole DAG:
 
         Total: 5 jobs; 4 idle, 1 running
 
-        Updated at 2021-07-28 13:53:53
+        Updated at 2024-07-28 13:53:53
 
 
     <span style="color:RED">**They're running**</span> 
@@ -170,7 +170,7 @@ Let’s follow the progress of the whole DAG:
 
         Total: 5 jobs; 5 running
 
-        Updated at 2021-07-28 13:54:33
+        Updated at 2024-07-28 13:54:33
 
     <span style="color:RED">**They finished, but DAGMan hasn't noticed yet. It only checks periodically:**</span>
 
@@ -182,7 +182,7 @@ Let’s follow the progress of the whole DAG:
 
         Total: 5 jobs; 4 completed, 1 running
 
-        Updated at 2021-07-28 13:55:13
+        Updated at 2024-07-28 13:55:13
 
     Eventually, you'll see the montage job submitted, then running, then leave the queue, and then DAGMan will leave the queue.
 
