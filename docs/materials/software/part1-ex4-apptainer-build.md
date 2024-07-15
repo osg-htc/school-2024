@@ -93,7 +93,7 @@ allow us to test our new container.
 1. Try running: 
 
 		:::console
-		$ singularity shell first-image.sif
+		$ singularity shell py-cowsay.sif
 
 1. Then try running the `hello-cow.py` script: 
 

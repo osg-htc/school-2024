@@ -209,7 +209,7 @@ destination `science-results/mouse.fa.result`. Remember
 that the `transfer_output_remaps` value requires double
 quotes around it.
 
-Submit the job, and wait for it to complete. Was there
+Submit the job, and wait for it to complete. Are there
 any errors? Can you find mouse.fa.result?
 
 Conclusions

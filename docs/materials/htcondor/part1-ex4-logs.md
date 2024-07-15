@@ -23,15 +23,15 @@ For this exercise, we can examine a log file for any previous job that you have 
 A job log file is updated throughout the life of a job, usually at key events. Each event starts with a heading that indicates what happened and when. Here are **all** of the event headings from the `sleep` job log (detailed output in between headings has been omitted here):
 
 ``` file
-000 (5739.000.000) 2023-07-10 10:44:20 Job submitted from host: <128.104.100.43:9618?addrs=...>
-040 (5739.000.000) 2023-07-10 10:45:10 Started transferring input files
-040 (5739.000.000) 2023-07-10 10:45:10 Finished transferring input files
-001 (5739.000.000) 2023-07-10 10:45:11 Job executing on host: <128.104.55.42:9618?addrs=...>
-006 (5739.000.000) 2023-07-10 10:45:20 Image size of job updated: 72
-040 (5739.000.000) 2023-07-10 10:45:20 Started transferring output files
-040 (5739.000.000) 2023-07-10 10:45:20 Finished transferring output files
-006 (5739.000.000) 2023-07-10 10:46:11 Image size of job updated: 4072
-005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+000 (5739.000.000) 2024-07-10 10:44:20 Job submitted from host: <128.104.100.43:9618?addrs=...>
+040 (5739.000.000) 2024-07-10 10:45:10 Started transferring input files
+040 (5739.000.000) 2024-07-10 10:45:10 Finished transferring input files
+001 (5739.000.000) 2024-07-10 10:45:11 Job executing on host: <128.104.55.42:9618?addrs=...>
+006 (5739.000.000) 2024-07-10 10:45:20 Image size of job updated: 72
+040 (5739.000.000) 2024-07-10 10:45:20 Started transferring output files
+040 (5739.000.000) 2024-07-10 10:45:20 Finished transferring output files
+006 (5739.000.000) 2024-07-10 10:46:11 Image size of job updated: 4072
+005 (5739.000.000) 2024-07-10 10:46:11 Job terminated.
 ```
 
 There is a lot of extra information in those lines, but you can see:
@@ -43,7 +43,7 @@ There is a lot of extra information in those lines, but you can see:
 Some events provide no information in addition to the heading. For example:
 
 ``` file
-000 (5739.000.000) 2020-07-10 10:44:20 Job submitted from host: <128.104.100.43:9618?addrs=...>
+000 (5739.000.000) 2024-07-10 10:44:20 Job submitted from host: <128.104.100.43:9618?addrs=...>
 ...
 ```
 
@@ -53,7 +53,7 @@ Some events provide no information in addition to the heading. For example:
 However, some lines have additional information to help you quickly understand where and how your job is running. For example:  
 
 ``` file
-001 (5739.000.000) 2020-07-10 10:45:11 Job executing on host: <128.104.55.42:9618?addrs=...>
+001 (5739.000.000) 2024-07-10 10:45:11 Job executing on host: <128.104.55.42:9618?addrs=...>
 	SlotName: slot1@WISC-PATH-IDPL-EP.osgvo-docker-pilot-idpl-7c6575d494-2sj5w
 	CondorScratchDir = "/pilot/osgvo-pilot-2q71K9/execute/dir_9316"
 	Cpus = 1
@@ -70,7 +70,7 @@ However, some lines have additional information to help you quickly understand w
 Another example of is the periodic update:
 
 ``` file
-006 (5739.000.000) 2020-07-10 10:45:20 Image size of job updated: 72
+006 (5739.000.000) 2024-07-10 10:45:20 Image size of job updated: 72
     1  -  MemoryUsage of job (MB)
     72  -  ResidentSetSize of job (KB)
 ...
@@ -81,7 +81,7 @@ These updates record the amount of memory that the job is using on the execute m
 The job termination event includes a lot of very useful information:
 
 ``` file
-005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+005 (5739.000.000) 2024-07-10 10:46:11 Job terminated.
     (1) Normal termination (return value 0)
         Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
         Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
@@ -95,7 +95,7 @@ The job termination event includes a lot of very useful information:
        Cpus                 :                 1         1
        Disk (KB)            :       40       30   4203309
        Memory (MB)          :        1        1         1
-Job terminated of its own accord at 2023-07-10 10:46:11 with exit-code 0.
+Job terminated of its own accord at 2024-07-10 10:46:11 with exit-code 0.
 ...
 ```
 

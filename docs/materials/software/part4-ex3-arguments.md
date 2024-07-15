@@ -50,7 +50,7 @@ and third arguments, respectively.  Thus, in  the main command of the script,
 replace the various names with these variables: 
 
         :::bash
-        ncbi-blast-2.12.0+/bin/blastx -db $1/$1 -query $2 -out $3
+        ncbi-blast-2.15.0+/bin/blastx -db $1/$1 -query $2 -out $3
 
 	> If your wrapper script is in a different language, you should use 
 	that language's syntax for reading in variables from the command line. 
@@ -71,12 +71,12 @@ One of the downsides of this approach, is that our command has become
 harder to read. The original script contains all the information at a glance:
 
 	:::bash
-	ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
+	ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
 
 But our new version is more cryptic -- what is `$1`?: 
 
 	:::bash
-	ncbi-blast-2.10.1+/bin/blastx -db $1 -query $2 -out $3
+	ncbi-blast-2.15.1+/bin/blastx -db $1 -query $2 -out $3
 
 One way to overcome this is to create our own variable names inside the wrapper 
 script and assign the argument values to them. Here is an example for our 
@@ -89,10 +89,10 @@ BLAST script:
 	INFILE=$2
 	OUTFILE=$3
 	
-	tar -xzf ncbi-blast-2.10.1+-x64-linux.tar.gz 
+	tar -xzf ncbi-blast-2.15.1+-x64-linux.tar.gz 
 	tar -xzf pdbaa.tar.gz
 
-	ncbi-blast-2.10.1+/bin/blastx -db $DATABASE/$DATABASE -query $INFILE -out $OUTFILE
+	ncbi-blast-2.15.1+/bin/blastx -db $DATABASE/$DATABASE -query $INFILE -out $OUTFILE
 
 Here, we are assigning the input arguments (`$1`, `$2` and `$3`) to new variable names, and 
 then using **those** names (`$DATABASE`, `$INFILE`, and `$OUTFILE`) in the command, 

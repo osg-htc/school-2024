@@ -44,7 +44,7 @@ On Mac and Windows, for example, the "Activity Monitor" and "Task Manager" appli
 Using `ps`:
 
 ``` console
-username@learn $ ps ux
+username@ap1 $ ps ux
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 alice      24342  0.0  0.0  90224  1864 ?        S    13:39   0:00 sshd: alice@pts/0  
 alice      24343  0.0  0.0  66096  1580 pts/0    Ss   13:39   0:00 -bash
