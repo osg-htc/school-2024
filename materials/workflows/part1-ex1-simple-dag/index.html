@@ -417,143 +417,143 @@ you'll submit the job.  In another you will watch the queue, and in the third yo
 
 <p>In the third window, watch what DAGMan does (what you see may be slightly different):</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>tail -f --lines<span class="o">=</span><span class="m">500</span> simple.dag.dagman.out
-<span class="go">08/02/23 15:44:57 ******************************************************</span>
-<span class="go">08/02/23 15:44:57 ** condor_scheduniv_exec.271100.0 (CONDOR_DAGMAN) STARTING UP</span>
-<span class="go">08/02/23 15:44:57 ** /usr/bin/condor_dagman</span>
-<span class="go">08/02/23 15:44:57 ** SubsystemInfo: name=DAGMAN type=DAGMAN(9) class=CLIENT(2)</span>
-<span class="go">08/02/23 15:44:57 ** Configuration: subsystem:DAGMAN local:&lt;NONE&gt; class:CLIENT</span>
-<span class="go">08/02/23 15:44:57 ** $CondorVersion: 10.7.0 2023-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $</span>
-<span class="go">08/02/23 15:44:57 ** $CondorPlatform: x86_64_AlmaLinux8 $</span>
-<span class="go">08/02/23 15:44:57 ** PID = 2340103</span>
-<span class="go">08/02/23 15:44:57 ** Log last touched time unavailable (No such file or directory)</span>
-<span class="go">08/02/23 15:44:57 ******************************************************</span>
-<span class="go">08/02/23 15:44:57 Daemon Log is logging: D_ALWAYS D_ERROR D_STATUS</span>
-<span class="go">08/02/23 15:44:57 DaemonCore: No command port requested.</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_USE_STRICT setting: 1</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_VERBOSITY setting: 3</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG_CACHE_SIZE setting: 5242880</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG_CACHE_ENABLE setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_SUBMIT_DELAY setting: 0</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_SUBMIT_ATTEMPTS setting: 6</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_STARTUP_CYCLE_DETECT setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_SUBMITS_PER_INTERVAL setting: 100</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_AGGRESSIVE_SUBMIT setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_USER_LOG_SCAN_INTERVAL setting: 5</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_QUEUE_UPDATE_INTERVAL setting: 300</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_PRIORITY setting: 0</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_SUPPRESS_NOTIFICATION setting: True</span>
-<span class="go">08/02/23 15:44:57 allow_events (DAGMAN_ALLOW_EVENTS) setting: 114</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_RETRY_SUBMIT_FIRST setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_RETRY_NODE_FIRST setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOBS_IDLE setting: 1000</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOBS_SUBMITTED setting: 0</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_PRE_SCRIPTS setting: 20</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_POST_SCRIPTS setting: 20</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_HOLD_SCRIPTS setting: 20</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MUNGE_NODE_NAMES setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_PROHIBIT_MULTI_JOBS setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_SUBMIT_DEPTH_FIRST setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_ALWAYS_RUN_POST setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_CONDOR_SUBMIT_EXE setting: /usr/bin/condor_submit</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_USE_DIRECT_SUBMIT setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_APPEND_VARS setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_ABORT_DUPLICATES setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_ABORT_ON_SCARY_SUBMIT setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_PENDING_REPORT_INTERVAL setting: 600</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_AUTO_RESCUE setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_RESCUE_NUM setting: 100</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_WRITE_PARTIAL_RESCUE setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEFAULT_NODE_LOG setting: @(DAG_DIR)/@(DAG_FILE).nodes.log</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_GENERATE_SUBDAG_SUBMITS setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_MAX_JOB_HOLDS setting: 100</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_HOLD_CLAIM_TIME setting: 20</span>
-<span class="go">08/02/23 15:44:57 ALL_DEBUG setting: </span>
-<span class="go">08/02/23 15:44:57 DAGMAN_DEBUG setting: </span>
-<span class="go">08/02/23 15:44:57 DAGMAN_SUPPRESS_JOB_LOGS setting: False</span>
-<span class="go">08/02/23 15:44:57 DAGMAN_REMOVE_NODE_JOBS setting: True</span>
-<span class="go">08/02/23 15:44:57 DAGMAN will adjust edges after parsing</span>
-<span class="go">08/02/23 15:44:57 argv[0] == &quot;condor_scheduniv_exec.271100.0&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[1] == &quot;-Lockfile&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[2] == &quot;simple.dag.lock&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[3] == &quot;-AutoRescue&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[4] == &quot;1&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[5] == &quot;-DoRescueFrom&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[6] == &quot;0&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[7] == &quot;-Dag&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[8] == &quot;simple.dag&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[9] == &quot;-Suppress_notification&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[10] == &quot;-CsdVersion&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[11] == &quot;$CondorVersion: 10.7.0 2023-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[12] == &quot;-Dagman&quot;</span>
-<span class="go">08/02/23 15:44:57 argv[13] == &quot;/usr/bin/condor_dagman&quot;</span>
-<span class="go">08/02/23 15:44:57 Default node log file is: &lt;/home/mats.rynge/dagman-1/./simple.dag.nodes.log&gt;</span>
-<span class="go">08/02/23 15:44:57 DAG Lockfile will be written to simple.dag.lock</span>
-<span class="go">08/02/23 15:44:57 DAG Input file is simple.dag</span>
-<span class="go">08/02/23 15:44:57 Parsing 1 dagfiles</span>
-<span class="go">08/02/23 15:44:57 Parsing simple.dag ...</span>
-<span class="go">08/02/23 15:44:57 Adjusting edges</span>
-<span class="go">08/02/23 15:44:57 Dag contains 1 total jobs</span>
-<span class="go">08/02/23 15:44:57 Bootstrapping...</span>
-<span class="go">08/02/23 15:44:57 Number of pre-completed nodes: 0</span>
-<span class="go">08/02/23 15:44:57 MultiLogFiles: truncating log file /home/mats.rynge/dagman-1/./simple.dag.nodes.log</span>
-<span class="go">08/02/23 15:44:57 DAG status: 0 (DAG_STATUS_OK)</span>
-<span class="go">08/02/23 15:44:57 Of 1 nodes total:</span>
-<span class="go">08/02/23 15:44:57  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile</span>
-<span class="go">08/02/23 15:44:57   ===     ===      ===     ===     ===        ===      ===      ===</span>
-<span class="go">08/02/23 15:44:57     0       0        0       0       1          0        0        0</span>
-<span class="go">08/02/23 15:44:57 0 job proc(s) currently held</span>
-<span class="go">08/02/23 15:44:57 Registering condor_event_timer...</span>
-<span class="go">08/02/23 15:44:58 Submitting HTCondor Node Simple job(s)...</span>
+<span class="go">08/02/24 15:44:57 ******************************************************</span>
+<span class="go">08/02/24 15:44:57 ** condor_scheduniv_exec.271100.0 (CONDOR_DAGMAN) STARTING UP</span>
+<span class="go">08/02/24 15:44:57 ** /usr/bin/condor_dagman</span>
+<span class="go">08/02/24 15:44:57 ** SubsystemInfo: name=DAGMAN type=DAGMAN(9) class=CLIENT(2)</span>
+<span class="go">08/02/24 15:44:57 ** Configuration: subsystem:DAGMAN local:&lt;NONE&gt; class:CLIENT</span>
+<span class="go">08/02/24 15:44:57 ** $CondorVersion: 10.7.0 2024-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $</span>
+<span class="go">08/02/24 15:44:57 ** $CondorPlatform: x86_64_AlmaLinux8 $</span>
+<span class="go">08/02/24 15:44:57 ** PID = 2340103</span>
+<span class="go">08/02/24 15:44:57 ** Log last touched time unavailable (No such file or directory)</span>
+<span class="go">08/02/24 15:44:57 ******************************************************</span>
+<span class="go">08/02/24 15:44:57 Daemon Log is logging: D_ALWAYS D_ERROR D_STATUS</span>
+<span class="go">08/02/24 15:44:57 DaemonCore: No command port requested.</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_USE_STRICT setting: 1</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_VERBOSITY setting: 3</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEBUG_CACHE_SIZE setting: 5242880</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEBUG_CACHE_ENABLE setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_SUBMIT_DELAY setting: 0</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_SUBMIT_ATTEMPTS setting: 6</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_STARTUP_CYCLE_DETECT setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_SUBMITS_PER_INTERVAL setting: 100</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_AGGRESSIVE_SUBMIT setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_USER_LOG_SCAN_INTERVAL setting: 5</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_QUEUE_UPDATE_INTERVAL setting: 300</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEFAULT_PRIORITY setting: 0</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_SUPPRESS_NOTIFICATION setting: True</span>
+<span class="go">08/02/24 15:44:57 allow_events (DAGMAN_ALLOW_EVENTS) setting: 114</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_RETRY_SUBMIT_FIRST setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_RETRY_NODE_FIRST setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_JOBS_IDLE setting: 1000</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_JOBS_SUBMITTED setting: 0</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_PRE_SCRIPTS setting: 20</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_POST_SCRIPTS setting: 20</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_HOLD_SCRIPTS setting: 20</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MUNGE_NODE_NAMES setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_PROHIBIT_MULTI_JOBS setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_SUBMIT_DEPTH_FIRST setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_ALWAYS_RUN_POST setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_CONDOR_SUBMIT_EXE setting: /usr/bin/condor_submit</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_USE_DIRECT_SUBMIT setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEFAULT_APPEND_VARS setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_ABORT_DUPLICATES setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_ABORT_ON_SCARY_SUBMIT setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_PENDING_REPORT_INTERVAL setting: 600</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_AUTO_RESCUE setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_RESCUE_NUM setting: 100</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_WRITE_PARTIAL_RESCUE setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEFAULT_NODE_LOG setting: @(DAG_DIR)/@(DAG_FILE).nodes.log</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_GENERATE_SUBDAG_SUBMITS setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_MAX_JOB_HOLDS setting: 100</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_HOLD_CLAIM_TIME setting: 20</span>
+<span class="go">08/02/24 15:44:57 ALL_DEBUG setting: </span>
+<span class="go">08/02/24 15:44:57 DAGMAN_DEBUG setting: </span>
+<span class="go">08/02/24 15:44:57 DAGMAN_SUPPRESS_JOB_LOGS setting: False</span>
+<span class="go">08/02/24 15:44:57 DAGMAN_REMOVE_NODE_JOBS setting: True</span>
+<span class="go">08/02/24 15:44:57 DAGMAN will adjust edges after parsing</span>
+<span class="go">08/02/24 15:44:57 argv[0] == &quot;condor_scheduniv_exec.271100.0&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[1] == &quot;-Lockfile&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[2] == &quot;simple.dag.lock&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[3] == &quot;-AutoRescue&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[4] == &quot;1&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[5] == &quot;-DoRescueFrom&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[6] == &quot;0&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[7] == &quot;-Dag&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[8] == &quot;simple.dag&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[9] == &quot;-Suppress_notification&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[10] == &quot;-CsdVersion&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[11] == &quot;$CondorVersion: 10.7.0 2024-07-10 BuildID: 659788 PackageID: 10.7.0-0.659788 RC $&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[12] == &quot;-Dagman&quot;</span>
+<span class="go">08/02/24 15:44:57 argv[13] == &quot;/usr/bin/condor_dagman&quot;</span>
+<span class="go">08/02/24 15:44:57 Default node log file is: &lt;/home/mats.rynge/dagman-1/./simple.dag.nodes.log&gt;</span>
+<span class="go">08/02/24 15:44:57 DAG Lockfile will be written to simple.dag.lock</span>
+<span class="go">08/02/24 15:44:57 DAG Input file is simple.dag</span>
+<span class="go">08/02/24 15:44:57 Parsing 1 dagfiles</span>
+<span class="go">08/02/24 15:44:57 Parsing simple.dag ...</span>
+<span class="go">08/02/24 15:44:57 Adjusting edges</span>
+<span class="go">08/02/24 15:44:57 Dag contains 1 total jobs</span>
+<span class="go">08/02/24 15:44:57 Bootstrapping...</span>
+<span class="go">08/02/24 15:44:57 Number of pre-completed nodes: 0</span>
+<span class="go">08/02/24 15:44:57 MultiLogFiles: truncating log file /home/mats.rynge/dagman-1/./simple.dag.nodes.log</span>
+<span class="go">08/02/24 15:44:57 DAG status: 0 (DAG_STATUS_OK)</span>
+<span class="go">08/02/24 15:44:57 Of 1 nodes total:</span>
+<span class="go">08/02/24 15:44:57  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile</span>
+<span class="go">08/02/24 15:44:57   ===     ===      ===     ===     ===        ===      ===      ===</span>
+<span class="go">08/02/24 15:44:57     0       0        0       0       1          0        0        0</span>
+<span class="go">08/02/24 15:44:57 0 job proc(s) currently held</span>
+<span class="go">08/02/24 15:44:57 Registering condor_event_timer...</span>
+<span class="go">08/02/24 15:44:58 Submitting HTCondor Node Simple job(s)...</span>
 </code></pre></div>
 
 <p><span style="color:RED"><strong>Here's where the job is submitted</strong></span></p>
-<div class="codehilite"><pre><span></span><code>08/02/23 15:44:58 Submitting HTCondor Node Simple job(s)...
-08/02/23 15:44:58 Submitting node Simple from file job.sub using direct job submission
-08/02/23 15:44:58       assigned HTCondor ID (271101.0.0)
-08/02/23 15:44:58 Just submitted 1 job this cycle...
+<div class="codehilite"><pre><span></span><code>08/02/24 15:44:58 Submitting HTCondor Node Simple job(s)...
+08/02/24 15:44:58 Submitting node Simple from file job.sub using direct job submission
+08/02/24 15:44:58       assigned HTCondor ID (271101.0.0)
+08/02/24 15:44:58 Just submitted 1 job this cycle...
 </code></pre></div>
 
 <p><span style="color:RED"><strong>Here's where DAGMan noticed that the job is running</strong></span></p>
-<div class="codehilite"><pre><span></span><code>08/02/23 15:45:18 Event: ULOG_EXECUTE for HTCondor Node Simple (271101.0.0) {08/02/23 15:45:14}
-08/02/23 15:45:18 Number of idle job procs: 0
+<div class="codehilite"><pre><span></span><code>08/02/24 15:45:18 Event: ULOG_EXECUTE for HTCondor Node Simple (271101.0.0) {08/02/24 15:45:14}
+08/02/24 15:45:18 Number of idle job procs: 0
 </code></pre></div>
 
 <p><span style="color:RED"><strong>Here's where DAGMan noticed that the job finished.</strong></span></p>
-<div class="codehilite"><pre><span></span><code>08/02/23 15:45:23 Event: ULOG_JOB_TERMINATED for HTCondor Node Simple (271101.0.0) {08/02/23 15:45:19}
-08/02/23 15:45:23 Number of idle job procs: 0
-08/02/23 15:45:23 Node Simple job proc (271101.0.0) completed successfully.
-08/02/23 15:45:23 Node Simple job completed
-08/02/23 15:45:23 DAG status: 0 (DAG_STATUS_OK)
-08/02/23 15:45:23 Of 1 nodes total:
-08/02/23 15:45:23  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile
-08/02/23 15:45:23   ===     ===      ===     ===     ===        ===      ===      ===
-08/02/23 15:45:23     1       0        0       0       0          0        0        0
+<div class="codehilite"><pre><span></span><code>08/02/24 15:45:23 Event: ULOG_JOB_TERMINATED for HTCondor Node Simple (271101.0.0) {08/02/24 15:45:19}
+08/02/24 15:45:23 Number of idle job procs: 0
+08/02/24 15:45:23 Node Simple job proc (271101.0.0) completed successfully.
+08/02/24 15:45:23 Node Simple job completed
+08/02/24 15:45:23 DAG status: 0 (DAG_STATUS_OK)
+08/02/24 15:45:23 Of 1 nodes total:
+08/02/24 15:45:23  Done     Pre   Queued    Post   Ready   Un-Ready   Failed   Futile
+08/02/24 15:45:23   ===     ===      ===     ===     ===        ===      ===      ===
+08/02/24 15:45:23     1       0        0       0       0          0        0        0
 </code></pre></div>
 
 <p><span style="color:RED"><strong>Here's where DAGMan noticed that all the work is done.</strong></span></p>
-<div class="codehilite"><pre><span></span><code>08/02/23 15:45:23 All jobs Completed!
-08/02/23 15:45:23 Note: 0 total job deferrals because of -MaxJobs limit (0)
-08/02/23 15:45:23 Note: 0 total job deferrals because of -MaxIdle limit (1000)
-08/02/23 15:45:23 Note: 0 total job deferrals because of node category throttles
-08/02/23 15:45:23 Note: 0 total PRE script deferrals because of -MaxPre limit (20) or DEFER
-08/02/23 15:45:23 Note: 0 total POST script deferrals because of -MaxPost limit (20) or DEFER
-08/02/23 15:45:23 Note: 0 total HOLD script deferrals because of -MaxHold limit (20) or DEFER
+<div class="codehilite"><pre><span></span><code>08/02/24 15:45:23 All jobs Completed!
+08/02/24 15:45:23 Note: 0 total job deferrals because of -MaxJobs limit (0)
+08/02/24 15:45:23 Note: 0 total job deferrals because of -MaxIdle limit (1000)
+08/02/24 15:45:23 Note: 0 total job deferrals because of node category throttles
+08/02/24 15:45:23 Note: 0 total PRE script deferrals because of -MaxPre limit (20) or DEFER
+08/02/24 15:45:23 Note: 0 total POST script deferrals because of -MaxPost limit (20) or DEFER
+08/02/24 15:45:23 Note: 0 total HOLD script deferrals because of -MaxHold limit (20) or DEFER
 </code></pre></div>
 
 <p>Now verify your results:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">username@ap40 $ </span>cat simple.log
-<span class="go">000 (271101.000.000) 2023-08-02 15:44:58 Job submitted from host: &lt;128.105.68.92:9618?addrs=128.105.68.92-9618+[2607-f388-2200-100-eaeb-d3ff-fe40-111c]-9618&amp;alias=ap40.uw.osg-htc.org&amp;noUDP&amp;sock=schedd_35391_dc5c&gt;</span>
+<span class="go">000 (271101.000.000) 2024-08-02 15:44:58 Job submitted from host: &lt;128.105.68.92:9618?addrs=128.105.68.92-9618+[2607-f388-2200-100-eaeb-d3ff-fe40-111c]-9618&amp;alias=ap40.uw.osg-htc.org&amp;noUDP&amp;sock=schedd_35391_dc5c&gt;</span>
 <span class="go">    DAG Node: Simple</span>
 <span class="go">...</span>
-<span class="go">040 (271101.000.000) 2023-08-02 15:45:13 Started transferring input files</span>
+<span class="go">040 (271101.000.000) 2024-08-02 15:45:13 Started transferring input files</span>
 <span class="go">        Transferring to host: &lt;10.136.81.233:37425?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#23067238%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-73b6]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector10#1512850&amp;PrivNet=comp-cc-0463.gwave.ics.psu.edu&amp;addrs=10.136.81.233-37425&amp;alias=comp-cc-0463.gwave.ics.psu.edu&amp;noUDP&gt;</span>
 <span class="go">...</span>
-<span class="go">040 (271101.000.000) 2023-08-02 15:45:13 Finished transferring input files</span>
+<span class="go">040 (271101.000.000) 2024-08-02 15:45:13 Finished transferring input files</span>
 <span class="go">...</span>
-<span class="go">021 (271101.000.000) 2023-08-02 15:45:14 Warning from starter on slot1_4@glidein_2635188_104012775@comp-cc-0463.gwave.ics.psu.edu:</span>
+<span class="go">021 (271101.000.000) 2024-08-02 15:45:14 Warning from starter on slot1_4@glidein_2635188_104012775@comp-cc-0463.gwave.ics.psu.edu:</span>
 <span class="go">        PREPARE_JOB (prepare-hook) succeeded (reported status 000): Using default Singularity image /cvmfs/singularity.opensciencegrid.org/htc/rocky:8-cuda-11.0.3</span>
 <span class="go">...</span>
-<span class="go">001 (271101.000.000) 2023-08-02 15:45:14 Job executing on host: &lt;10.136.81.233:39645?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector10#1506459%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-73b4]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector10#1506644&amp;PrivNet=comp-cc-0463.gwave.ics.psu.edu&amp;addrs=10.136.81.233-39645&amp;alias=comp-cc-0463.gwave.ics.psu.edu&amp;noUDP&gt;</span>
+<span class="go">001 (271101.000.000) 2024-08-02 15:45:14 Job executing on host: &lt;10.136.81.233:39645?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector10#1506459%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-73b4]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector10#1506644&amp;PrivNet=comp-cc-0463.gwave.ics.psu.edu&amp;addrs=10.136.81.233-39645&amp;alias=comp-cc-0463.gwave.ics.psu.edu&amp;noUDP&gt;</span>
 <span class="go">        SlotName: slot1_4@comp-cc-0463.gwave.ics.psu.edu</span>
 <span class="go">        CondorScratchDir = &quot;/localscratch/condor/execute/dir_2635172/glide_uZ6qXM/execute/dir_3252113&quot;</span>
 <span class="go">        Cpus = 1</span>
@@ -561,15 +561,15 @@ you'll submit the job.  In another you will watch the queue, and in the third yo
 <span class="go">        GLIDEIN_ResourceName = &quot;PSU-LIGO&quot;</span>
 <span class="go">        Memory = 1024</span>
 <span class="go">...</span>
-<span class="go">006 (271101.000.000) 2023-08-02 15:45:19 Image size of job updated: 2296464</span>
+<span class="go">006 (271101.000.000) 2024-08-02 15:45:19 Image size of job updated: 2296464</span>
 <span class="go">        47  -  MemoryUsage of job (MB)</span>
 <span class="go">        47684  -  ResidentSetSize of job (KB)</span>
 <span class="go">...</span>
-<span class="go">040 (271101.000.000) 2023-08-02 15:45:19 Started transferring output files</span>
+<span class="go">040 (271101.000.000) 2024-08-02 15:45:19 Started transferring output files</span>
 <span class="go">...</span>
-<span class="go">040 (271101.000.000) 2023-08-02 15:45:19 Finished transferring output files</span>
+<span class="go">040 (271101.000.000) 2024-08-02 15:45:19 Finished transferring output files</span>
 <span class="go">...</span>
-<span class="go">005 (271101.000.000) 2023-08-02 15:45:19 Job terminated.</span>
+<span class="go">005 (271101.000.000) 2024-08-02 15:45:19 Job terminated.</span>
 <span class="go">        (1) Normal termination (return value 0)</span>
 <span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage</span>
 <span class="go">                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage</span>
@@ -584,7 +584,7 @@ you'll submit the job.  In another you will watch the queue, and in the third yo
 <span class="go">           Disk (KB)            :      149  1048576   2699079 </span>
 <span class="go">           Memory (MB)          :       47     1024      1024 </span>
 
-<span class="go">        Job terminated of its own accord at 2023-08-02T20:45:19Z with exit-code 0.</span>
+<span class="go">        Job terminated of its own accord at 2024-08-02T20:45:19Z with exit-code 0.</span>
 <span class="go">...</span>
 </code></pre></div>
 
@@ -610,7 +610,7 @@ you'll submit the job.  In another you will watch the queue, and in the third yo
 <span class="gp"># </span>is killed <span class="o">(</span>e.g., during a reboot<span class="o">)</span>.
 <span class="go">on_exit_remove  = (ExitSignal =?= 11 || (ExitCode =!= UNDEFINED &amp;&amp; ExitCode &gt;=0 &amp;&amp; ExitCode &lt;= 2))</span>
 <span class="go">copy_to_spool   = False</span>
-<span class="go">arguments       = &quot;-p 0 -f -l . -Lockfile simple.dag.lock -AutoRescue 1 -DoRescueFrom 0 -Dag simple.dag -Suppress_notification -CsdVersion $CondorVersion:&#39; &#39;10.7.0&#39; &#39;2023-07-10&#39; &#39;BuildID:&#39; &#39;659788&#39; &#39;PackageID:&#39; &#39;10.7.0-0.659788&#39; &#39;RC&#39; &#39;$ -Dagman /usr/bin/condor_dagman&quot;</span>
+<span class="go">arguments       = &quot;-p 0 -f -l . -Lockfile simple.dag.lock -AutoRescue 1 -DoRescueFrom 0 -Dag simple.dag -Suppress_notification -CsdVersion $CondorVersion:&#39; &#39;10.7.0&#39; &#39;2024-07-10&#39; &#39;BuildID:&#39; &#39;659788&#39; &#39;PackageID:&#39; &#39;10.7.0-0.659788&#39; &#39;RC&#39; &#39;$ -Dagman /usr/bin/condor_dagman&quot;</span>
 <span class="go">environment     = &quot;_CONDOR_DAGMAN_LOG=simple.dag.dagman.out _CONDOR_MAX_DAGMAN_LOG=0 _CONDOR_SCHEDD_ADDRESS_FILE=/var/lib/condor/spool/.schedd_address _CONDOR_SCHEDD_DAEMON_AD_FILE=/var/lib/condor/spool/.schedd_classad&quot;</span>
 <span class="go">queue</span>
 </code></pre></div>

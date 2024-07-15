@@ -377,24 +377,24 @@
 <h2 id="selecting-slots">Selecting Slots<a class="headerlink" href="#selecting-slots" title="Permanent link">&para;</a></h2>
 <p>The <code>condor_status</code> program has many options for selecting which slots are listed. You've already learned the basic <code>condor_status</code> and the <code>condor_status -compact</code> variation (which you may wish to retry now, before proceeding).</p>
 <p>Another convenient option is to list only those slots that are available now:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status -avail
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status -avail
 </code></pre></div>
 
 <p>Of course, the individual execute machines only report their slots to the collector at certain time intervals, so this list will not reflect the up-to-the-second reality of all slots. But this limitation is true of all <code>condor_status</code> output, not just with the <code>-avail</code> option.</p>
 <p>Similar to <code>condor_q</code>, you can limit the slots that are listed in two easy ways. To list just the slots on a specific machine:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status &lt;hostname&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status &lt;hostname&gt;
 </code></pre></div>
 
 <p>For example, if you want to see the slots on <code>e2337.chtc.wisc.edu</code> (in the CHTC pool):</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status e2337.chtc.wisc.edu
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status e2337.chtc.wisc.edu
 </code></pre></div>
 
 <p>To list a specific slot on a machine:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status &lt;slot&gt;@&lt;hostname&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status &lt;slot&gt;@&lt;hostname&gt;
 </code></pre></div>
 
 <p>For example, to see the “first” slot on the machine above:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status slot1@e2337.chtc.wisc.edu
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status slot1@e2337.chtc.wisc.edu
 </code></pre></div>
 
 <div class="admonition note">
@@ -416,7 +416,7 @@
 </ol>
 <h2 id="viewing-a-slot-classad">Viewing a Slot ClassAd<a class="headerlink" href="#viewing-a-slot-classad" title="Permanent link">&para;</a></h2>
 <p>Just as with <code>condor_q</code>, you can use <code>condor_status</code> to view the complete ClassAd for a given slot (often confusingly called the “machine” ad):</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status -long &lt;slot&gt;@&lt;hostname&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status -long &lt;slot&gt;@&lt;hostname&gt;
 </code></pre></div>
 
 <p>Because slot ClassAds may have 150–200 attributes (or more), it probably makes the most sense to show the ClassAd for a single slot at a time, as shown above.</p>
@@ -435,11 +435,11 @@ Memory = 1024
 </code></pre></div>
 
 <p>As you may be able to tell, there is a mix of attributes about the machine as a whole (hence the name “machine ad”) and about the slot in particular.</p>
-<p>Go ahead and examine a machine ClassAd now. I suggest looking at one of the slots on, say, <code>e2337.chtc.wisc.edu</code> because of its relatively simple configuration.</p>
+<p>Go ahead and examine a machine ClassAd now.</p>
 <h2 id="viewing-slots-by-classad-expression">Viewing Slots by ClassAd Expression<a class="headerlink" href="#viewing-slots-by-classad-expression" title="Permanent link">&para;</a></h2>
 <p>Often, it is helpful to view slots that meet some particular criteria. For example, if you know that your job needs a lot of memory to run, you may want to see how many high-memory slots there are and whether they are busy. You can filter the list of slots like this using the <code>-constraint</code> option and a ClassAd expression.</p>
 <p>For example, suppose we want to list all slots that are running Scientific Linux 7 (operating system) and have at least 16 GB memory available. Note that memory is reported in units of Megabytes. The command is:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status -constraint <span class="s1">&#39;OpSysAndVer == &quot;CentOS7&quot; &amp;&amp; Memory &gt;= 16000&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status -constraint <span class="s1">&#39;OpSysAndVer == &quot;CentOS7&quot; &amp;&amp; Memory &gt;= 16000&#39;</span>
 </code></pre></div>
 
 <div class="admonition note">
@@ -448,7 +448,7 @@ Memory = 1024
 In the example above, the single quotes (<code>'</code>) are for the shell, so that the entire expression is passed to
 <code>condor_status</code> untouched, and the double quotes (<code>"</code>) surround a string value within the expression itself.</p>
 </div>
-<p>Currently on CHTC, there are only a few slots that meet these criteria (our high-memory servers, mainly used for metagenomics assemblies).</p>
+<p>Currently on PATh, there are only a few slots that meet these criteria (our high-memory servers, mainly used for metagenomics assemblies).</p>
 <p>If you are interested in learning more about writing ClassAd expressions, look at section 4.1 and especially 4.1.4 of the HTCondor Manual. This is definitely advanced material, so if you do not want to read it, that is fine. But if you do, take some time to practice writing expressions for the <code>condor_status -constraint</code> command.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -458,7 +458,7 @@ As you might expect, the option allows you to limit the jobs that are listed bas
 <h2 id="bonus-formatting-output">Bonus: Formatting Output<a class="headerlink" href="#bonus-formatting-output" title="Permanent link">&para;</a></h2>
 <p>The <code>condor_status</code> command accepts the same <code>-autoformat</code> (<code>-af</code>) options that <code>condor_q</code> accepts, and the options have the same meanings in both commands. Of course, the attributes available in machine ads may differ from the ones that are available in job ads. Use the HTCondor Manual or look at individual slot ClassAds to get a better idea of what attributes are available.</p>
 <p>For example, I was curious about the host name and operating system of the slots with more than 32GB of memory:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_status -af Machine -af OpSysAndVer -constraint <span class="s1">&#39;Memory &gt;= 32000&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_status -af Machine -af OpSysAndVer -constraint <span class="s1">&#39;Memory &gt;= 32000&#39;</span>
 </code></pre></div>
 
 <p>If you like, spend a few minutes now or later experimenting with <code>condor_status</code> formatting.</p>

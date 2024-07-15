@@ -372,15 +372,15 @@ If you suspect something has gone wrong with your job, the log is the a great pl
 <h2 id="reading-a-log-file">Reading a Log File<a class="headerlink" href="#reading-a-log-file" title="Permanent link">&para;</a></h2>
 <p>For this exercise, we can examine a log file for any previous job that you have run. The example output below is based on the <code>sleep 60</code> job.</p>
 <p>A job log file is updated throughout the life of a job, usually at key events. Each event starts with a heading that indicates what happened and when. Here are <strong>all</strong> of the event headings from the <code>sleep</code> job log (detailed output in between headings has been omitted here):</p>
-<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2023-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
-040 (5739.000.000) 2023-07-10 10:45:10 Started transferring input files
-040 (5739.000.000) 2023-07-10 10:45:10 Finished transferring input files
-001 (5739.000.000) 2023-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
-006 (5739.000.000) 2023-07-10 10:45:20 Image size of job updated: 72
-040 (5739.000.000) 2023-07-10 10:45:20 Started transferring output files
-040 (5739.000.000) 2023-07-10 10:45:20 Finished transferring output files
-006 (5739.000.000) 2023-07-10 10:46:11 Image size of job updated: 4072
-005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2024-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
+040 (5739.000.000) 2024-07-10 10:45:10 Started transferring input files
+040 (5739.000.000) 2024-07-10 10:45:10 Finished transferring input files
+001 (5739.000.000) 2024-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
+006 (5739.000.000) 2024-07-10 10:45:20 Image size of job updated: 72
+040 (5739.000.000) 2024-07-10 10:45:20 Started transferring output files
+040 (5739.000.000) 2024-07-10 10:45:20 Finished transferring output files
+006 (5739.000.000) 2024-07-10 10:46:11 Image size of job updated: 4072
+005 (5739.000.000) 2024-07-10 10:46:11 Job terminated.
 </code></pre></div>
 
 <p>There is a lot of extra information in those lines, but you can see:</p>
@@ -390,7 +390,7 @@ If you suspect something has gone wrong with your job, the log is the a great pl
 <li>A brief description of the event: submission, execution, some information updates, and termination</li>
 </ul>
 <p>Some events provide no information in addition to the heading. For example:</p>
-<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2020-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
+<div class="codehilite"><pre><span></span><code>000 (5739.000.000) 2024-07-10 10:44:20 Job submitted from host: &lt;128.104.100.43:9618?addrs=...&gt;
 ...
 </code></pre></div>
 
@@ -399,7 +399,7 @@ If you suspect something has gone wrong with your job, the log is the a great pl
 <p>Each event ends with a line that contains only 3 dots: <code>...</code></p>
 </div>
 <p>However, some lines have additional information to help you quickly understand where and how your job is running. For example:  </p>
-<div class="codehilite"><pre><span></span><code>001 (5739.000.000) 2020-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
+<div class="codehilite"><pre><span></span><code>001 (5739.000.000) 2024-07-10 10:45:11 Job executing on host: &lt;128.104.55.42:9618?addrs=...&gt;
     SlotName: slot1@WISC-PATH-IDPL-EP.osgvo-docker-pilot-idpl-7c6575d494-2sj5w
     CondorScratchDir = &quot;/pilot/osgvo-pilot-2q71K9/execute/dir_9316&quot;
     Cpus = 1
@@ -416,7 +416,7 @@ If you suspect something has gone wrong with your job, the log is the a great pl
 <li>The <code>Cpu</code>, <code>GPUs</code>, <code>Disk</code>, and <code>Memory</code> values provide the maximum amount of each resource your job has used while running</li>
 </ul>
 <p>Another example of is the periodic update:</p>
-<div class="codehilite"><pre><span></span><code>006 (5739.000.000) 2020-07-10 10:45:20 Image size of job updated: 72
+<div class="codehilite"><pre><span></span><code>006 (5739.000.000) 2024-07-10 10:45:20 Image size of job updated: 72
     1  -  MemoryUsage of job (MB)
     72  -  ResidentSetSize of job (KB)
 ...
@@ -424,7 +424,7 @@ If you suspect something has gone wrong with your job, the log is the a great pl
 
 <p>These updates record the amount of memory that the job is using on the execute machine. This can be helpful information, so that in future runs of the job, you can tell HTCondor how much memory you will need.</p>
 <p>The job termination event includes a lot of very useful information:</p>
-<div class="codehilite"><pre><span></span><code>005 (5739.000.000) 2023-07-10 10:46:11 Job terminated.
+<div class="codehilite"><pre><span></span><code>005 (5739.000.000) 2024-07-10 10:46:11 Job terminated.
     (1) Normal termination (return value 0)
         Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
         Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
@@ -438,7 +438,7 @@ If you suspect something has gone wrong with your job, the log is the a great pl
        Cpus                 :                 1         1
        Disk (KB)            :       40       30   4203309
        Memory (MB)          :        1        1         1
-Job terminated of its own accord at 2023-07-10 10:46:11 with exit-code 0.
+Job terminated of its own accord at 2024-07-10 10:46:11 with exit-code 0.
 ...
 </code></pre></div>
 

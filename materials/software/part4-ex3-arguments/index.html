@@ -400,7 +400,7 @@ values mentioned above. </p>
 script), the variables <code>$1</code>, <code>$2</code> and <code>$3</code> represent  the first, second, 
 and third arguments, respectively.  Thus, in  the main command of the script,
 replace the various names with these variables: </p>
-<div class="codehilite"><pre><span></span><code>ncbi-blast-2.12.0+/bin/blastx -db <span class="nv">$1</span>/<span class="nv">$1</span> -query <span class="nv">$2</span> -out <span class="nv">$3</span>
+<div class="codehilite"><pre><span></span><code>ncbi-blast-2.15.0+/bin/blastx -db <span class="nv">$1</span>/<span class="nv">$1</span> -query <span class="nv">$2</span> -out <span class="nv">$3</span>
 </code></pre></div>
 
 <blockquote>
@@ -421,11 +421,11 @@ into their <em>own</em> variables when submitting multiple jobs at once. </p>
 <h2 id="readability-with-variables">Readability with Variables<a class="headerlink" href="#readability-with-variables" title="Permanent link">&para;</a></h2>
 <p>One of the downsides of this approach, is that our command has become 
 harder to read. The original script contains all the information at a glance:</p>
-<div class="codehilite"><pre><span></span><code>ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
+<div class="codehilite"><pre><span></span><code>ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
 </code></pre></div>
 
 <p>But our new version is more cryptic -- what is <code>$1</code>?: </p>
-<div class="codehilite"><pre><span></span><code>ncbi-blast-2.10.1+/bin/blastx -db <span class="nv">$1</span> -query <span class="nv">$2</span> -out <span class="nv">$3</span>
+<div class="codehilite"><pre><span></span><code>ncbi-blast-2.15.1+/bin/blastx -db <span class="nv">$1</span> -query <span class="nv">$2</span> -out <span class="nv">$3</span>
 </code></pre></div>
 
 <p>One way to overcome this is to create our own variable names inside the wrapper 
@@ -437,10 +437,10 @@ BLAST script: </p>
 <span class="nv">INFILE</span><span class="o">=</span><span class="nv">$2</span>
 <span class="nv">OUTFILE</span><span class="o">=</span><span class="nv">$3</span>
 
-tar -xzf ncbi-blast-2.10.1+-x64-linux.tar.gz 
+tar -xzf ncbi-blast-2.15.1+-x64-linux.tar.gz 
 tar -xzf pdbaa.tar.gz
 
-ncbi-blast-2.10.1+/bin/blastx -db <span class="nv">$DATABASE</span>/<span class="nv">$DATABASE</span> -query <span class="nv">$INFILE</span> -out <span class="nv">$OUTFILE</span>
+ncbi-blast-2.15.1+/bin/blastx -db <span class="nv">$DATABASE</span>/<span class="nv">$DATABASE</span> -query <span class="nv">$INFILE</span> -out <span class="nv">$OUTFILE</span>
 </code></pre></div>
 
 <p>Here, we are assigning the input arguments (<code>$1</code>, <code>$2</code> and <code>$3</code>) to new variable names, and 

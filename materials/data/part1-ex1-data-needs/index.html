@@ -423,8 +423,8 @@ genome information.</p>
 <ol>
 <li>
 <p>Copy the BLAST executables:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/ncbi-blast-2.12.0+-x64-linux.tar.gz
-<span class="gp">user@ap40 $ </span>tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/ncbi-blast-2.15.0+-x64-linux.tar.gz
+<span class="gp">user@ap40 $ </span>tar -xzvf ncbi-blast-2.15.0+-x64-linux.tar.gz
 </code></pre></div>
 
 </li>
@@ -444,7 +444,7 @@ genome information.</p>
 </ol>
 <h2 id="understanding-blast">Understanding BLAST<a class="headerlink" href="#understanding-blast" title="Permanent link">&para;</a></h2>
 <p>Remember that <code>blastx</code> is executed in a command like the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>./ncbi-blast-2.12.0+/bin/blastx -db &lt;DATABASE ROOTNAME&gt; -query &lt;INPUT FILE&gt; -out &lt;RESULTS FILE&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>./ncbi-blast-2.15.0+/bin/blastx -db &lt;DATABASE ROOTNAME&gt; -query &lt;INPUT FILE&gt; -out &lt;RESULTS FILE&gt;
 </code></pre></div>
 
 <p>In the above, the <code>&lt;INPUT FILE&gt;</code> is the name of a file containing a number of genetic sequences (e.g. <code>mouse.fa</code>), and

@@ -365,7 +365,7 @@
                 <style type="text/css"> pre em { font-style: normal; background-color: yellow; } pre strong { font-style: normal; font-weight: bold; color: #008; } </style>
 
 <h1 id="software-exercise-51-pre-package-a-research-code">Software Exercise 5.1: Pre-package a Research Code<a class="headerlink" href="#software-exercise-51-pre-package-a-research-code" title="Permanent link">&para;</a></h1>
-<p><strong>Objective</strong>: Install software (HHMER) to a folder and run it in a job using a wrapper script. </p>
+<p><strong>Objective</strong>: Install software (HMMER) to a folder and run it in a job using a wrapper script. </p>
 <p><strong>Why learn this?</strong>: If not using a container, this is a template for how to create 
 a portable software installation using your own files, especially if the software 
 is not available already compiled for Linux. </p>
@@ -402,7 +402,7 @@ for this example, we are going to compile directly on the Access Point</p>
 <li>
 <p>Now run the commands to unpack the source code: </p>
 <div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span>tar -zxf hmmer.tar.gz
-<span class="gp">username@host $ </span><span class="nb">cd</span> hmmer-3.3.2
+<span class="gp">username@host $ </span><span class="nb">cd</span> hmmer-3.4
 </code></pre></div>
 
 </li>
@@ -473,7 +473,7 @@ hmmsearch -o search-results.txt globins4.hmm globins45.fa
 <li>
 <p>We're going to use some of the tutorial files provided with the HMMER download to 
 run the job. You already have these files back in the directory where you unpacked the source code:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>ls hmmer-3.3.2/tutorial
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>ls hmmer-3.4/tutorial
 <span class="go">7LESS_DROME    fn3.hmm  globins45.fa  globins4.sto  MADE1.hmm  Pkinase.hmm</span>
 <span class="go">dna_target.fa  fn3.sto  globins4.hmm  HBB_HUMAN     MADE1.sto  Pkinase.sto</span>
 </code></pre></div>
@@ -486,7 +486,7 @@ run the job. You already have these files back in the directory where you unpack
 <li>
 <p>The two most important lines to modify for this job are listed below; check them against your own submit file: </p>
 <div class="codehilite"><pre><span></span><code>executable = run_hmmer.sh
-transfer_input_files = hmmer-build.tar.gz, hmmer-3.3.2/tutorial/
+transfer_input_files = hmmer-build.tar.gz, hmmer-3.4/tutorial/
 </code></pre></div>
 
 <p>A wrapper script will always be a job's <code>executable</code>.

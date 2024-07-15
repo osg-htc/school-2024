@@ -385,7 +385,7 @@ common practice for managing what happens in a job. </p>
 <p>Once you have an idea, check against the example below:  </p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt
+ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt
 </code></pre></div>
 
 </li>
@@ -405,7 +405,7 @@ ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt
 </li>
 <li>
 <p>Note that since the <code>blastx</code> program is no longer listed as the executable, it will be need to be included in <code>transfer_input_files</code>. Instead of transferring just that program, we will transfer the original downloaded <code>tar.gz</code> file. To achieve efficiency, we'll also transfer the <span style="color:BLUE">pdbaa database</span> as the original <code>tar.gz</code> file instead of as the unzipped folder: </p>
-<div class="codehilite"><pre><span></span><code><span class="go">transfer_input_files = pdbaa.tar.gz, mouse.fa, ncbi-blast-2.12.0+-x64-linux.tar.gz</span>
+<div class="codehilite"><pre><span></span><code><span class="go">transfer_input_files = pdbaa.tar.gz, mouse.fa, ncbi-blast-2.15.0+-x64-linux.tar.gz</span>
 </code></pre></div>
 
 </li>
@@ -429,10 +429,10 @@ ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt
 <p>The completed script <code>run_blast.sh</code> should look like this: </p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-tar -xzf ncbi-blast-2.12.0+-x64-linux.tar.gz 
+tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz 
 tar -xzf pdbaa.tar.gz
 
-ncbi-blast-2.12.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
+ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
 </code></pre></div>
 
 </li>

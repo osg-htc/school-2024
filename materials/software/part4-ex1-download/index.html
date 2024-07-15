@@ -404,8 +404,8 @@ systems. </p>
 this exercise. Then download the appropriate <code>tar.gz</code> file and un-tar/decompress it
 it. If you want to do this all from the command line, the sequence will 
 look like this (using <code>wget</code> as the download command.) </p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@login $ </span>wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.14.0+-x64-linux.tar.gz
-<span class="gp">user@login $ </span>tar -xzf ncbi-blast-2.14.0+-x64-linux.tar.gz
+<div class="codehilite"><pre><span></span><code><span class="gp">user@login $ </span>wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.15.0+-x64-linux.tar.gz
+<span class="gp">user@login $ </span>tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz
 </code></pre></div>
 
 </li>
@@ -471,7 +471,7 @@ job.</p>
 <p>The executable is <code>blastx</code>, which is located in the <code>bin</code>
 directory of our downloaded BLAST directory. We need to use the
 <code>arguments</code> line in the submit file to express the rest of the command. </p>
-<div class="codehilite"><pre><span></span><code>executable = ncbi-blast-2.13.0+/bin/blastx
+<div class="codehilite"><pre><span></span><code>executable = ncbi-blast-2.15.0+/bin/blastx
 arguments = -db pdbaa/pdbaa -query mouse.fa -out results.txt
 </code></pre></div>
 

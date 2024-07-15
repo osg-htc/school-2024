@@ -376,29 +376,29 @@
 <p>The main part of this exercise should take just a few minutes, but if you have more time later, come back and work on the extension ideas at the end to become a <code>condor_q</code> expert!</p>
 <h2 id="selecting-jobs">Selecting Jobs<a class="headerlink" href="#selecting-jobs" title="Permanent link">&para;</a></h2>
 <p>The <code>condor_q</code> program has many options for selecting which jobs are listed. You have already seen that the default mode is to show only your jobs in "batch" mode:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q
 </code></pre></div>
 
 <p>You've seen that you can view all jobs (all users) in the submit node's queue by using the <code>-all</code> argument:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -all
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -all
 </code></pre></div>
 
 <p>And you've seen that you can view more details about queued jobs, with each separate job on a single line using the <code>-nobatch</code> option:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -nobatch
-<span class="gp">username@learn $ </span>condor_q -all -nobatch
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -nobatch
+<span class="gp">username@ap1 $ </span>condor_q -all -nobatch
 </code></pre></div>
 
 <p>Did you know you can also name one or more user IDs on the command line, in which case jobs for all of the named users are listed at once?</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;USERNAME1&gt; &lt;USERNAME2&gt; &lt;USERNAME3&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q &lt;USERNAME1&gt; &lt;USERNAME2&gt; &lt;USERNAME3&gt;
 </code></pre></div>
 
 <p>To list just the jobs associated with a single cluster number:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;CLUSTER&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q &lt;CLUSTER&gt;
 </code></pre></div>
 
 <p>For example, if you want to see the jobs in cluster 5678 (i.e., <code>5678.0</code>, <code>5678.1</code>, etc.), you use <code>condor_q 5678</code>.</p>
 <p>To list a specific job (i.e., cluster.process, as in 5678.0):</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q &lt;JOB.ID&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q &lt;JOB.ID&gt;
 </code></pre></div>
 
 <p>For example, to see job ID 5678.1, you use <code>condor_q 5678.1</code>.</p>
@@ -424,7 +424,7 @@
 <h2 id="viewing-a-job-classad">Viewing a Job ClassAd<a class="headerlink" href="#viewing-a-job-classad" title="Permanent link">&para;</a></h2>
 <p>You may have wondered why it is useful to be able to list a single job ID using <code>condor_q</code>. By itself, it may not be that useful. But, in combination with another option, it is very useful!</p>
 <p>If you add the <code>-long</code> option to <code>condor_q</code> (or its short form, <code>-l</code>), it will show the complete ClassAd for each selected job, instead of the one-line summary that you have seen so far. Because job ClassAds may have 80–90 attributes (or more), it probably makes the most sense to show the ClassAd for a single job at a time. And you know how to show just one job! Here is what the command looks like:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -long &lt;JOB.ID&gt;
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -long &lt;JOB.ID&gt;
 </code></pre></div>
 
 <p>The output from this command is long and complex. Most of the attributes that HTCondor adds to a job are arcane and uninteresting for us now. But here are some examples of common, interesting attributes taken directly from <code>condor_q</code> output (except with some line breaks added to the <code>Requirements</code> attribute):</p>
@@ -482,7 +482,7 @@ Do not assume anything about the order of attributes in <code>condor_q</code> ou
 <h2 id="why-is-my-job-not-running">Why Is My Job Not Running?<a class="headerlink" href="#why-is-my-job-not-running" title="Permanent link">&para;</a></h2>
 <p>Sometimes, you submit a job and it just sits in the queue in Idle state, never running. It can be difficult to figure out why a job never matches and runs. Fortunately, HTCondor can give you some help.</p>
 <p>To ask HTCondor why your job is not running, add the <code>-better-analyze</code> option to <code>condor_q</code> for the specific job. For example, for job ID 2423.0, the command is:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -better-analyze <span class="m">2423</span>.0
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -better-analyze <span class="m">2423</span>.0
 </code></pre></div>
 
 <p>Of course, replace the job ID with your own.</p>
@@ -504,7 +504,7 @@ queue
 <li>Run <code>condor_q -better-analyze</code> on the job ID.</li>
 </ol>
 <p>There is a lot of output, but a few items are worth highlighting. Here is a sample from my own job (with some lines omitted):</p>
-<div class="codehilite"><pre><span></span><code>-- Schedd: learn.chtc.wisc.edu : &lt;128.104.100.148:9618?...
+<div class="codehilite"><pre><span></span><code>-- Schedd: ap1.facility.path-cc.io : &lt;128.105.68.66:9618?...
 ...
 
 Job 98096.000 defines the following attributes:
@@ -544,7 +544,7 @@ Reason for last match failure: no match found
 <p>There is a way to select the specific job attributes you want <code>condor_q</code> to tell you about with the <code>-autoformat</code> or <code>-af</code> option. In this case, HTCondor decides for you how to format the data you ask for from job ClassAd(s). 
 (To tell HTCondor how to specially format this information, yourself, you could use the <code>-format</code> option, which we're not covering.)</p>
 <p>To use autoformatting, use the <code>-af</code> option followed by the attribute name, for each attribute that you want to output:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@learn $ </span>condor_q -all -af Owner ClusterId Cmd
+<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>condor_q -all -af Owner ClusterId Cmd
 <span class="go">moate 2418 /share/test.sh</span>
 <span class="go">cat 2421 /bin/sleep</span>
 <span class="go">cat 2422 /bin/sleep</span>
@@ -554,8 +554,8 @@ Reason for last match failure: no match found
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p>As suggested above, if you want to learn more about <code>condor_q</code>, you can do some reading:</p>
 <ul>
-<li>Read the <code>condor_q</code> man page or HTCondor Manual section (same text) to learn about more options</li>
-<li>Read about ClassAd attributes in Appendix A of the HTCondor Manual</li>
+<li>Read the <code>condor_q</code> man page or <a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_q.html">HTCondor Manual section</a> (same text) to learn about more options</li>
+<li>Read about <a href="https://htcondor.readthedocs.io/en/latest/classad-attributes/job-classad-attributes.html">ClassAd attributes</a> in the HTCondor Manual</li>
 </ul>
                 
                   
