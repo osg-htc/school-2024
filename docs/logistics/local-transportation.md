@@ -63,8 +63,10 @@ provides a web interface to plan your trip.
 ### Taxis and Ride-Sharing Services
 
 Both [Lyft](https://www.lyft.com/) and [Uber](https://www.uber.com/ride/) are active in Madison,
-or you can choose from our local taxi companies, including [Green Cab](https://greencabmadison.com), and
+or you can choose from our local taxi companies, such as
+[Madison Taxi](https://www.madtaxi.com) and
 [Union Cab](https://www.unioncab.com/).
+We cannot recommend any particular option, but those are some options we know about.
 
 !!! note 
     We cannot reimburse for any taxi or rideshare service beyond the ride to and from the airport.
