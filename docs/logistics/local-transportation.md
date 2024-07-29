@@ -72,7 +72,7 @@ We cannot recommend any particular option, but those are some options we know ab
     We cannot reimburse for any taxi or rideshare service beyond the ride to and from the airport.
 
 !!! note
-    We will need receipts for any taxi fare over $25.
+    We will need receipts for any ride-share or taxi fare over $25.
 
 ### Madison BCycle
 
