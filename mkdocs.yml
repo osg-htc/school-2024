@@ -31,8 +31,9 @@ nav:
   - Schedule:                       schedule.md
   - Logistics:
     - General information:          logistics/index.md
-    - Travel:
-      - Travel planning:            logistics/travel-planning.md
-    - Visa requirements:            logistics/visas.md
     - Hotel information:            logistics/hotel.md
+    - School location:              logistics/location.md
+    - Local transportation:         logistics/local-transportation.md
+    - Visa requirements:            logistics/visas.md
+    - Travel planning:              logistics/travel-planning.md
     - Account setup:                logistics/account-setup.md
