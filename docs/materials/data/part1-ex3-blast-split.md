@@ -93,7 +93,9 @@ Follow the below steps:
 
         transfer_input_files = ... , $(inputfile)
 
-5. Update the memory and disk requests, since the new input file is larger and will also produce larger output.
+5. Remove or comment out `transfer_output_files` and `transfer_output_remaps`.
+
+6. Update the memory and disk requests, since the new input file is larger and will also produce larger output.
    It may be best to overestimate to something like 1 GB for each.
 
 ### Modify the wrapper file

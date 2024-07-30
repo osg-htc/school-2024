@@ -24,7 +24,7 @@ To get the exercise set up:
     directory first):
 
         :::console
-        user@ap40 $ cd /ospool/PROTECTED/[USERNAME]/
+        user@ap40 $ cd /ospool/ap40/data/[USERNAME]/
         user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/ducks.mov        
         user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/teaching.mov
         user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/test_open_terminal.mov
@@ -84,6 +84,8 @@ An example of that script is below:
 Ultimately we'll want to submit several jobs (one for each `.mov` file), but to start with, we'll run one job to make
 sure that everything works.
 
+Remember to `chmod +x run_ffmpeg.sh` to make the script executable.
+
 Submit File
 -----------
 
@@ -95,16 +97,16 @@ Create a submit file for this job, based on other submit files from the school. 
 
 1.  Add the same requirements as the previous exercise: 
 
-        requirements = (OSGVO_OS_STRING == "RHEL 8")
+        requirements = (OSGVO_OS_STRING == "RHEL 9")
 
 1.  We need to transfer the `ffmpeg` program that we downloaded above, and the movie from OSDF:
 
-        transfer_input_files = ffmpeg, osdf:///ospool/PROTECTED/[USERNAME]/test_open_terminal.mov
+        transfer_input_files = ffmpeg, osdf:///ospool/ap40/data/[USERNAME]/test_open_terminal.mov
 
 1.  Transfer outputs via OSDF. This requires a transfer remap:
 
         transfer_output_files = test_open_terminal.mp4
-        transfer_output_remaps = "test_open_terminal.mp4 = osdf:///ospool/PROTECTED/[USERNAME]/test_open_terminal.mp4"
+        transfer_output_remaps = "test_open_terminal.mp4 = osdf:///ospool/ap40/data/[USERNAME]/test_open_terminal.mp4"
 
 
 Initial Job
@@ -147,8 +149,6 @@ The final script should look like this:
 ./ffmpeg -i $1 -b:v 400k -s 640x360 $2
 ```
 
-Note that we use the input file name multiple times in our script, so we'll have to use `$1` multiple times as well.
-
 ### Modify your submit file
 
 1.  We now need to tell each job what arguments to use.
@@ -163,13 +163,13 @@ Note that we use the input file name multiple times in our script, so we'll have
 1.  Update the `transfer_input_files` to have `$(mov)`:
 
         :::file
-        transfer_input_files = ffmpeg, osdf:///ospool/PROTECTED/[USERNAME]/$(mov)
+        transfer_input_files = ffmpeg, osdf:///ospool/ap40/data/[USERNAME]/$(mov)
 
 1.  Similarly, update the output/remap with `$(mov).mp4`:
 
         :::file
         transfer_output_files = $(mov).mp4
-        transfer_output_remaps = "$(mov).mp4 = osdf:///ospool/PROTECTED/[USERNAME]/$(mov).mp4"
+        transfer_output_remaps = "$(mov).mp4 = osdf:///ospool/ap40/data/[USERNAME]/$(mov).mp4"
 
 1. To set these arguments, we will use the `queue .. from` syntax.
    In our submit file, we can then change our queue statement to:
