@@ -35,14 +35,14 @@ genome information.
 1. Copy the BLAST executables:
    
         :::console
-        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/ncbi-blast-2.12.0+-x64-linux.tar.gz
+        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/ncbi-blast-2.12.0+-x64-linux.tar.gz
         user@ap40 $ tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
 
 1.  Download these files to your current directory:
 
         :::console
-        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/pdbaa.tar.gz
-        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/mouse.fa
+        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/pdbaa.tar.gz
+        user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/mouse.fa
 
 1.  Untar the `pdbaa` database:
 
