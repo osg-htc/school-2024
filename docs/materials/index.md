@@ -3,19 +3,19 @@
 ## School Overview and Intro
 
 View the slides:
-[PDF](welcome/files/osgus23-day1-part1-welcome-timc.pdf)
+[Slides coming soon]
 
 ## Intro to HTC and HTCondor Job Execution
 
 ### Intro to HTC Slides
 
-Intro to HTC: [PDF](htcondor/files/osgus23-intro-to-htc.pdf)
+Intro to HTC: [Slides coming soon]
 
-Worksheet: [PDF](htcondor/files/osgus23-htc-worksheet.pdf)
+Worksheet: [Slides coming soon]
 
 ### Intro to HTCondor Slides
 
-View the slides: [PDF](htcondor/files/osgus23-htc-htcondor.pdf)
+View the slides: [Slides coming soon]
 <!--
 [PowerPoint](htcondor/files/osgus22-htc-htcondor.pptx))
 -->
@@ -37,7 +37,7 @@ View the slides: [PDF](htcondor/files/osgus23-htc-htcondor.pdf)
 
 ## Intro to HTCondor Multiple Job Execution
 
-View the Slides ([PDF](htcondor/files/osgus23-htc-htcondor-multiple-jobs.pdf))
+View the Slides: [Slides coming soon]
 
 
 ### Intro Exercises 2: Running Many HTC Jobs (Strongly Recommended)
@@ -51,7 +51,7 @@ View the Slides ([PDF](htcondor/files/osgus23-htc-htcondor-multiple-jobs.pdf))
 ## OSG
 
 View the slides:
-[PDF](osg/files/osgus23-day2-part1-osg-timc.pdf)
+[Slides coming soon]
 
 ### OSG Exercises: Comparing PATh and OSG (Strongly Recommended)
 
@@ -62,8 +62,7 @@ View the slides:
 
 ## Troubleshooting
 
-Slides: ([PDF](troubleshooting/files/OSGUS2023_troubleshooting.pdf),
-[PowerPoint](troubleshooting/files/OSGUS2023_troubleshooting.pptx))
+Slides: [Slides coming soon]
 
 ### Troubleshooting Exercises: 
 
@@ -72,7 +71,7 @@ Slides: ([PDF](troubleshooting/files/OSGUS2023_troubleshooting.pdf),
 
 ## Software
 
-Slides: [PDF](software/files/osgus23-software.pdf)
+Slides: [Slides coming soon]
 
 ### Software Exercises 1: Exploring Containers
 
@@ -106,9 +105,7 @@ Slides: [PDF](software/files/osgus23-software.pdf)
 
 ## Data
 
-View the slides
-([PDF](data/files/osgus23-data.pdf),
-[PowerPoint](data/files/osgus23-data.pptx))
+View the slides: [Slides coming soon]
 
 ### Data Exercises 1: HTCondor File Transfer (Strongly Recommended)
 
@@ -124,8 +121,7 @@ View the slides
 
 ## Scaling Up
 
-View the slides
-([PDF](scaling/files/osgus23-scaling-out.pdf))
+View the slides: [Slides coming soon]
 
 ### Scaling Up Exercises
 
@@ -136,9 +132,7 @@ View the slides
 
 ## Workflows with DAGMan
 
-View the slides
-([PDF](workflows/files/osgus23-dagman.pdf),
-[PowerPoint](workflows/files/osgus23-dagman.pptx))
+View the slides: [Slides coming soon]
 
 ### DAGMan Exercises 1
 
@@ -167,17 +161,14 @@ END EXTRA TOPICS THAT ARE NOT READY YET -->
 
 ### Self-checkpointing for long-running jobs
 
-View the slides
-([PDF](checkpoint/files/OSGUS2023_checkpointing.pdf),[PPT](checkpoint/files/OSGUS2023_checkpointing.pptx))
+View the slides: [Slides coming soon]
 
 -   [Exercise 1.1: Trying out self-checkpointing](checkpoint/part1-ex1-checkpointing.md)
 
 
 ### Special Environments
 
-View the slides
-([PDF](special/files/osgus23-special.pdf),
-[PowerPoint](special/files/osgus23-special.pptx))
+View the slides: [Slides coming soon]
 
 ### Special Environments Exercises 1
 
@@ -185,9 +176,9 @@ View the slides
 
 ### Introduction to Research Computing Facilitation
 
-View the slides: [PDF](facilitation/files/osgus23-facilitation-campuses.pdf)
+View the slides: [Slides coming soon]
 
 ## Final Talks
 
-*   Philosophy: (slides coming soon)
-*   Final thoughts: [PDF](final/files/osgus23-day5-part6-forward-timc.pdf)
+*   Philosophy: [Slides coming soon]
+*   Final thoughts: [Slides coming soon]
