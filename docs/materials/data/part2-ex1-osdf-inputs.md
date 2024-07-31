@@ -39,9 +39,9 @@ Place the Database in OSDF
 
 OSDF provides a directory for you to store data which can be accessed through the caching servers.
 First, you need to move your BLAST database (`pdbaa_files.tar.gz`) into this directory. For `ap40.uw.osg-htc.org`, the directory
-to use is `/ospool/PROTECTED/[USERNAME]/`
+to use is `/ospool/ap40/data/[USERNAME]/`
 
-As the `PROTECTED` directory name indicates, your files placed in the directory will only be accessible
+Note that files placed in the `/ospool/ap40/data/[USERNAME]/` directory will only be accessible
 by your own jobs.
 
 Modify the Submit File and Wrapper
@@ -51,10 +51,10 @@ You will have to modify the wrapper and submit file to use OSDF:
 
 1. HTCondor knows how to do OSDF transfers, so you just have to provide the correct URL in 
    `transfer_input_files`. Note there is no servername (3 slashes in :///) and we instead
-   is is just based on namespace (`/ospool/PROTECTED` in this case):
+   is is just based on namespace (`/ospool/ap40` in this case):
 
         ::file
-        transfer_input_files = blastx, $(inputfile), osdf:///ospool/PROTECTED/<USERNAME>/pdbaa_files.tar.gz
+        transfer_input_files = blastx, $(inputfile), osdf:///ospool/ap40/data/[USERNAME]/pdbaa_files.tar.gz
 
 1. Confirm that your queue statement is correct for the current directory. It should be something like:
 
@@ -86,7 +86,7 @@ Note: Keeping OSDF 'Clean'
 
 Just as for any data directory, it is VERY important to remove old files from OSDF when you no longer need them,
 especially so that you'll have plenty of space for such files in the future.
-For example, you would delete (`rm`) files from `/ospool/PROTECTED/` on when you don't need them there
+For example, you would delete (`rm`) files from `/ospool/ap40/data/[USERNAME]/` on when you don't need them there
 anymore, but only after all jobs have finished.
 The next time you use OSDF after the school, remember to first check for old files that you can delete.
 

@@ -53,7 +53,7 @@ log = test.log
 request_memory = 
 request_disk = 
 request_cpus = 1
-requirements = (OSGVO_OS_STRING == "RHEL 8")
+requirements = (OSGVO_OS_STRING == "RHEL 9")
 queue
 ```
 
