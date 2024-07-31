@@ -95,6 +95,10 @@ nav:
       - Data Exercises 2 - Using OSDF:
         - 2.1 - OSDF for inputs: materials/data/part2-ex1-osdf-inputs.md
         - 2.2 - OSDF for outputs: materials/data/part2-ex2-osdf-outputs.md
+    - Scaling Up:
+      - 1.1 - Organizing HTC workloads: materials/scaling/part1-ex1-organization.md
+      - 1.2 - Investigating Job Attributes: materials/scaling/part1-ex2-job-attributes.md
+      - 1.3 - Getting Job Information from Log Files: materials/scaling/part1-ex3-log-files.md
     - DAGMan Exercises:
       - 1.1 - A simple DAG: materials/workflows/part1-ex1-simple-dag.md
       - 1.2 - A brief detour through the Mandelbrot set: materials/workflows/part1-ex2-mandelbrot.md
