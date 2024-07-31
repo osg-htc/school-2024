@@ -23,21 +23,21 @@ reference database, the BLAST program.
 "blast executable or "download blast software".  Hopefully these
 searches will lead you to a BLAST website page that looks like this:
 
-    ![BLAST landing page](../files/part1-ex1-blast-landing-page.png)
+    ![BLAST landing page](files/part1-ex1-blast-landing-page.png)
 
 1.  Click on the title that says ["Download
-BLAST"](../files/part1-ex1-blast-front-page.png) and then look for the
+BLAST"](files/part1-ex1-blast-front-page.png) and then look for the
 link that has the [latest installation and source
-code](../files/part1-ex1-blast-dl-page.png).  
+code](files/part1-ex1-blast-dl-page.png).  
 
 	This will either open a page in a web browser that looks like this: 
 	
-	![Download page](../files/part1-ex1-blast-dl-list.png)
+	![Download page](files/part1-ex1-blast-dl-list.png)
 
 	Or you will be asked to open the link in your file browser (choose the 
 	Connect as Guest option): 
 	
-	![Download Folder](../files/part1-ex1-blast-dl-folder.png)
+	![Download Folder](files/part1-ex1-blast-dl-folder.png)
 
 	In either case, you should end up on a
 	page with a list of each version of BLAST that is available for
@@ -50,9 +50,9 @@ look at the list of downloads and try to determine which one you want.**
 1.  Based on our operating system, we want to use the Linux binary,
 which is labelled with the `x64-linux` suffix. 
 
-	![BLAST download page](../files/part1-ex1-blast-dl-list-linux.png)
+	![BLAST download page](files/part1-ex1-blast-dl-list-linux.png)
 
-	![BLAST download folder](../files/part1-ex1-blast-dl-folder-linux.png)
+	![BLAST download folder](files/part1-ex1-blast-dl-folder-linux.png)
 
 	All the other links are either for source code or other operating
 systems. 

@@ -66,7 +66,7 @@ Note that we are starting with the same `ubuntu` base we used in previous
 exercises. The `%post` statement includes our installation commands, including 
 updating the `pip` and `numpy` packages, and then using `pip` to install `cowsay`.
 
-To learn more about definition files, see [Exercise 3.1](../part3-ex1-apptainer-recipes)
+To learn more about definition files, see [Exercise 3.1](part3-ex1-apptainer-recipes.md)
 
 Build the Container
 -------------------
@@ -78,7 +78,7 @@ Once the definition file is complete, we can build the container.
 		:::console
 		$ apptainer build py-cowsay.sif py-cowsay.def
 
-As with the Docker image in the [previous exercise](../part1-ex3-docker-jobs), 
+As with the Docker image in the [previous exercise](part1-ex3-docker-jobs.md), 
 the first argument is the name to give to the newly create image file and the 
 second argument is how to build the container image - in this case, the definition file. 
 
@@ -87,7 +87,7 @@ Testing the Image Locally
 -------------------
 
 1. Do you remember how to interactively test an image? Look back 
-at [Exercise 1.1](../part1-ex1-run-apptainer) and guess what command would 
+at [Exercise 1.1](part1-ex1-run-apptainer.md) and guess what command would 
 allow us to test our new container. 
 
 1. Try running: 

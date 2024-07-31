@@ -64,7 +64,7 @@ Wrapper Script, part 2
 
 Now that our database and BLAST software are being transferred to the job as `tar.gz` files, our script needs to accommodate.
 
-1. Opening your `run_blast.sh` script, add two commands at the start to un-tar the BLAST and pdbaa `tar.gz` files. See the [previous exercise](../part1-ex1-download) if you're not sure what these commands looks like. 
+1. Opening your `run_blast.sh` script, add two commands at the start to un-tar the BLAST and pdbaa `tar.gz` files. See the [previous exercise](part4-ex1-download.md) if you're not sure what these commands looks like. 
 
 1. In order to distinguish this job from our previous job, change the output file name to something besides `results.txt`. 
 

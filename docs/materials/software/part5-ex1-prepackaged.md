@@ -75,7 +75,7 @@ Note that we now have two tarballs in our directory -- the *source* tarball (`hm
 Wrapper Script
 --------------
 
-Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a [previous exercise](../part4-ex2-wrapper). These steps should be performed back on the submit server (`ap1.facility.path-cc.io`).
+Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a [previous exercise](part4-ex2-wrapper.md). These steps should be performed back on the submit server (`ap1.facility.path-cc.io`).
 
 1. Create a script called `run_hmmer.sh`. 
 
@@ -118,7 +118,7 @@ run the job. You already have these files back in the directory where you unpack
 
 	If you don't see these files, you may want to redownload the `hmmer.tar.gz` file and untar it here.
 
-1.  Our last step is to create a submit file for our HMMER job. Think about which lines this submit file will need. Make a copy of a previous submit file (you could use the blast submit file from a [previous exercise](../part4-ex2-wrapper) as a base) and modify it as you think necessary.
+1.  Our last step is to create a submit file for our HMMER job. Think about which lines this submit file will need. Make a copy of a previous submit file (you could use the blast submit file from a [previous exercise](part4-ex2-wrapper.md) as a base) and modify it as you think necessary.
 
 1.  The two most important lines to modify for this job are listed below; check them against your own submit file: 
 

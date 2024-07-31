@@ -18,7 +18,7 @@ Create Local Copy of Docker Container
 While it is technically possible to use a Docker container directly in a job, 
 there are some good reasons for converting it to a local Apptainer container first. 
 We'll do this with the same `python:3.10` Docker container we used in the 
-[first exercise](../part1-ex1-run-apptainer). 
+[first exercise](part1-ex1-run-apptainer.md). 
 
 To convert the Docker container to a local Apptainer container, run: 
 
@@ -31,7 +31,7 @@ second argument is what we're building from (in this case, Docker).
 Submit File and Executable
 -------------------
 
-1.  Make a copy of your submit file from the [previous container exercise](../part1-ex2-apptainer-jobs) or build from an existing submit file. 
+1.  Make a copy of your submit file from the [previous container exercise](part1-ex2-apptainer-jobs.md) or build from an existing submit file. 
 
 1.  Add the following lines to the submit file or modify existing lines to match the lines below: 
 
@@ -39,7 +39,7 @@ Submit File and Executable
 		universe = container
 		container_image = local-py310.sif
 
-1.  Use the same executable as the [previous exercise](../part1-ex2-apptainer-jobs). 
+1.  Use the same executable as the [previous exercise](part1-ex2-apptainer-jobs.md). 
 
 1. Once these steps are done, submit the job.
 
