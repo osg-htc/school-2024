@@ -18,7 +18,7 @@ OSDF is connected to a distributed set of caches spread across the U.S.
 They are connected with high bandwidth connections to each other, and to the data origin servers, where your data is
 originally placed.
 
-![OSDF Map](../files/osgus19-day4-part2-CacheLocations.png)
+![OSDF Map](files/osgus19-day4-part2-CacheLocations.png)
 
 Setup
 -----
@@ -93,5 +93,5 @@ The next time you use OSDF after the school, remember to first check for old fil
 Next exercise
 -------------
 
-Once completed, move onto the next exercise: [Using OSDF for outputs](../part2-ex2-osdf-outputs)
+Once completed, move onto the next exercise: [Using OSDF for outputs](part2-ex2-osdf-outputs.md)
 

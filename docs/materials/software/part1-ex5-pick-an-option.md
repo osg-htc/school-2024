@@ -45,25 +45,25 @@ Choose a Strategy
 		* [jupyter](https://hub.docker.com/u/jupyter)
 		* [nvidia](https://hub.docker.com/u/nvidia)
 		* (and many more!)
-  If yes, try using this container first, as shown in [Exercise 1.2](../part1-ex2-apptainer-jobs) and [Exercise 1.3](../part1-ex3-docker-jobs)
+  If yes, try using this container first, as shown in [Exercise 1.2](part1-ex2-apptainer-jobs.md) and [Exercise 1.3](part1-ex3-docker-jobs.md)
 
 1. Is there a simple download or easy compilation process? If so, can you 
  download the software and use it via a wrapper script? See the exercises from 
- Part 4 ([Download Software Files](../part4-ex1-download), 
- [Use a Wrapper Script](../part4-ex2-wrapper), 
- [Wrapper Script Arguments](../part4-ex3-arguments)). To learn more about using 
- this approach for specific softwares, see the examples in [Part 5](../../index.html#-software-exercises-5-compiled-software-examples). 
+ Part 4 ([Download Software Files](part4-ex1-download.md), 
+ [Use a Wrapper Script](part4-ex2-wrapper.md), 
+ [Wrapper Script Arguments](part4-ex3-arguments.md)). To learn more about using 
+ this approach for specific softwares, see the examples in [Part 5](../index.md#software-exercises-5-compiled-software-examples-optional). 
 
-1. Are you using conda? See the specific example in [Exercise 5.3](../part5-ex3-conda)
+1. Are you using conda? See the specific example in [Exercise 5.3](part5-ex3-conda.md)
 
 1. If neither of the above options works (which may be true for more software!), you 
   may want to build your own container. 
     1. If you want to just use this container on the OSPool, build an 
-    Apptainer container as described in [Exercise 1.4](../part1-ex4-apptainer-build) and 
-    with more information in [Exercise 3.1](../part3-ex1-apptainer-recipes)
+    Apptainer container as described in [Exercise 1.4](part1-ex4-apptainer-build.md) and 
+    with more information in [Exercise 3.1](part3-ex1-apptainer-recipes.md)
     1. If you want to use the container on your own computer or share with 
     others who would use it on a laptop or desktop, look at the Docker container 
-    example in [Exercise 3.2](../part3-ex2-docker-build). 
+    example in [Exercise 3.2](part3-ex2-docker-build.md). 
 
 Don't do ALL of the software exercises in parts 3 - 5! Instead, choose the section(s) 
 that makes sense based on how you want to manage your software. Talk to the School 
@@ -73,5 +73,5 @@ Create an Executable
 ---------------------
 
 Regardless of which approach you use, check out 
-the [Build an HTC-Friendly Executable](../part2-ex1-build-executable) exercise
+the [Build an HTC-Friendly Executable](part2-ex1-build-executable.md) exercise
 for some tips on how to make your script more robust and easy to use with multiple jobs. 

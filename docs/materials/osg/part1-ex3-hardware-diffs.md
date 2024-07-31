@@ -108,7 +108,7 @@ Now you will do essentially the same thing on the OSPool.
 
 1.  Log in or switch to `ap40.uw.osg-htc.org`
 
-1.  Copy the `osg-ex13` directory from the [section above](#checking-chtc-memory-availability)
+1.  Copy the `osg-ex13` directory from the [section above](#checking-path-memory-availability)
     from `ap1.facility.path-cc.io` to `ap40.uw.osg-htc.org`
 
     If you get stuck during the copying process, refer to [OSG exercise 1.1](part1-ex1-login-scp.md).

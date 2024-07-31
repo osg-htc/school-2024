@@ -135,7 +135,7 @@ Submit File
 -----------
 
 1.  Make a copy of a previous submit file in your local directory (the submit file from 
-the [Use a Wrapper Script exercise](../part4-ex2-wrapper) might be a good candidate). What changes need to be made to run this Python job? 
+the [Use a Wrapper Script exercise](part4-ex2-wrapper.md) might be a good candidate). What changes need to be made to run this Python job? 
 
 1. Modify your submit file, then make sure you've included the key lines below: 
 

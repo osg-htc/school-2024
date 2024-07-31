@@ -7,7 +7,7 @@ Data Exercise 2.2: Using OSDF for outputs
 
 In this exercise, we will run a multimedia program that converts and manipulates video files.
 In particular, we want to convert large `.mov` files to smaller (10-100s of MB) `mp4` files.
-Just like the Blast database in the [previous exercise](../part2-ex1-osdf-inputs), these video
+Just like the Blast database in the [previous exercise](part2-ex1-osdf-inputs.md), these video
 files are potentially too large to send to jobs using HTCondor's default file transfer for 
 inputs/outputs, so we will use OSDF.
 

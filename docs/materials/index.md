@@ -22,7 +22,7 @@ View the slides: [Slides coming soon]
 
 ### Intro Exercises 1: Running and Viewing Simple Jobs (Strongly Recommended)
 
-- [Exercise 1.1: Log in to the local submit machine and look around](htcondor/part1-ex1-login)
+- [Exercise 1.1: Log in to the local submit machine and look around](htcondor/part1-ex1-login.md)
 - [Exercise 1.2: Experiment with HTCondor commands](htcondor/part1-ex2-commands.md)
 - [Exercise 1.3: Run jobs!](htcondor/part1-ex3-jobs.md)
 - [Exercise 1.4: Read and interpret log files](htcondor/part1-ex4-logs.md)
