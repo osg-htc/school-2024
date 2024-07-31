@@ -461,8 +461,8 @@ originally placed.</p>
 <h3 id="copy-to-your-data-to-the-osdf-space">Copy to your data to the OSDF space<a class="headerlink" href="#copy-to-your-data-to-the-osdf-space" title="Permanent link">&para;</a></h3>
 <p>OSDF provides a directory for you to store data which can be accessed through the caching servers.
 First, you need to move your BLAST database (<code>pdbaa_files.tar.gz</code>) into this directory. For <code>ap40.uw.osg-htc.org</code>, the directory
-to use is <code>/ospool/PROTECTED/[USERNAME]/</code></p>
-<p>As the <code>PROTECTED</code> directory name indicates, your files placed in the directory will only be accessible
+to use is <code>/ospool/ap40/data/[USERNAME]/</code></p>
+<p>Note that files placed in the <code>/ospool/ap40/data/[USERNAME]/</code> directory will only be accessible
 by your own jobs.</p>
 <h2 id="modify-the-submit-file-and-wrapper">Modify the Submit File and Wrapper<a class="headerlink" href="#modify-the-submit-file-and-wrapper" title="Permanent link">&para;</a></h2>
 <p>You will have to modify the wrapper and submit file to use OSDF:</p>
@@ -470,8 +470,8 @@ by your own jobs.</p>
 <li>
 <p>HTCondor knows how to do OSDF transfers, so you just have to provide the correct URL in 
    <code>transfer_input_files</code>. Note there is no servername (3 slashes in :///) and we instead
-   is is just based on namespace (<code>/ospool/PROTECTED</code> in this case):</p>
-<div class="codehilite"><pre><span></span><code>transfer_input_files = blastx, $(inputfile), osdf:///ospool/PROTECTED/&lt;USERNAME&gt;/pdbaa_files.tar.gz
+   is is just based on namespace (<code>/ospool/ap40</code> in this case):</p>
+<div class="codehilite"><pre><span></span><code>transfer_input_files = blastx, $(inputfile), osdf:///ospool/ap40/data/[USERNAME]/pdbaa_files.tar.gz
 </code></pre></div>
 
 </li>
@@ -503,7 +503,7 @@ However, after it has been running for ~2 minutes, you're safe to continue to th
 <h2 id="note-keeping-osdf-clean">Note: Keeping OSDF 'Clean'<a class="headerlink" href="#note-keeping-osdf-clean" title="Permanent link">&para;</a></h2>
 <p>Just as for any data directory, it is VERY important to remove old files from OSDF when you no longer need them,
 especially so that you'll have plenty of space for such files in the future.
-For example, you would delete (<code>rm</code>) files from <code>/ospool/PROTECTED/</code> on when you don't need them there
+For example, you would delete (<code>rm</code>) files from <code>/ospool/ap40/data/[USERNAME]/</code> on when you don't need them there
 anymore, but only after all jobs have finished.
 The next time you use OSDF after the school, remember to first check for old files that you can delete.</p>
 <h2 id="next-exercise">Next exercise<a class="headerlink" href="#next-exercise" title="Permanent link">&para;</a></h2>

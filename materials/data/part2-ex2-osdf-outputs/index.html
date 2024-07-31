@@ -457,7 +457,7 @@ inputs/outputs, so we will use OSDF.</p>
 <li>
 <p>Download the input data and store it under the OSDF directory (<code>cd</code> to that
     directory first):</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span><span class="nb">cd</span> /ospool/PROTECTED/<span class="o">[</span>USERNAME<span class="o">]</span>/
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span><span class="nb">cd</span> /ospool/ap40/data/<span class="o">[</span>USERNAME<span class="o">]</span>/
 <span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/ducks.mov        
 <span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/teaching.mov
 <span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/test_open_terminal.mov
@@ -514,6 +514,7 @@ An example of that script is below: </p>
 
 <p>Ultimately we'll want to submit several jobs (one for each <code>.mov</code> file), but to start with, we'll run one job to make
 sure that everything works.</p>
+<p>Remember to <code>chmod +x run_ffmpeg.sh</code> to make the script executable.</p>
 <h2 id="submit-file">Submit File<a class="headerlink" href="#submit-file" title="Permanent link">&para;</a></h2>
 <p>Create a submit file for this job, based on other submit files from the school. Things to consider:</p>
 <ol>
@@ -524,20 +525,20 @@ sure that everything works.</p>
 </li>
 <li>
 <p>Add the same requirements as the previous exercise: </p>
-<div class="codehilite"><pre><span></span><code>requirements = (OSGVO_OS_STRING == &quot;RHEL 8&quot;)
+<div class="codehilite"><pre><span></span><code>requirements = (OSGVO_OS_STRING == &quot;RHEL 9&quot;)
 </code></pre></div>
 
 </li>
 <li>
 <p>We need to transfer the <code>ffmpeg</code> program that we downloaded above, and the movie from OSDF:</p>
-<div class="codehilite"><pre><span></span><code>transfer_input_files = ffmpeg, osdf:///ospool/PROTECTED/[USERNAME]/test_open_terminal.mov
+<div class="codehilite"><pre><span></span><code>transfer_input_files = ffmpeg, osdf:///ospool/ap40/data/[USERNAME]/test_open_terminal.mov
 </code></pre></div>
 
 </li>
 <li>
 <p>Transfer outputs via OSDF. This requires a transfer remap:</p>
 <div class="codehilite"><pre><span></span><code>transfer_output_files = test_open_terminal.mp4
-transfer_output_remaps = &quot;test_open_terminal.mp4 = osdf:///ospool/PROTECTED/[USERNAME]/test_open_terminal.mp4&quot;
+transfer_output_remaps = &quot;test_open_terminal.mp4 = osdf:///ospool/ap40/data/[USERNAME]/test_open_terminal.mp4&quot;
 </code></pre></div>
 
 </li>
@@ -571,7 +572,6 @@ The final script should look like this: </p>
 ./ffmpeg -i $1 -b:v 400k -s 640x360 $2
 </code></pre></div>
 
-<p>Note that we use the input file name multiple times in our script, so we'll have to use <code>$1</code> multiple times as well.</p>
 <h3 id="modify-your-submit-file">Modify your submit file<a class="headerlink" href="#modify-your-submit-file" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -586,14 +586,14 @@ The final script should look like this: </p>
 </li>
 <li>
 <p>Update the <code>transfer_input_files</code> to have <code>$(mov)</code>:</p>
-<div class="codehilite"><pre><span></span><code>transfer_input_files = ffmpeg, osdf:///ospool/PROTECTED/[USERNAME]/$(mov)
+<div class="codehilite"><pre><span></span><code>transfer_input_files = ffmpeg, osdf:///ospool/ap40/data/[USERNAME]/$(mov)
 </code></pre></div>
 
 </li>
 <li>
 <p>Similarly, update the output/remap with <code>$(mov).mp4</code>:</p>
 <div class="codehilite"><pre><span></span><code>transfer_output_files = $(mov).mp4
-transfer_output_remaps = &quot;$(mov).mp4 = osdf:///ospool/PROTECTED/[USERNAME]/$(mov).mp4&quot;
+transfer_output_remaps = &quot;$(mov).mp4 = osdf:///ospool/ap40/data/[USERNAME]/$(mov).mp4&quot;
 </code></pre></div>
 
 </li>
