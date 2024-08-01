@@ -490,7 +490,7 @@ Splitting the input will also mean that we don't have to rely on additional larg
 <p>We've previously used <code>blastx</code> to analyze a relatively small input file of test data, <code>mouse.fa</code>, but let's imagine that
 you now need to blast a much larger dataset for your research.
 This dataset can be downloaded with the following command:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/mouse_rna.tar.gz
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/mouse_rna.tar.gz
 </code></pre></div>
 
 <p>After un-tar'ing (<code>tar xzf mouse_rna.tar.gz</code>) the file, you should be able to confirm that it's size is roughly 100 MB.
@@ -505,7 +505,7 @@ sequence that is calculated relative to the entire length of the database.</p>
 into smaller files.
 One of these is called <a href="http://genometools.org/">genome tools</a>, and you can download a package of precompiled binaries
 (just like BLAST) using the following command:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/gt-1.5.10-Linux_x86_64-64bit-complete.tar.gz
+<div class="codehilite"><pre><span></span><code><span class="gp">user@ap40 $ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/gt-1.5.10-Linux_x86_64-64bit-complete.tar.gz
 </code></pre></div>
 
 <p>Un-tar the gt package (<code>tar -xzvf ...</code>), then run its sequence file splitter as follows, with the target file size of 1MB:</p>
