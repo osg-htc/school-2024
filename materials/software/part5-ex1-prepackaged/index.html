@@ -443,8 +443,7 @@ is not available already compiled for Linux. </p>
 installation instructions page. On the installation page, there are short instructions for how to install HMMER. There are two options shown for installation -- which should we use?</p>
 </li>
 <li>
-<p>For the purposes of this example, we are going to use the instructions under the heading "...to obtain and compile from source."  Download the HMMER source as shown in 
-these instructions (command should start with <code>wget</code>)</p>
+<p>For the purposes of this example, we are going to use the instructions under the "Current version" heading, with the "Source" link. Download the HMMER source using wget.</p>
 </li>
 <li>
 <p>Go back to the installation 
@@ -464,7 +463,7 @@ for this example, we are going to compile directly on the Access Point</p>
 </li>
 <li>
 <p>Now run the commands to unpack the source code: </p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span>tar -zxf hmmer.tar.gz
+<div class="codehilite"><pre><span></span><code><span class="gp">username@host $ </span>tar -zxf hmmer-3.4.tar.gz
 <span class="gp">username@host $ </span><span class="nb">cd</span> hmmer-3.4
 </code></pre></div>
 
@@ -497,7 +496,7 @@ for this example, we are going to compile directly on the Access Point</p>
 </ol>
 <p>Note that we now have two tarballs in our directory -- the <em>source</em> tarball (<code>hmmer.tar.gz</code>), which we will no longer need and our newly built installation (<code>hmmer-build.tar.gz</code>) which is what we will actually be using to run jobs.</p>
 <h2 id="wrapper-script">Wrapper Script<a class="headerlink" href="#wrapper-script" title="Permanent link">&para;</a></h2>
-<p>Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a <a href="../part4-ex2-wrapper">previous exercise</a>. These steps should be performed back on the submit server (<code>ap1.facility.path-cc.io</code>).</p>
+<p>Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a <a href="../part4-ex2-wrapper">previous exercise</a>. These steps should be performed back on the access point.</p>
 <ol>
 <li>
 <p>Create a script called <code>run_hmmer.sh</code>. </p>
@@ -525,7 +524,7 @@ hmmsearch -o search-results.txt globins4.hmm globins45.fa
 </li>
 <li>
 <p>Make sure the wrapper script has executable permissions: </p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>chmod u+x run_HMMER.sh
+<div class="codehilite"><pre><span></span><code><span class="gp">username@login $ </span>chmod u+x run_hmmer.sh
 </code></pre></div>
 
 </li>
@@ -536,7 +535,7 @@ hmmsearch -o search-results.txt globins4.hmm globins45.fa
 <li>
 <p>We're going to use some of the tutorial files provided with the HMMER download to 
 run the job. You already have these files back in the directory where you unpacked the source code:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">username@ap1 $ </span>ls hmmer-3.4/tutorial
+<div class="codehilite"><pre><span></span><code><span class="gp">username@login $ </span>ls hmmer-3.4/tutorial
 <span class="go">7LESS_DROME    fn3.hmm  globins45.fa  globins4.sto  MADE1.hmm  Pkinase.hmm</span>
 <span class="go">dna_target.fa  fn3.sto  globins4.hmm  HBB_HUMAN     MADE1.sto  Pkinase.sto</span>
 </code></pre></div>
@@ -568,7 +567,7 @@ When using a wrapper script, you must also always remember to transfer the softw
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For a very similar compiling example, see this guide on how to 
-compile <code>samtools</code>: <a href="https://support.opensciencegrid.org/support/solutions/articles/12000074984-example-software-compilation">Example Software Compilation</a></p>
+compile <code>samtools</code>: <a href="https://portal.osg-htc.org/documentation/htc_workloads/using_software/example-compilation/">Example Software Compilation</a></p>
 </div>
 </li>
 </ol>

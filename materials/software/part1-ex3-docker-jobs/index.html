@@ -451,7 +451,7 @@ container_image = local-py310.sif
 <p>Use the same executable as the <a href="../part1-ex2-apptainer-jobs">previous exercise</a>. </p>
 </li>
 <li>
-<p>Once these steps are done, submit the job.</p>
+<p>Once these steps are done, submit the job. You might get a warning about using OSDF for container transfers - ignore this warning for now.</p>
 </li>
 </ol>
 <h2 id="finding-docker-containers">Finding Docker Containers<a class="headerlink" href="#finding-docker-containers" title="Permanent link">&para;</a></h2>
@@ -461,9 +461,10 @@ created equal. Anyone can create an account on Docker Hub and share container im
 <li>The container image is updated regularly.</li>
 <li>The container image is associated with a well established company, community, or other group that is well-known.</li>
 <li>There is a Dockerfile or other listing of what has been installed to the container image.</li>
-<li>
-<p>The container image page has documentation on how to use the container image. [^1]</p>
-</li>
+<li>The container image page has documentation on how to use the container image. [^1]</li>
+</ul>
+<p>Given these indicators:</p>
+<ol>
 <li>
 <p>Can you find a container on <a href="https://hub.docker.com/">Docker Hub</a> that would be 
 useful for running Jupyter notebooks that use tensorflow? </p>
@@ -471,7 +472,7 @@ useful for running Jupyter notebooks that use tensorflow? </p>
 <li>
 <p>Does your chosen image meet at least 2 of the criteria above? </p>
 </li>
-</ul>
+</ol>
 <p>[^1]: This list and previous text taken from <a href="https://carpentries-incubator.github.io/docker-introduction/">Introduction to Docker</a></p>
                 
                   

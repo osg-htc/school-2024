@@ -470,9 +470,12 @@ of Linux was used for the job? What is the version of <code>gcc</code> or Python
 <li>
 <p>For this job, we will use the OSG-provided Ubuntu "Focal" image, as we did in the previous exercise. The <code>container_image</code> submit file option will tell HTCondor to use this container for the job: </p>
 <div class="codehilite"><pre><span></span><code>universe = container
-container_image = /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04:latest
+container_image = /cvmfs/singularity.opensciencegrid.org/htc/ubuntu:22.04
 </code></pre></div>
 
+</li>
+<li>
+<p>If the submit file you copied has something like <code>requirements = (OSGVO_OS_STRING == "RHEL 9")</code>, remove that. When you use containers, you should not specify an OS in the requirements as that will unnecessarily limit the number of resources you can run on.</p>
 </li>
 <li>
 <p>Submit the job and read the standard output file when it completes. 

@@ -514,13 +514,13 @@ new container, we will want to use a similar naming scheme of: </p>
 
 <p>In what follows, you will want to replace <code>USERNAME</code> with your DockerHub user name. 
 The <code>CONTAINER</code> name and <code>VERSIONTAG</code> are your choice; in what follows, we will 
-use <code>py3-numpy</code> as the container name and <code>2021-08</code> as the version tag. </p>
+use <code>py3-numpy</code> as the container name and <code>2024-08</code> as the version tag. </p>
 </li>
 <li>
 <p>To build and name the new container, open a command line window on your computer 
 where you can run Docker commands. Use the <code>cd</code> command to change your working directory 
 to the build directory with the <code>Dockerfile</code> inside. </p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>docker build -t USERNAME/py3-numpy:2021-08 .
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>docker build -t USERNAME/py3-numpy:2024-08 .
 </code></pre></div>
 
 <p>Note the <code>.</code> at the end of the command! This indicates that we're using the current 
@@ -534,7 +534,7 @@ elsewhere, it needs to be added to a public registry like Docker Hub. </p>
 <li>
 <p>To put your container image in Docker Hub, use the <code>docker push</code> command on the 
 command line:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>docker push USERNAME/py3-numpy:2021-08
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>docker push USERNAME/py3-numpy:2024-08
 </code></pre></div>
 
 <p>If the push doesn't work, you may need to run <code>docker login</code> first, enter your 

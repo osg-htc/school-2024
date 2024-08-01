@@ -476,7 +476,7 @@ Python installation and the <code>cowsay</code> Python library. </p>
 when it builds the container image. </p>
 <ol>
 <li>Create a file called <code>py-cowsay.def</code> with these contents: <div class="codehilite"><pre><span></span><code>Bootstrap: docker
-From: opensciencegrid/osgvo-ubuntu-20.04:latest
+From: hub.opensciencegrid.org/htc/ubuntu:22.04
 
 %post
     apt-get update -y
@@ -512,13 +512,13 @@ allow us to test our new container. </p>
 </li>
 <li>
 <p>Try running: </p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>singularity shell py-cowsay.sif
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>apptainer shell py-cowsay.sif
 </code></pre></div>
 
 </li>
 <li>
 <p>Then try running the <code>hello-cow.py</code> script: </p>
-<div class="codehilite"><pre><span></span><code><span class="go">Singularity&lt; ./hello-cow.py</span>
+<div class="codehilite"><pre><span></span><code><span class="go">apptainer&gt; ./hello-cow.py</span>
 </code></pre></div>
 
 </li>
