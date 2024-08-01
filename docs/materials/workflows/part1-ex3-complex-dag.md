@@ -77,17 +77,25 @@ queue
 You should notice that the `transfer_input_files` statement refers to the files created by the other jobs.
 
 ``` file
-executable              = /usr/bin/montage
++SingularityImage =     "/cvmfs/singularity.opensciencegrid.org/htc/rocky:9"
+executable              = montage.sh
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandel-from-dag.jpg
 transfer_input_files    = tile_0_0.ppm,tile_0_1.ppm,tile_1_0.ppm,tile_1_1.ppm
 output                  = montage.out
 error                   = montage.err
 log                     = montage.log
-requirements            = OSG_OS_STRING == "RHEL 8"
 request_memory          = 1GB
 request_disk            = 1GB
 request_cpus            = 1
 queue
+```
+
+Notice that the job specified by `montage.sub` uses a container image, as indicated by the `+SingularityImage` flag. This is because `montage` uses libraries that are not installed on the execution nodes. We use a container with `montage` installed and call it using the executable `montage.sh`; thus we will need to create the file `montage.sh`.
+
+``` file
+#!/bin/bash
+# Pass all arguments to montage
+montage "$@"
 ```
 
 Make your DAG
