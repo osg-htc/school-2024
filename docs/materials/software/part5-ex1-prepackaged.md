@@ -23,8 +23,7 @@ For this exercise, we will be using the bioinformatics package HMMER. HMMER is a
 1.  Do an internet search to find the HMMER software downloads page and the 
 installation instructions page. On the installation page, there are short instructions for how to install HMMER. There are two options shown for installation -- which should we use?
 
-1. For the purposes of this example, we are going to use the instructions under the heading "...to obtain and compile from source."  Download the HMMER source as shown in 
-these instructions (command should start with `wget`)
+1. For the purposes of this example, we are going to use the instructions under the "Current version" heading, with the "Source" link. Download the HMMER source using wget.
 
 1. Go back to the installation 
 documentation page and look at the steps for compiling from source. This process 
@@ -44,7 +43,7 @@ for this example, we are going to compile directly on the Access Point
 1.  Now run the commands to unpack the source code: 
 
         :::console
-		username@host $ tar -zxf hmmer.tar.gz
+		username@host $ tar -zxf hmmer-3.4.tar.gz
 		username@host $ cd hmmer-3.4
 
 1.  Now we can follow the second set of installation instructions. For the prefix, we'll use the variable `$PWD` to capture the name of our current working directory and then a relative path to the `hmmer-build` directory we created in step 1: 
@@ -75,7 +74,7 @@ Note that we now have two tarballs in our directory -- the *source* tarball (`hm
 Wrapper Script
 --------------
 
-Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a [previous exercise](../part4-ex2-wrapper). These steps should be performed back on the submit server (`ap1.facility.path-cc.io`).
+Now that we've created our portable installation, we need to write a script that opens and uses the installation, similar to the process we used in a [previous exercise](../part4-ex2-wrapper). These steps should be performed back on the access point.
 
 1. Create a script called `run_hmmer.sh`. 
 
@@ -100,7 +99,7 @@ Now that we've created our portable installation, we need to write a script that
 1.  Make sure the wrapper script has executable permissions: 
 
 		:::console
-		username@ap1 $ chmod u+x run_HMMER.sh
+		username@login $ chmod u+x run_hmmer.sh
 
 
 Run a HMMER job
@@ -112,7 +111,7 @@ We're almost ready! We need two more pieces to run a HMMER job.
 run the job. You already have these files back in the directory where you unpacked the source code:
 
 		:::console
-		username@ap1 $ ls hmmer-3.4/tutorial
+		username@login $ ls hmmer-3.4/tutorial
 		7LESS_DROME    fn3.hmm  globins45.fa  globins4.sto  MADE1.hmm  Pkinase.hmm
 		dna_target.fa  fn3.sto  globins4.hmm  HBB_HUMAN     MADE1.sto  Pkinase.sto
 
@@ -139,4 +138,4 @@ run the job. You already have these files back in the directory where you unpack
 
 	!!! note
 		For a very similar compiling example, see this guide on how to 
-		compile `samtools`: [Example Software Compilation](https://support.opensciencegrid.org/support/solutions/articles/12000074984-example-software-compilation)
+		compile `samtools`: [Example Software Compilation](https://portal.osg-htc.org/documentation/htc_workloads/using_software/example-compilation/)

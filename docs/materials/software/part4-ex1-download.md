@@ -63,7 +63,7 @@ it. If you want to do this all from the command line, the sequence will
 look like this (using `wget` as the download command.) 
 
         :::console
-        user@login $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.15.0+-x64-linux.tar.gz
+        user@login $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.15.0/ncbi-blast-2.15.0+-x64-linux.tar.gz
         user@login $ tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz
 
 1.  We're going to be using the `blastx` binary in our job. Where is it
@@ -80,8 +80,8 @@ we'll use an abbreviated fasta file with mouse genome information.
 1.  Download these files to your current directory: 
 
         :::console
-        username@login $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/pdbaa.tar.gz
-        username@login $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/mouse.fa
+        username@login $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/pdbaa.tar.gz
+        username@login $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/mouse.fa
 
 1.  Untar the `pdbaa` database: 
 

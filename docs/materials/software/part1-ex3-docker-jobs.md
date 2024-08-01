@@ -41,7 +41,7 @@ Submit File and Executable
 
 1.  Use the same executable as the [previous exercise](../part1-ex2-apptainer-jobs). 
 
-1. Once these steps are done, submit the job.
+1. Once these steps are done, submit the job. You might get a warning about using OSDF for contaier transfers - ignore this warning for now.
 
 Finding Docker Containers
 -------------
@@ -53,6 +53,8 @@ created equal. Anyone can create an account on Docker Hub and share container im
 - The container image is associated with a well established company, community, or other group that is well-known.
 - There is a Dockerfile or other listing of what has been installed to the container image.
 - The container image page has documentation on how to use the container image. [^1]
+
+Given these indicators:
 
 1. Can you find a container on [Docker Hub](https://hub.docker.com/) that would be 
 useful for running Jupyter notebooks that use tensorflow? 

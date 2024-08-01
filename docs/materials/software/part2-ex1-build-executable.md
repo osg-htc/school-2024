@@ -18,7 +18,7 @@ Setup
 1. Download and unzip a set of Protein Data Bank (PDB) files: 
 
 		:::console
-		$ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/alkanes.tar.gz
+		$ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/alkanes.tar.gz
 		$ tar -xzf alkanes.tar.gz
 
 1. For these exercises, we are going to run a command that counts the number of 
@@ -43,7 +43,7 @@ run the script, we will add the following header on the first line: ``#!/bin/bas
 	The "header" of `#!/bin/bash` will tell the computer that this is a bash shell script 
 	and can be run in the same way that  you would run individual commands on the command line. 
 	We use `/bin/bash` instead of just `bash` because that is the full path to the `bash` 
-	software file. (Run `which bash` to check!)
+	software file.
 
     !!! note "Other languages"
 		We can use the same principle for any scripting language. For example, the header for a Python script 

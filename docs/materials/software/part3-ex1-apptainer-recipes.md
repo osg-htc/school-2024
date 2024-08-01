@@ -25,12 +25,12 @@ Where to start
 
 	:::file
 	Bootstrap: docker
-	From: opensciencegrid/osgvo-ubuntu-20.04:latest
+	From: hub.opensciencegrid.org/htc/ubuntu:22.04
 
 A custom container always is always built on an existing container. It is common 
-to use a container on Docker Hub. These lines tell Apptainer to pull the 
-pre-existing image from Docker Hub, and to use it as the base for the 
-container that will be built using this definition file.
+to use a container on Docker Hub, or in this case, hub.opensciencegrid.org.
+These lines tell Apptainer to pull the  pre-existing image from the hub, and to
+use it as the base for the  container that will be built using this definition file.
 
 When choosing a base container, try to find one that has most of what you need - for 
 example, if you want to install R packages, try to find a container that already 

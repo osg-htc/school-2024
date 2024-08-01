@@ -33,12 +33,12 @@ Exploring Apptainer Containers
 
 First, let's try to run a container from the [OSG-Supported List](https://portal.osg-htc.org/documentation/htc_workloads/using_software/available-containers-list/). 
 
-1. Find the full path for the `ubuntu 20.04` container image. 
+1. Find the full path for the `ubuntu 22.04` container image. 
 
 1. To run it, use this command: 
 
 		:::console
-		$ apptainer shell /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04:latest
+		$ apptainer shell /cvmfs/singularity.opensciencegrid.org/htc/ubuntu:22.04
 
 	It may take a few minutes to start - don't worry if this happens. 
 

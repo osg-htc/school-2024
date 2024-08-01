@@ -91,14 +91,14 @@ new container, we will want to use a similar naming scheme of:
 
 	In what follows, you will want to replace `USERNAME` with your DockerHub user name. 
 	The `CONTAINER` name and `VERSIONTAG` are your choice; in what follows, we will 
-	use `py3-numpy` as the container name and `2021-08` as the version tag. 
+	use `py3-numpy` as the container name and `2024-08` as the version tag. 
 
 1. To build and name the new container, open a command line window on your computer 
 where you can run Docker commands. Use the `cd` command to change your working directory 
 to the build directory with the `Dockerfile` inside. 
 
 		:::console
-		$ docker build -t USERNAME/py3-numpy:2021-08 .
+		$ docker build -t USERNAME/py3-numpy:2024-08 .
 		
 	Note the `.` at the end of the command! This indicates that we're using the current 
 	directory as our build environment, including the `Dockerfile` inside. 
@@ -113,7 +113,7 @@ elsewhere, it needs to be added to a public registry like Docker Hub.
 command line:
 
 		:::console
-		$ docker push USERNAME/py3-numpy:2021-08
+		$ docker push USERNAME/py3-numpy:2024-08
 
 	If the push doesn't work, you may need to run `docker login` first, enter your 
 	Docker Hub username and password and then try the push again. 
