@@ -17,7 +17,7 @@ Background
 **Why learn this?**: This is very similar to the [previous exercise](part5-ex1-prepackaged.md). 
 
 
-Interactive Job for Pre-Building
+Pre-Building
 --------------------------------
 
 The first step in our job process is building a Python installation that we can package up.
@@ -26,7 +26,7 @@ The first step in our job process is building a Python installation that we can 
 1.  Download the Python source code from <https://www.python.org/>. 
 
 		:::console
-		username@ap1 $ wget https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
+		username@login $ wget https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
 
 1.   First, we have to determine how to install Python to a specific location in our working directory.
     1.  Untar the Python source tarball (`tar -xzf Python-3.10.5.tgz`) and look at the `README.rst` file in the `Python-3.10.5` directory (`cd Python-3.10.5`).  You'll want to look for the "Build Instructions" header.  What will the main installation steps be?  What command is required for the final installation?  Once you've tried to answer these questions, move to the next step.

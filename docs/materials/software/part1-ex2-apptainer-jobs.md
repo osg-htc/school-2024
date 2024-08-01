@@ -60,7 +60,9 @@ Now, let's try running that same script inside a container.
 
 		:::file
 		universe = container
-		container_image = /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04:latest
+		container_image = /cvmfs/singularity.opensciencegrid.org/htc/ubuntu:22.04
+   
+1. If the submit file you copied has something like `requirements = (OSGVO_OS_STRING == "RHEL 9")`, remove that. When you use containers, you should not specify an OS in the requirements as that will unnecessarily limit the number of resources you can run on.
 
 1. Submit the job and read the standard output file when it completes. 
 What version of Linux was used for the job? What is the version of `gcc`? or Python? 

@@ -34,7 +34,7 @@ Our wrapper script will be a bash script that runs several commands.
         :::bash
         #!/bin/bash
         
-        ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt 
+        ./ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results.txt
 
 
 Submit File Changes
@@ -76,7 +76,7 @@ Now that our database and BLAST software are being transferred to the job as `ta
         tar -xzf ncbi-blast-2.15.0+-x64-linux.tar.gz 
         tar -xzf pdbaa.tar.gz
 
-        ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
+        ./ncbi-blast-2.15.0+/bin/blastx -db pdbaa/pdbaa -query mouse.fa -out results2.txt
 
 1.  While not strictly necessary, it's a good idea to enable executable permissions on the wrapper script, like so: 
 

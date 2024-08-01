@@ -53,7 +53,7 @@ when it builds the container image.
 
 		:::file
 		Bootstrap: docker
-		From: opensciencegrid/osgvo-ubuntu-20.04:latest
+		From: hub.opensciencegrid.org/htc/ubuntu:22.04
 
 		%post
 			apt-get update -y
@@ -93,12 +93,12 @@ allow us to test our new container.
 1. Try running: 
 
 		:::console
-		$ singularity shell py-cowsay.sif
+		$ apptainer shell py-cowsay.sif
 
 1. Then try running the `hello-cow.py` script: 
 
 		:::console
-		Singularity< ./hello-cow.py
+		apptainer> ./hello-cow.py
 
 1. If it produces an output, our container works! We can now exit (by typing `exit`)
 and submit a job. 
