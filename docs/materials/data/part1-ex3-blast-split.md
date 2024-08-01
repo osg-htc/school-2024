@@ -30,7 +30,7 @@ you now need to blast a much larger dataset for your research.
 This dataset can be downloaded with the following command:
 
 ``` console
-user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/mouse_rna.tar.gz
+user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/mouse_rna.tar.gz
 ```
 
 After un-tar'ing (`tar xzf mouse_rna.tar.gz`) the file, you should be able to confirm that it's size is roughly 100 MB.
@@ -50,7 +50,7 @@ One of these is called [genome tools](http://genometools.org/), and you can down
 (just like BLAST) using the following command:
 
 ``` console
-user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2023/gt-1.5.10-Linux_x86_64-64bit-complete.tar.gz
+user@ap40 $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/gt-1.5.10-Linux_x86_64-64bit-complete.tar.gz
 ```
 
 Un-tar the gt package (`tar -xzvf ...`), then run its sequence file splitter as follows, with the target file size of 1MB:
