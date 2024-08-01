@@ -29,8 +29,10 @@ extra:
 nav:
   - Home:                           index.md
   - Schedule:                       schedule.md
+  - Health Guidelines:              health.md
   - Logistics:
     - General information:          logistics/index.md
+    - Travel advice:                logistics/travel-advice.md
     - Hotel information:            logistics/hotel.md
     - School location:              logistics/location.md
     - Local transportation:         logistics/local-transportation.md
