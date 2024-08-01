@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://osg-htc.org/school-2024/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/schedule/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://osg-htc.org/school-2024/health/</loc>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://osg-htc.org/school-2024/logistics/travel-advice/</loc>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/hotel/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/location/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/local-transportation/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/visas/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/travel-planning/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/meals/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/dining/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://osg-htc.org/school-2024/logistics/account-setup/</loc>
-     <lastmod>2024-07-31</lastmod>
+     <lastmod>2024-08-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
