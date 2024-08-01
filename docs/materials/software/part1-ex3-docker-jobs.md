@@ -41,7 +41,7 @@ Submit File and Executable
 
 1.  Use the same executable as the [previous exercise](../part1-ex2-apptainer-jobs). 
 
-1. Once these steps are done, submit the job. You might get a warning about using OSDF for contaier transfers - ignore this warning for now.
+1. Once these steps are done, submit the job. You might get a warning about using OSDF for container transfers - ignore this warning for now.
 
 Finding Docker Containers
 -------------
