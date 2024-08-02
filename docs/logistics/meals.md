@@ -60,7 +60,7 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-## Badger Breakfast ##
+Badger Breakfast
 - Turkey Sausage Links
 - Vegan Sausage Patties
 - Assorted Breakfast Pastries
@@ -73,7 +73,7 @@ Please do not take them unless they are for you.
   
 #### Lunch (12:15 PM - 1:15 PM)
 
-## Southwest Buffet ##
+Southwest Buffet 
 - Tortilla Chips
 - Red Salsa
 - Spanish Rice
@@ -113,8 +113,7 @@ Please do not take them unless they are for you.
 
 #### Lunch (12:15 PM - 1:15 PM)
 
-## Italian Buffet ##
-
+Italian Buffet
 - Caesar Salad (croutons, cheese & Kalamata olives on the side)
 - Caesar Dressing
 - Garlic Breadsticks
@@ -148,8 +147,7 @@ Please do not take them unless they are for you.
 
 #### Lunch (12:30 PM - 1:45 PM)
 
-## Boxed Lunches ##
-
+Boxed Lunches 
 - Chicken Bacon Ranch Wraps
 - Smoked Turkey Sandwiches
 - Southwest Salads
@@ -166,8 +164,7 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-## Buckingham Breakfast ##
-
+Buckingham Breakfast
 - Assorted Breakfast Pastries
 - Gluten Free Muffin
 - Seasonal Fresh Cut Fruit Salad
@@ -181,8 +178,7 @@ Please do not take them unless they are for you.
 
 #### Lunch (12:00 PM - 1:15 PM)
 
-## Mediteranian Buffet  ##
-
+Mediteranian Buffet
 - Lemon Oregano Chicken
 - Greek Salad with Olive Oil Vinaigrette
 - Roasted Vegetable Couscous
@@ -199,8 +195,7 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-## Badger Breakfast ##
-
+Badger Breakfast
 - Turkey Sausage Links
 - Bacon
 - Vegan Sausage Patties
@@ -216,8 +211,7 @@ Please do not take them unless they are for you.
 
 #### Lunch (12:00 PM - 1:00 PM)
 
-## Wisconsin Tailgate ##
-
+Wisconsin Tailgate 
 - Garden Salad with Ranch and Balsamic dressing
 - Fried Wedge Potatoes with Ketchup
 - Brats with Kraut
