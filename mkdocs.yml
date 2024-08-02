@@ -40,8 +40,9 @@ nav:
     - Travel planning:              logistics/travel-planning.md
     - Meal information:             logistics/meals.md
     - Dining options:               logistics/dining.md
+    - Madison Fun Day:              logistics/fun-day.md
     - Account setup:                logistics/account-setup.md
-    - Wednesday fun day:            logistics/fun-day.md
+   
   - Materials:
     - Overview:                     materials/index.md
     - Intro to HTCondor:
