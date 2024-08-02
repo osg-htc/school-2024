@@ -12,7 +12,7 @@ The objective of this exercise is to run a real set of jobs with DAGMan.
 Make Your Job Submission Files
 ------------------------------
 
-We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](../part1-ex2-mandelbrot). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so each job will take longer to run.
+We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](part1-ex2-mandelbrot.md). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so each job will take longer to run.
 
 You can create your five jobs. The goatbrot jobs are very similar to each other, but they have slightly different parameters and output files.
 
@@ -77,17 +77,25 @@ queue
 You should notice that the `transfer_input_files` statement refers to the files created by the other jobs.
 
 ``` file
-executable              = /usr/bin/montage
++SingularityImage =     "/cvmfs/singularity.opensciencegrid.org/htc/rocky:9"
+executable              = montage.sh
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandel-from-dag.jpg
 transfer_input_files    = tile_0_0.ppm,tile_0_1.ppm,tile_1_0.ppm,tile_1_1.ppm
 output                  = montage.out
 error                   = montage.err
 log                     = montage.log
-requirements            = OSG_OS_STRING == "RHEL 8"
 request_memory          = 1GB
 request_disk            = 1GB
 request_cpus            = 1
 queue
+```
+
+Notice that the job specified by `montage.sub` uses a container image, as indicated by the `+SingularityImage` flag. This is because `montage` uses libraries that are not installed on the execution nodes. We use a container with `montage` installed and call it using the executable `montage.sh`; thus we will need to create the file `montage.sh`.
+
+``` file
+#!/bin/bash
+# Pass all arguments to montage
+montage "$@"
 ```
 
 Make your DAG

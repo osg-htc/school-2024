@@ -119,7 +119,7 @@ command line:
 	Docker Hub username and password and then try the push again. 
 
 1. Once your container image is in DockerHub, you can use it in jobs as described 
-in [Exercise 1.3](../part1-ex3-docker-jobs). 
+in [Exercise 1.3](part1-ex3-docker-jobs.md). 
 
 > Thanks to [Josh Karpel](https://github.com/JoshKarpel/osg-school-example-dockerfile) for 
 providing the original sample `Dockerfile`!

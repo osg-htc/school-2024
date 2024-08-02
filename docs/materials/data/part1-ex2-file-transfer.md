@@ -28,7 +28,7 @@ previous exercise.
 
 ### Review: HTCondor File Transfer
 
-![OSG data transfer](../files/osgus18-day4-part2-ex2-data-transfer.jpg)
+![OSG data transfer](files/osgus18-day4-part2-ex2-data-transfer.jpg)
 
 Recall that OSG does **NOT** have a shared filesystem! Instead,
 HTCondor *transfers* your executable and input files (specified with
@@ -59,7 +59,7 @@ queue
 
 ### Implement file compression
 
-In our first blast job from the Software exercises ([1.1](../../software/part1-ex1-download)), the database files in the `pdbaa` directory were all transferred, as is, but we
+In our first blast job from the Software exercises ([1.1](../software/part4-ex1-download.md)), the database files in the `pdbaa` directory were all transferred, as is, but we
 could instead transfer them as a single, compressed file using `tar`.
 For this version of the job, let's compress our blast database files to send them to the submit node as a single
 `tar.gz` file (otherwise known as a tarball), by following the below steps:
@@ -123,7 +123,7 @@ It's good to start with values that are a little higher than you think a test jo
     files (hint: the log file only exists on the submit node).
 -   Whether you'd like to request some extra memory or disk space, just in case
 
-Look at the `log` file for your `blastx` job from Software exercise ([1.1](../../software/part1-ex1-download)), and compare the memory and disk "Usage" to what you predicted
+Look at the `log` file for your `blastx` job from Software exercise ([1.1](../software/part4-ex1-download.md)), and compare the memory and disk "Usage" to what you predicted
 from the files.
 Make sure to update the submit file with more accurate memory and disk requests. You may still want to request slightly
 more than the job actually used. 
@@ -136,7 +136,7 @@ It should take a few minutes to complete, and then you can check to make sure th
 `pdbaa` database files) were copied back at the end of the job.
 
 Run a **`du -sh`** on the directory with this job's input.
-How does it compare to the directory from Software exercise ([1.1](../../software/part1-ex1-download)), and why?
+How does it compare to the directory from Software exercise ([1.1](../software/part4-ex1-download.md)), and why?
 
 transfer\_output\_files
 -----------------------
@@ -217,11 +217,11 @@ Conclusions
 
 In this exercise, you:
 
--   Used your data requirements knowledge from the [previous exercise](../part1-ex1-data-needs) to write a job.
+-   Used your data requirements knowledge from the [previous exercise](part1-ex1-data-needs.md) to write a job.
 -   Executed the job on a remote worker node and took note of the data usage.
 -   Used `transfer_input_files` to transfer inputs
 -   Used `transfer_output_files` to transfer outputs
 -   Used `transfer_output_remaps` to map outputs to a different destination
 
-When you've completed the above, continue with the [next exercise](../part1-ex3-blast-split).
+When you've completed the above, continue with the [next exercise](part1-ex3-blast-split.md).
 

@@ -16,7 +16,7 @@ Setup
 1. Log in to `ap40.uw.osg-htc.org`
 
 1. Create a directory for this exercise named `blast-split` and change into it.
-1. Copy over the following files from the [previous exercise](../part1-ex2-file-transfer):
+1. Copy over the following files from the [previous exercise](part1-ex2-file-transfer.md):
     - Your submit file
     - `blastx`
     - `pdbaa_files.tar.gz`
@@ -72,7 +72,7 @@ First, you'll create a new submit file that passes the input filename as an argu
 filenames.
 Follow the below steps:
 
-1. Copy the submit file from the [previous exercise](../part1-ex2-file-transfer) to a new file called `blast_split.sub` and modify the "queue" line of the submit file to the
+1. Copy the submit file from the [previous exercise](part1-ex2-file-transfer.md) to a new file called `blast_split.sub` and modify the "queue" line of the submit file to the
    following:
 
         queue inputfile matching mouse_rna.fa.*

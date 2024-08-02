@@ -168,4 +168,4 @@ Up next!
 --------
 
 Next you will create a HTCondor submit script to transfer the Blast input files in order to run Blast on a worker nodes.
-[Next Exercise](../part1-ex2-file-transfer)
+[Next Exercise](part1-ex2-file-transfer.md)

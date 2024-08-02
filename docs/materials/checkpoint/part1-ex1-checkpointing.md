@@ -26,7 +26,7 @@ To get set up:
 1.  Download the Python script that is the main executable for this exercise:
 
         :::console
-        user@server $ wget https://raw.githubusercontent.com/osg-htc/user-school-2022/main/src/checkpointing/fibonacci.py
+        user@server $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/fibonacci.py
 
 1.  If you want to run the script directly, make it executable first:
 
