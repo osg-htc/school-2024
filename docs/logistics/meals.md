@@ -41,12 +41,13 @@ Please do not take them unless they are for you.
 
 #### Opening Dinner (6:30 PM - 8:30 PM)
 
-**Location: Fluno Skyview Room**
+**Location: Fluno Center - Skyview Room (on the 8th Floor)**
 
 - Cavatappi Pasta
+- Gluten Free Pasta
 - Cheese Lasagna
 - Grilled Chicken Breast
-- Homemade Pork, Chicken & Beef Meatballs
+- Homemade Chicken & Beef Meatballs
 - Italian Vegetable Blend
 - Breadsticks
 - Marinara and Alfredo Sauce
@@ -59,19 +60,20 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-- Turkey Sausage Link
+## Badger Breakfast ##
+- Turkey Sausage Links
+- Vegan Sausage Patties
 - Assorted Breakfast Pastries
 - Seasonal Fresh Cut Fruit Salad
 - Breakfast Potatoes
 - Scrambled Eggs
 - Regular Coffee
 - Assorted Bottled Juice
-- Vegan Sausage Patties
-- Hot Tea (3 gallons)
-- Hot Water with Assorted Tea Bags
-
+- Hot Tea 
+  
 #### Lunch (12:15 PM - 1:15 PM)
 
+## Southwest Buffet ##
 - Tortilla Chips
 - Red Salsa
 - Spanish Rice
@@ -97,21 +99,24 @@ Please do not take them unless they are for you.
 
 ### Tuesday, August 6, 2024
 
-#### Breakfast (8:00 AM - 4:00 PM)
+#### Breakfast (8:00 AM - 9:00 AM)
 
 - Fresh Cut Fruit Salad
 - Assorted Muffins
 - Gluten Free Muffin
-- Mini Quiche
-- Turkey Sausage Link
-- Vegan Sausage Patty
-- Assorted Bottled Juice
+- Mini Quiches
+- Turkey Sausage Links
+- Vegan Sausage Patties
+- Assorted Bottled Juices
 - Hot Tea
 - Regular Coffee
 
 #### Lunch (12:15 PM - 1:15 PM)
 
+## Italian Buffet ##
+
 - Caesar Salad (croutons, cheese & Kalamata olives on the side)
+- Caesar Dressing
 - Garlic Breadsticks
 - Pasta
 - Gluten Free Pasta
@@ -122,7 +127,7 @@ Please do not take them unless they are for you.
 
 #### PM Break (12:30 PM - 4:00 PM)
 
-- Assorted Bars
+- Assorted Dessert Bars
 - Granola Bars (GF)
 - Regular Coffee
 
@@ -130,7 +135,8 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-- Turkey Sausage Link
+- Turkey Sausage Links
+- Vegan Sausage Patties
 - Assorted Breakfast Pastries
 - Gluten Free Muffin
 - Seasonal Fresh Cut Fruit Salad
@@ -138,36 +144,44 @@ Please do not take them unless they are for you.
 - Scrambled Eggs
 - Regular Coffee
 - Assorted Bottled Juice
-- Vegan Sausage Patties
 - Hot Tea
 
 #### Lunch (12:30 PM - 1:45 PM)
 
-- Chicken Bacon Ranch Wrap
-- Smoked Turkey Sandwich
-- Southwest Salad
+## Boxed Lunches ##
+
+- Chicken Bacon Ranch Wraps
+- Smoked Turkey Sandwiches
+- Southwest Salads
+- Cookies
 - Gluten Free Cookie
+- Assorted Chips
 - Assorted Chips
 - Mediterranean Antipasto Platter
 - Vegetable Platter with Dill Dip
-- Italian Pasta
+- Italian Cold Pasta
 - Assorted Soda, Water, and Sparkling Water
 
 ### Thursday, August 8, 2024
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
+## Buckingham Breakfast ##
+
 - Assorted Breakfast Pastries
 - Gluten Free Muffin
 - Seasonal Fresh Cut Fruit Salad
 - Regular Coffee
 - Assorted Bottled Juice
-- Mini Quiche
-- Turkey Sausage Link
+- Mini Quiches
+- Turkey Sausage Links
 - Vegan Sausage Patties
 - Hot Tea
 
+
 #### Lunch (12:00 PM - 1:15 PM)
+
+## Mediteranian Buffet  ##
 
 - Lemon Oregano Chicken
 - Greek Salad with Olive Oil Vinaigrette
@@ -185,20 +199,24 @@ Please do not take them unless they are for you.
 
 #### Breakfast (8:00 AM - 9:00 AM)
 
-- Turkey Sausage Link
+## Badger Breakfast ##
+
+- Turkey Sausage Links
 - Bacon
+- Vegan Sausage Patties
 - Assorted Breakfast Pastries
 - Gluten Free Muffin
 - Seasonal Fresh Cut Fruit Salad
 - Breakfast Potatoes
 - Scrambled Eggs
+- Cinnamon Rolls
 - Regular Coffee
 - Assorted Bottled Juice
-- Vegan Sausage Patties
-- Cinnamon Rolls
 - Hot Tea
 
 #### Lunch (12:00 PM - 1:00 PM)
+
+## Wisconsin Tailgate ##
 
 - Garden Salad with Ranch and Balsamic dressing
 - Fried Wedge Potatoes with Ketchup
@@ -220,7 +238,7 @@ Please do not take them unless they are for you.
 - Regular Coffee
 - Brownies
 
-#### Closing Dinner (5:30 PM - 8:00 PM)
+#### Closing Dinner (6:00 PM - 8:00 PM)
 
 **Location: Union South - Industry (3rd Floor)**
 
