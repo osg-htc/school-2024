@@ -105,7 +105,7 @@
       <td>19:00</td>
       <td>20:30</td>
       <td><span class="before-dot text-orange">Evening work sessions (optional)</span></td>
-      <td>Rachel, Showmic</td>
+      <td>Rachel, Christina</td>
     </tr>
 
   </tbody>
@@ -197,7 +197,7 @@
         <td>19:00</td>
         <td>20:30</td>
         <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
-        <td>Andrew, Christina</td>
+        <td>Christina, Amber</td>
     </tr> 
   </tbody>
 </table>
@@ -280,7 +280,7 @@
         <td>19:00</td>
         <td>20:30</td>
         <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
-        <td>Tim C., Christina</td>
+        <td>Tim C., Showmic</td>
     </tr>
   </tbody>
 </table>
