@@ -60,7 +60,7 @@ Retrying Failed Jobs
 
 Now let’s see if we can solve the problem of jobs that fail once in a while. In this particular case, if HTCondor runs a failed job again, it has a good chance of succeeding. Not all failing jobs are like this, but in this case it is a reasonable assumption.
 
-From the lecture materials, implement the `max_retries` feature to retry any job with a non-zero exit code up to 5 times, then resubmit the jobs. Did your change work?
+HTcondor has a feature named [max_retries](https://htcondor.readthedocs.io/en/latest/users-manual/automatic-job-management.html#automatically-rerunning-a-failed-job) that allows to retry any job with a non-zero exit code up to 5 times, then resubmit the jobs. Did your change work?
 
 After the jobs have finished, examine the log file(s) to see what happened in detail. Did any jobs need to be restarted? Another way to see how many restarts there were is to look at the `NumJobStarts` attribute of a completed job with the `condor_history` command, in the same way you looked at the `ExitCode` attribute earlier. Does the number of retries seem correct? For those jobs which did need to be retried, what is their `ExitCode`; and what about the `ExitCode` from earlier execution attempts?
 
