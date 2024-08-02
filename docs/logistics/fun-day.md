@@ -1,5 +1,5 @@
 
-# Activity Ideas for Wednesday Afternoon or Evening
+# Fun Activity Ideas While in Madison
 
 ## Free
 
