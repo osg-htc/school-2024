@@ -15,7 +15,7 @@ Worksheet: [Slides coming soon]
 
 ### Intro to HTCondor Slides
 
-View the slides: [Slides coming soon]
+View the slides: [pdf](htcondor/files/osgus24-htc-htcondor.pdf)
 <!--
 [PowerPoint](htcondor/files/osgus22-htc-htcondor.pptx))
 -->
