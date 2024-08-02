@@ -8,7 +8,7 @@
 - **[L.R. Ingersoll Physics Museum**](https://www.physics.wisc.edu/ingersollmuseum/): Small museum of Physics objects and demonstrations. Very short walk from the School building: Chamberlin Hall, 1150 University Avenue. (~6 minute walk from School)
 - **[Terrace Open Mic Night](https://union.wisc.edu/events-and-activities/event-calendar/event/terrace-open-mic-2024/2024-08-07/)**: Enjoy a night out where all styles of music, comedy, spoken word, poetry, and more take the stage. Performances start at 7 PM on Wednesday. 800 Langdon Street (~15 minute walk from School)
 - **[Tour of Wisconsin State Capitol](https://tours.wisconsin.gov/)**: Tours start at 1, 2, 3, and 4 p.m. and last about 45 minutes. 2 E Main Street (~29 minute walk from School and across the Park Hotel)
-- **[Henry Vilas Zoo]([https://tours.wisconsin.gov/](https://www.henryvilaszoo.gov/)**: One-mile walk south of Computer Sciences: 702 South Randall Avenue. (~18 minute walk from School)
+- **[Henry Vilas Zoo](https://www.henryvilaszoo.gov/)**: One-mile walk south of Computer Sciences: 702 South Randall Avenue. (~18 minute walk from School)
 - **Take a stroll or a ride on [The Lakeshore Path](https://lakeshorepreserve.wisc.edu/visit/places/the-lakeshore-path/)**: Reach the infamous [Picnic Point](https://lakeshorepreserve.wisc.edu/visit/places/picnic-point/) or take your trip to the [Arboretum!](https://arboretum.wisc.edu/visit/getting-here/)
 
 ## Cost
