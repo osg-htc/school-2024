@@ -61,6 +61,7 @@ Please do not take them unless they are for you.
 #### Breakfast (8:00 AM - 9:00 AM)
 
 Badger Breakfast
+
 - Turkey Sausage Links
 - Vegan Sausage Patties
 - Assorted Breakfast Pastries
@@ -74,6 +75,7 @@ Badger Breakfast
 #### Lunch (12:15 PM - 1:15 PM)
 
 Southwest Buffet 
+
 - Tortilla Chips
 - Red Salsa
 - Spanish Rice
@@ -114,6 +116,7 @@ Southwest Buffet
 #### Lunch (12:15 PM - 1:15 PM)
 
 Italian Buffet
+
 - Caesar Salad (croutons, cheese & Kalamata olives on the side)
 - Caesar Dressing
 - Garlic Breadsticks
@@ -165,6 +168,7 @@ Boxed Lunches
 #### Breakfast (8:00 AM - 9:00 AM)
 
 Buckingham Breakfast
+
 - Assorted Breakfast Pastries
 - Gluten Free Muffin
 - Seasonal Fresh Cut Fruit Salad
@@ -179,6 +183,7 @@ Buckingham Breakfast
 #### Lunch (12:00 PM - 1:15 PM)
 
 Mediteranian Buffet
+
 - Lemon Oregano Chicken
 - Greek Salad with Olive Oil Vinaigrette
 - Roasted Vegetable Couscous
@@ -196,6 +201,7 @@ Mediteranian Buffet
 #### Breakfast (8:00 AM - 9:00 AM)
 
 Badger Breakfast
+
 - Turkey Sausage Links
 - Bacon
 - Vegan Sausage Patties
@@ -212,6 +218,7 @@ Badger Breakfast
 #### Lunch (12:00 PM - 1:00 PM)
 
 Wisconsin Tailgate 
+
 - Garden Salad with Ranch and Balsamic dressing
 - Fried Wedge Potatoes with Ketchup
 - Brats with Kraut
@@ -235,6 +242,8 @@ Wisconsin Tailgate
 #### Closing Dinner (6:00 PM - 8:00 PM)
 
 **Location: Union South - Industry (3rd Floor)**
+
+Global Buffet
 
 - Spinach, Strawberry, Shaved Red Onion, Sesame Poppy Seed Dressing
 - Vegetables, Dips, Spreads, Pita Chips
