@@ -41,6 +41,7 @@ nav:
     - Meal information:             logistics/meals.md
     - Dining options:               logistics/dining.md
     - Account setup:                logistics/account-setup.md
+    - Wednesday fun day:            logistics/fun-day.md
   - Materials:
     - Overview:                     materials/index.md
     - Intro to HTCondor:
@@ -59,7 +60,7 @@ nav:
         - 2.1 - Work with input and output files:  materials/htcondor/part2-ex1-files.md
         - 2.2 - Use queue N, $(Cluster), and $(Process): materials/htcondor/part2-ex2-queue-n.md
         - 2.3 - Use queue from with custom variables: materials/htcondor/part2-ex3-queue-from.md
-        - Bonus Exercise 2.4 - Use queue matching with a custom variable: materials/htcondor/part2-ex4-queue-matching.md 
+        - Bonus Exercise 2.4 - Use queue matching with a custom variable: materials/htcondor/part2-ex4-queue-matching.md
     - OSG:
       - 1.1 - Log in to the OSPool Access Point: materials/osg/part1-ex1-login-scp.md
       - 1.2 - Running jobs in the OSPool: materials/osg/part1-ex2-submit-osg.md
