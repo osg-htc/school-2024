@@ -1,16 +1,16 @@
 ## August 4 (Sunday)
 
-### Welcome Dinner for Participants and Staff
+<div style="font-size: larger; font-weight: bold; color: #FF6600;">Welcome Dinner for Participants and Staff</div>
 
 All School participants and staff are encourage to attend!
 
-**Time:** Starting at 6:30 p.m.
+**Time:** Starting at 6:30 p.m.<br>
 **Location**: [Fluno Center](https://fluno.com), 601 University Avenue; Skyview Room, 8th floor
 
 There is construction all around the Fluno Center;
 use the map below to get to the entrance on University Avenue:
 
-![Map showing Fluno Center entrance near University and Frances](files/fluno-entrance-2024.jpg "Fluno Center entrance map")
+<p><img alt="Map showing Fluno Center entrance near University and Frances" src="../files/fluno-entrance-2024.jpg" title="Fluno Center entrance map" style="max-width: 80%;"/></p>
 
 Rachel, one of the School staff, will be in the hotel lobby to lead a group walking to the Fluno.
 She plans to arrive at the Park Hotel at about 5:40 p.m.,
@@ -36,7 +36,7 @@ or to get there however you like.
     <tr>
       <td>8:00</td>
       <td>8:45</td>
-      <td>Breakfast in [Computer Sciences 1240](logistics/location.md)</td>
+      <td>Breakfast in Computer Sciences 1240</td>
       <td>-</td>
     </tr>
     <tr>
@@ -148,7 +148,7 @@ or to get there however you like.
     <tr>
       <td>8:00</td>
       <td>8:45</td>
-      <td>Breakfast in [Computer Sciences 1240](logistics/location.md)</td>
+      <td>Breakfast in Computer Sciences 1240</td>
       <td>-</td>
     </tr>
     <tr>
