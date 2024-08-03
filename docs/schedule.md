@@ -1,96 +1,115 @@
 ## August 4 (Sunday)
-### Welcome Dinner for Students and Staff
-<p>More information TBD</p>
+
+### Welcome Dinner for Participants and Staff
+
+All School participants and staff are encourage to attend!
+
+**Time:** Starting at 6:30 p.m.
+**Location**: [Fluno Center](https://fluno.com), 601 University Avenue; Skyview Room, 8th floor
+
+There is construction all around the Fluno Center;
+use the map below to get to the entrance on University Avenue:
+
+![Map showing Fluno Center entrance near University and Frances](files/fluno-entrance-2024.jpg "Fluno Center entrance map")
+
+Rachel, one of the School staff, will be in the hotel lobby to lead a group walking to the Fluno.
+She plans to arrive at the Park Hotel at about 5:40 p.m.,
+and then the whole group will leave at about 6:00 p.m.
+Join the walking group, if you like!
+
+Otherwise, you are welcome to walk on your own,
+to get a ride (maybe even the hotel shuttle will be available),
+or to get there however you like.
 
 ## August 5 (Monday)
 
 <table>
   <thead>
     <tr>
-        <th>Start</th>
-        <th>End</th>
-        <th>Event</th>
-        <th>Instructor</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Event</th>
+      <th>Instructor</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-        <td>8:00</td>
-        <td>8:45</td>
-        <td>Breakfast, Computer Sciences 1240</td>
-        <td>-</td>
+      <td>8:00</td>
+      <td>8:45</td>
+      <td>Breakfast in [Computer Sciences 1240](logistics/location.md)</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>9:00</td>
-        <td>9:15</td>
-        <td>Welcome to the OSG School</td>
-        <td>Tim C.</td>
+      <td>9:00</td>
+      <td>9:15</td>
+      <td>Welcome to the OSG School</td>
+      <td>Tim C.</td>
     </tr>
     <tr>
-        <td>9:15</td>
-        <td>9:30</td>
-        <td><span class="before-dot text-light-blue">Lecture: Introduction to High Throughput Computing</span></td>
-        <td>Christina</td>
+      <td>9:15</td>
+      <td>9:30</td>
+      <td><span class="before-dot text-light-blue">Lecture: Introduction to High Throughput Computing</span></td>
+      <td>Christina</td>
     </tr>
     <tr>
-        <td>9:30</td>
-        <td>9:45</td>
-        <td><span class="before-dot text-pink">Exercise: Scaling Out Computing Worksheet</span></td>
-        <td>-</td>
+      <td>9:30</td>
+      <td>9:45</td>
+      <td><span class="before-dot text-pink">Exercise: Scaling Out Computing Worksheet</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>9:45</td>
-        <td>10:15</td>
-        <td><span class="before-dot text-light-blue">Lecture: Introduction to HTCondor</span></td>
-        <td>Andrew</td>
+      <td>9:45</td>
+      <td>10:15</td>
+      <td><span class="before-dot text-light-blue">Lecture: Introduction to HTCondor</span></td>
+      <td>Andrew</td>
     </tr>
     <tr>
-        <td>10:15</td>
-        <td>10:30</td>
-        <td><span class="before-dot text-pink">Exercise: Log in</span></td>
-        <td>-</td>
+      <td>10:15</td>
+      <td>10:30</td>
+      <td><span class="before-dot text-pink">Exercise: Log in</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>10:30</td>
-        <td>10:45</td>
-        <td>Break</td>
-        <td>-</td>
+      <td>10:30</td>
+      <td>10:45</td>
+      <td>Break</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>10:45</td>
-        <td>12:15</td>
-        <td><span class="before-dot text-pink">Exercises: HTCondor bases (1.n series)</span></td>
-        <td>-</td>
+      <td>10:45</td>
+      <td>12:15</td>
+      <td><span class="before-dot text-pink">Exercises: HTCondor basics (1.n series)</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>12:15</td>
-        <td>13:15</td>
-        <td>Lunch, Computer Sciences (Staff to direct)</td>
-        <td>-</td>
+      <td>12:15</td>
+      <td>13:15</td>
+      <td>Lunch in Computer Sciences (near 1240)</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>13:15</td>
-        <td>14:00</td>
-        <td><span class="before-dot text-light-blue">Lecture: More HTCondor</span></td>
-        <td>Andrew</td>
+      <td>13:15</td>
+      <td>14:00</td>
+      <td><span class="before-dot text-light-blue">Lecture: More HTCondor</span></td>
+      <td>Andrew</td>
     </tr>
     <tr>
-        <td>14:15</td>
-        <td>15:00</td>
-        <td><span class="before-dot text-pink">Exercises: (2.n series)</span></td>
-        <td>-</td>
+      <td>14:15</td>
+      <td>15:00</td>
+      <td><span class="before-dot text-pink">Exercises: Many jobs (2.n series)</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>15:00</td>
-        <td>15:15</td>
-        <td>Break</td>
-        <td>-</td>
+      <td>15:00</td>
+      <td>15:15</td>
+      <td>Break</td>
+      <td>-</td>
     </tr> 
     <tr>
-        <td>15:15</td>
-        <td>15:30</td>
-        <td><span class="before-dot text-light-blue">Lecture: Setting goals for the School and beyond</span></td>
-        <td>Rachel</td>
+      <td>15:15</td>
+      <td>15:30</td>
+      <td><span class="before-dot text-light-blue">Lecture: Setting goals for the School and beyond</span></td>
+      <td>Rachel</td>
     </tr>
     <tr>
       <td>15:30</td>
@@ -104,10 +123,13 @@
     <tr>
       <td>19:00</td>
       <td>20:30</td>
-      <td><span class="before-dot text-orange">Evening work sessions (optional)</span></td>
-      <td>Rachel, Christina</td>
+      <td>
+        <span class="before-dot text-orange">Evening work sessions (optional)</span><br>
+        Memorial Union – Council Room (4th Floor)<br>
+        <strong>Note:</strong> Free, outdoor showing of Jaws (1975) at 9 p.m.!
+      </td>
+      <td>Rachel, Christina, Tim</td>
     </tr>
-
   </tbody>
 </table>
 
@@ -116,88 +138,87 @@
 <table>
   <thead>
     <tr>
-        <th>Start</th>
-        <th>End</th>
-        <th>Event</th>
-        <th>Instructor</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Event</th>
+      <th>Instructor</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-        <td>8:00</td>
-        <td>8:45</td>
-        <td>Breakfast, Computer Sciences 1240</td>
-        <td>-</td>
+      <td>8:00</td>
+      <td>8:45</td>
+      <td>Breakfast in [Computer Sciences 1240](logistics/location.md)</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>9:00</td>
-        <td>9:45</td>
-        <td><span class="before-dot text-light-blue">Lecture: Introduction to dHTC and the OSPool</span></td>
-        <td>Tim C.</td>
+      <td>9:00</td>
+      <td>9:45</td>
+      <td><span class="before-dot text-light-blue">Lecture: Introduction to dHTC and the OSPool</span></td>
+      <td>Tim C.</td>
     </tr>
     <tr>
-        <td>9:45</td>
-        <td>10:30</td>
-        <td><span class="before-dot text-light-pink">Exercises: Using the OSPool</span></td>
-        <td>-</td>
+      <td>9:45</td>
+      <td>10:30</td>
+      <td><span class="before-dot text-light-pink">Exercises: Using the OSPool</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>10:30</td>
-        <td>10:45</td>
-        <td>Break</td>
-        <td>-</td>
+      <td>10:30</td>
+      <td>10:45</td>
+      <td>Break<br>Travel document collection, [if needed](logistics/visas.md)</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>10:45</td>
-        <td>11:30</td>
-        <td><span class="before-dot text-light-blue">Lecture: Troubleshooting jobs</span></td>
-        <td>Showmic</td>
+      <td>10:45</td>
+      <td>11:30</td>
+      <td><span class="before-dot text-light-blue">Lecture: Troubleshooting jobs</span></td>
+      <td>Showmic</td>
     </tr>
     <tr>
-        <td>11:30</td>
-        <td>12:15</td>
-        <td><span class="before-dot text-pink">Exercises: Basic troubleshooting tools</span></td>
-        <td>-</td>
+      <td>11:30</td>
+      <td>12:15</td>
+      <td><span class="before-dot text-pink">Exercises: Basic troubleshooting tools</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>12:15</td>
-        <td>13:30</td>
-        <td>Lunch, Computer Sciences (Staff to direct)</td>
-        <td>-</td>
+      <td>12:15</td>
+      <td>13:30</td>
+      <td>Lunch in Computer Sciences (near 1240)<br>13:15: Return documents in 1240</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>13:30</td>
-        <td>14:45</td>
-        <td><span class="before-dot text-blue">Interactive: High Throughput Computing in action</span></td>
-        <td>staff</td>
+      <td>13:30</td>
+      <td>14:45</td>
+      <td><span class="before-dot text-blue">Interactive: High Throughput Computing in action</span></td>
+      <td>staff</td>
     </tr>
     <tr>
-        <td>14:45</td>
-        <td>15:00</td>
-        <td>Break</td>
-        <td>-</td>
+      <td>14:45</td>
+      <td>15:00</td>
+      <td>Break</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>15:00</td>
-        <td>15:45</td>
-        <td><span class="before-dot text-light-blue">Lecture: Software portability.</span></td>
-        <td>Rachel</td>
+      <td>15:00</td>
+      <td>15:45</td>
+      <td><span class="before-dot text-light-blue">Lecture: Software portability</span></td>
+      <td>Rachel</td>
     </tr>
     <tr>
-        <td>15:45</td>
-        <td>17:00</td>
-        <td>
-            <span class="before-dot text-pink">Excersies: Software and unfinished exercises</span> 
-            <br> 
-            <span class="before-dot text-black">Individual consultations</span>
-        </td>
-        <td>staff</td>
+      <td>15:45</td>
+      <td>17:00</td>
+      <td>
+        <span class="before-dot text-pink">Excersies: Software and unfinished exercises</span><br>
+        <span class="before-dot text-black">Individual consultations</span>
+      </td>
+      <td>staff</td>
     </tr>
     <tr>
-        <td>19:00</td>
-        <td>20:30</td>
-        <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
-        <td>Christina, Amber</td>
+      <td>19:00</td>
+      <td>20:30</td>
+      <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
+      <td>Christina, Amber, Tim</td>
     </tr> 
   </tbody>
 </table>
