@@ -124,7 +124,7 @@ or to get there however you like.
       <td>19:00</td>
       <td>20:30</td>
       <td>
-        <span class="before-dot text-orange">Evening work sessions (optional)</span><br>
+        <span class="before-dot text-orange">Evening work session (optional)</span><br>
         Memorial Union – Council Room (4th Floor)<br>
         <strong>Note:</strong> Free, outdoor showing of Jaws (1975) at 9 p.m.!
       </td>
@@ -217,7 +217,10 @@ or to get there however you like.
     <tr>
       <td>19:00</td>
       <td>20:30</td>
-      <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
+      <td>
+        <span class="before-dot text-orange">Evening work session (optional)</span><br>
+        Memorial Union – Council Room (4th Floor)
+      </td>
       <td>Christina, Amber, Tim</td>
     </tr> 
   </tbody>
@@ -228,80 +231,85 @@ or to get there however you like.
 <table>
   <thead>
     <tr>
-        <th>Start</th>
-        <th>End</th>
-        <th>Event</th>
-        <th>Instructor</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Event</th>
+      <th>Instructor</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-        <td>8:00</td>
-        <td>8:45</td>
-        <td>Breakfast, Computer Sciences 1240</td>
-        <td>-</td>
+      <td>8:00</td>
+      <td>8:45</td>
+      <td>Breakfast in Computer Sciences 1240</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>9:00</td>
-        <td>9:45</td>
-        <td><span class="before-dot text-light-blue">Lecture: Working with data</span></td>
-        <td>Andrew</td>
+      <td>9:00</td>
+      <td>9:45</td>
+      <td><span class="before-dot text-light-blue">Lecture: Working with data</span></td>
+      <td>Andrew</td>
     </tr>
     <tr>
-        <td>9:45</td>
-        <td>10:45</td>
-        <td><span class="before-dot text-pink">Exercises: Data</span></td>
-        <td>-</td>
+      <td>9:45</td>
+      <td>10:45</td>
+      <td><span class="before-dot text-pink">Exercises: Data</span></td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>10:45</td>
-        <td>11:00</td>
-        <td>Break</td>
-        <td>-</td>
+      <td>10:45</td>
+      <td>11:00</td>
+      <td>Break</td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>11:00</td>
-        <td>12:00</td>
-        <td>
-          HTC Showcase Part 1<br>
-          &#9654; <span style="color: rgb(173, 81, 12);">Michael Gerard</span>;
-          Nuclear Engineering &amp; Engineering Physics<br>
-          <div style="margin-left: 2ex;">“Using CHTC to optimize the Helically Symmetric eXperiment stellarator”</div>
-          &#9654; <span style="color: rgb(173, 81, 12);">Bryce Johnson</span>;
-          Morgridge Institute for Research & UW&ndash;Madison Computer Sciences<br>
-          <div style="margin-left: 2ex;">“Running millions of biophysical simulations with OSPool”</div>
-          </td>
-        <td>-</td>
+      <td>11:00</td>
+      <td>12:00</td>
+      <td>
+        HTC Showcase Part 1<br>
+        &#9654; <span style="color: rgb(173, 81, 12);">Michael Gerard</span>;
+        Nuclear Engineering &amp; Engineering Physics<br>
+        <div style="margin-left: 2ex;">“Using CHTC to optimize the Helically Symmetric eXperiment stellarator”</div>
+        &#9654; <span style="color: rgb(173, 81, 12);">Bryce Johnson</span>;
+        Morgridge Institute for Research & UW&ndash;Madison Computer Sciences<br>
+        <div style="margin-left: 2ex;">“Running millions of biophysical simulations with OSPool”</div>
+      </td>
+      <td>-</td>
     </tr>
     <tr>
-        <td>12:00</td>
-        <td>12:30</td>
-        <td>Open Q&amp;A and discussion time</td>
-        <td>staff</td>
+      <td>12:00</td>
+      <td>12:30</td>
+      <td>Open Q&amp;A and discussion time</td>
+      <td>staff</td>
     </tr>
     <tr>
-        <td>12:30</td>
-        <td>13:45</td>
-        <td>
-            Lunch, Computer Sciences (Staff to direct)<br>
-            Optional Domain Lunches: Christina (math); Rachel (biology); Andrew/Amber (chemistry); Ian (ML); Tim (physics &amp; astronomy)
-        </td> 
-        <td>-</td>
+      <td>12:30</td>
+      <td>13:45</td>
+      <td>
+        Lunch in Computer Sciences (near 1240)<br>
+        Optional Domain Lunches: Christina (math); Rachel (biology); Andrew/Amber (chemistry);
+        Ian (ML); Tim (physics &amp; astronomy)
+      </td> 
+      <td>-</td>
     </tr>
     <tr>
-        <td>13:45</td>
-        <td>17:00</td>
-        <td>
-            Afternoon off or optional work time<br>
-            <span class="before-dot text-black">Individual consultations</span>
-        </td>
-        <td>staff</td>
+      <td>13:45</td>
+      <td>17:00</td>
+      <td>
+        Afternoon off &mdash; [suggestions for fun](logistics/fun-day.md)<br>
+        Or, optional work time<br>
+        <span class="before-dot text-black">Or, individual consultations</span>
+      </td>
+      <td>staff</td>
     </tr>
     <tr>
-        <td>19:00</td>
-        <td>20:30</td>
-        <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
-        <td>Tim C., Showmic</td>
+      <td>19:00</td>
+      <td>20:30</td>
+      <td>
+        <span class="before-dot text-orange">Evening work session (optional)</span><br>
+        Memorial Union – Langdon Room (4th Floor)<br>
+      </td>
+      <td>Christina, Showmic</td>
     </tr>
   </tbody>
 </table>
@@ -319,15 +327,15 @@ or to get there however you like.
   </thead>
   <tbody>
     <tr>
-        <td>8:00</td>
-        <td>8:45</td>
-        <td>Breakfast, Computer Sciences 1240</td>
-        <td>-</td>
+      <td>8:00</td>
+      <td>8:45</td>
+      <td>Breakfast in Computer Sciences 1240</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>9:00</td>
       <td>9:45</td>
-      <td><span class="before-dot text-light-blue">Lecture: Scaling Up/Independence in Research Computing</span></td>
+      <td><span class="before-dot text-light-blue">Lecture: Independence in Research Computing</span></td>
       <td>Christina</td>
     </tr>
     <tr>
@@ -345,13 +353,13 @@ or to get there however you like.
     <tr>
       <td>11:00</td>
       <td>12:00</td>
-      <td><span class="before-dot text-light-blue">Lecture DAGMan</span></td>
+      <td><span class="before-dot text-light-blue">Lecture: DAGMan</span></td>
       <td>Rachel</td>
     </tr>
     <tr>
       <td>12:00</td>
       <td>13:15</td>
-      <td>Lunch, Computer Sciences (Staff to direct)</td>
+      <td>Lunch in Computer Sciences (near 1240)</td>
       <td>-</td>
     </tr>
     <tr>
@@ -388,8 +396,11 @@ or to get there however you like.
     <tr>
       <td>19:00</td>
       <td>20:30</td>
-      <td><span class="before-dot text-orange">Evening work session (optional)</span></td>
-      <td>Andrew, Showmic</td>
+      <td>
+        <span class="before-dot text-orange">Evening work session (optional)</span><br>
+        Memorial Union – Council Room (4th Floor)<br>
+      </td>
+      <td>Andrew, Showmic, Tim</td>
     </tr>
   </tbody>
 </table>
@@ -407,16 +418,16 @@ or to get there however you like.
   </thead>
   <tbody>
     <tr>
-        <td>8:00</td>
-        <td>8:45</td>
-        <td>Breakfast, Computer Sciences 1240</td>
-        <td>-</td>
+      <td>8:00</td>
+      <td>8:45</td>
+      <td>Breakfast in Computer Sciences 1240</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>9:00</td>
       <td>9:45</td>
       <td>
-        Checkpointing<br>
+        **Optional** Lecture: Self-Checkpointing<br>
         <span class="before-dot text-light-orange">Work Time: Apply HTC to own research</span>
       </td>
       <td>Showmic</td>
@@ -462,12 +473,12 @@ or to get there however you like.
       <td>14:00</td>
       <td>
         HTC Showcase, Part 2
-          <br>
-          &#9654; <span style="color: rgb(173, 81, 12);">Saloni Bhogale</span>;<br>
-          <div style="margin-left: 2ex;">“TBD”</div>
-          &#9654; <span style="color: rgb(173, 81, 12);">Dan Wright</span>;
-          Civil &amp; Environmental Engineering<br>
-          <div style="margin-left: 2ex;">“Computational hydroclimate research enabled by HTC”</div>
+        <br>
+        &#9654; <span style="color: rgb(173, 81, 12);">Saloni Bhogale</span>;<br>
+        <div style="margin-left: 2ex;">“TBD”</div>
+        &#9654; <span style="color: rgb(173, 81, 12);">Dan Wright</span>;
+        Civil &amp; Environmental Engineering<br>
+        <div style="margin-left: 2ex;">“Computational hydroclimate research enabled by HTC”</div>
       </td>
       <td>-</td>
     </tr>
@@ -497,13 +508,23 @@ or to get there however you like.
       <td>16:00</td>
       <td>16:45</td>
       <td>HTC and HTCondor Philosophy</td>
-      <td>Greg?</td>
+      <td>Miron (and Greg?)</td>
     </tr>
     <tr>
       <td>16:45</td>
       <td>17:15</td>
       <td><span class="before-dot text-light-blue">Lecture: Forward</span></td>
-      <td>Tim C.</td>
+      <td>Tim</td>
     </tr>
   </tbody>
 </table>
+
+**Closing Dinner for Participants and Staff**
+
+*   **Location:** Union South (next to Computer Sciences), indoors/outdoors
+*   **Time:** 6:00&ndash;7:45 p.m. (or so)
+
+We have scheduled a buffet dinner to wrap up the School.
+The buffet itself, and some tables, are inside.
+But if the weather is good, we will have easy access to outdoor space, too, and
+we encourage everyone to head outside with their food.
