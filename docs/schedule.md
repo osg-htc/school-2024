@@ -427,7 +427,7 @@ or to get there however you like.
       <td>9:00</td>
       <td>9:45</td>
       <td>
-        **Optional** Lecture: Self-Checkpointing<br>
+        <strong>Optional</strong> Lecture: Self-Checkpointing<br>
         <span class="before-dot text-light-orange">Work Time: Apply HTC to own research</span>
       </td>
       <td>Showmic</td>
