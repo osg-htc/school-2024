@@ -160,13 +160,13 @@ or to get there however you like.
     <tr>
       <td>9:45</td>
       <td>10:30</td>
-      <td><span class="before-dot text-light-pink">Exercises: Using the OSPool</span></td>
+      <td><span class="before-dot text-pink">Exercises: Using the OSPool</span></td>
       <td>-</td>
     </tr>
     <tr>
       <td>10:30</td>
       <td>10:45</td>
-      <td>Break<br>Travel document collection, [if needed](logistics/visas.md)</td>
+      <td>Break<br>Travel document collection, as needed</td>
       <td>-</td>
     </tr>
     <tr>
@@ -184,7 +184,7 @@ or to get there however you like.
     <tr>
       <td>12:15</td>
       <td>13:30</td>
-      <td>Lunch in Computer Sciences (near 1240)<br>13:15: Return documents in 1240</td>
+      <td>Lunch in Computer Sciences (near 1240)<br><strong>13:15:</strong> Return documents in 1240</td>
       <td>-</td>
     </tr>
     <tr>
@@ -209,7 +209,7 @@ or to get there however you like.
       <td>15:45</td>
       <td>17:00</td>
       <td>
-        <span class="before-dot text-pink">Excersies: Software and unfinished exercises</span><br>
+        <span class="before-dot text-pink">Exercises: Software and unfinished exercises</span><br>
         <span class="before-dot text-black">Individual consultations</span>
       </td>
       <td>staff</td>
@@ -474,11 +474,11 @@ or to get there however you like.
       <td>
         HTC Showcase, Part 2
         <br>
-        &#9654; <span style="color: rgb(173, 81, 12);">Saloni Bhogale</span>;<br>
-        <div style="margin-left: 2ex;">“TBD”</div>
         &#9654; <span style="color: rgb(173, 81, 12);">Dan Wright</span>;
         Civil &amp; Environmental Engineering<br>
         <div style="margin-left: 2ex;">“Computational hydroclimate research enabled by HTC”</div>
+        &#9654; <span style="color: rgb(173, 81, 12);">Saloni Bhogale</span>;<br>
+        <div style="margin-left: 2ex;">“TBD”</div>
       </td>
       <td>-</td>
     </tr>
