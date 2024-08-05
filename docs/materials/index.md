@@ -9,9 +9,9 @@ View the slides:
 
 ### Intro to HTC Slides
 
-Intro to HTC: [Slides coming soon]
+Intro to HTC: [pptx](htcondor/osgschool24-htc-intro.pptx)
 
-Worksheet: [Slides coming soon]
+Worksheet: [pdf](htcondor/HTC-List-Of-Jobs.pdf) or [Google Drive](https://docs.google.com/presentation/d/1DnJMOuw0YjuVg70vCvafXlJUm4k5Ovv7Zd1SJbfk6hU/edit?usp=sharing)
 
 ### Intro to HTCondor Slides
 
