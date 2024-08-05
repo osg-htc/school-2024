@@ -296,7 +296,7 @@ or to get there however you like.
       <td>13:45</td>
       <td>17:00</td>
       <td>
-        Afternoon off &mdash; [suggestions for fun](logistics/fun-day.md)<br>
+        Afternoon off &mdash; [suggestions for fun](../logistics/fun-day.md)<br>
         Or, optional work time<br>
         <span class="before-dot text-black">Or, individual consultations</span>
       </td>
