@@ -9,7 +9,7 @@ View the slides:
 
 ### Intro to HTC Slides
 
-Intro to HTC: [Slides coming soon]
+Intro to HTC: [pptx](htcondor/osgschool24-htc-intro.pptx)
 
 Worksheet: [Slides coming soon]
 
