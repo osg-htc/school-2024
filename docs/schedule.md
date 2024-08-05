@@ -7,6 +7,7 @@ All School participants and staff are encourage to attend!
 **Time:** Starting at 6:30 p.m.<br>
 **Location**: [Fluno Center](https://fluno.com), 601 University Avenue; Skyview Room, 8th floor
 
+<!--
 There is construction all around the Fluno Center;
 use the map below to get to the entrance on University Avenue:
 
@@ -20,6 +21,7 @@ Join the walking group, if you like!
 Otherwise, you are welcome to walk on your own,
 to get a ride (maybe even the hotel shuttle will be available),
 or to get there however you like.
+-->
 
 ## August 5 (Monday)
 
