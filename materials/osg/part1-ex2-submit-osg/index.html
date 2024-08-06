@@ -1698,8 +1698,9 @@ Geolocation uses a registry to match a computer’s network address to an approx
 <li>Create and change into a new folder for this exercise, for example <code>osg-ex12</code></li>
 <li>
 <p>Download the geolocation code:</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>wget http://proxy.chtc.wisc.edu/SQUID/osgschool21/location-wrapper.sh <span class="se">\</span>
-<span class="go">       http://proxy.chtc.wisc.edu/SQUID/osgschool21/wn-geoip.tar.gz</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/location-wrapper.sh <span class="se">\</span>
+<span class="go">       http://proxy.chtc.wisc.edu/SQUID/osgschool21/wn-geoip.tar.gz \ </span>
+<span class="go">       http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/python27.sif</span>
 </code></pre></div>
 
 <p>You will be using <code>location-wrapper.sh</code> as your executable and <code>wn-geoip.tar.gz</code> as an input file.</p>
@@ -1709,7 +1710,7 @@ Geolocation uses a registry to match a computer’s network address to an approx
     transfers <code>wn-geoip.tar.gz</code> as an input file,
     and uses the <code>$(Process)</code> macro to write different <code>output</code> and <code>error</code> files.
     Also, add the following requirement to the submit file (it’s not important to know what it does):</p>
-<div class="codehilite"><pre><span></span><code>requirements = (HAS_CVMFS_oasis_opensciencegrid_org == TRUE) &amp;&amp; (IsOsgVoContainer =!= True)
+<div class="codehilite"><pre><span></span><code>container_image = python27.sif
 </code></pre></div>
 
 <p>Try to do this step without looking at materials from the earlier exercises.
