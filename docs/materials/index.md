@@ -105,7 +105,7 @@ Slides: [pptx](software/files/osgs24-software.pptx)
 
 ## Data
 
-View the slides: [Slides coming soon]
+View the slides: [pdf](data/files/osgus24-data.pdf)
 
 ### Data Exercises 1: HTCondor File Transfer (Strongly Recommended)
 
