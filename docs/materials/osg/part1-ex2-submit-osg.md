@@ -23,17 +23,18 @@ Now, let’s try to remember some basic HTCondor ideas from the HTC exercises:
 1.  Download the geolocation code:
 
         :::console
-        $ wget http://proxy.chtc.wisc.edu/SQUID/osgschool21/location-wrapper.sh \
-               http://proxy.chtc.wisc.edu/SQUID/osgschool21/wn-geoip.tar.gz
+        $ wget http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/location-wrapper.sh \
+               http://proxy.chtc.wisc.edu/SQUID/osgschool21/wn-geoip.tar.gz \ 
+               http://proxy.chtc.wisc.edu/SQUID/osg-school-2024/python27.sif
 
     You will be using `location-wrapper.sh` as your executable and `wn-geoip.tar.gz` as an input file.
-
+ 
 1.  Create a submit file that queues **fifty** jobs that run `location-wrapper.sh`,
     transfers `wn-geoip.tar.gz` as an input file,
     and uses the `$(Process)` macro to write different `output` and `error` files.
     Also, add the following requirement to the submit file (it’s not important to know what it does):
 
-        requirements = (HAS_CVMFS_oasis_opensciencegrid_org == TRUE) && (IsOsgVoContainer =!= True)
+        container_image = python27.sif
 
     Try to do this step without looking at materials from the earlier exercises.
     But if you are stuck, see [HTC Exercise 2.2](../htcondor/part2-ex2-queue-n.md).
