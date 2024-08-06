@@ -51,7 +51,7 @@ View the Slides: [pdf](htcondor/files/osgus24-htc-htcondor-multiple-jobs.pdf)
 ## OSG
 
 View the slides:
-[Slides coming soon]
+[pdf](osg/files/osgs24-day2-part1-osg-timc.pdf)
 
 ### OSG Exercises: Comparing PATh and OSG (Strongly Recommended)
 
