@@ -71,7 +71,7 @@ Slides: [Slides coming soon]
 
 ## Software
 
-Slides: [Slides coming soon]
+Slides: [pptx](software/files/osgs24-software.pptx)
 
 ### Software Exercises 1: Exploring Containers
 
