@@ -134,7 +134,7 @@ View the slides: [pptx](scaling/files/osgschool24-learning-scaling.pptx)
 
 ## Workflows with DAGMan
 
-View the slides: [Slides coming soon]
+View the slides: [pptx](workflows/files/osg24-dagman.pptx)
 
 ### DAGMan Exercises 1
 
