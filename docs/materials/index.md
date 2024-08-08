@@ -160,6 +160,8 @@ View the slides
 - [Exercise 1.3: Running a GPU job](gpus/part1-ex3-gpu-jobs.md)
 
 END EXTRA TOPICS THAT ARE NOT READY YET -->
+### Machine Learning
+View the slides: [pdf](ml/Throughput-ML-iross-OSGUS24.pdf)
 
 ### Self-checkpointing for long-running jobs
 
