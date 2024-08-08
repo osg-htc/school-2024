@@ -71,7 +71,7 @@ View the Slides: [pdf](troubleshooting/files/OSGUS2024_troubleshooting.pdf) [ppt
 
 ## Software
 
-Slides: [pptx](software/files/osgs24-software.pdf)
+Slides: [pdf](software/files/osgs24-software.pdf)
 
 ### Software Exercises 1: Exploring Containers
 
