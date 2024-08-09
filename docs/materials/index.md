@@ -165,7 +165,7 @@ View the slides: [pdf](ml/Throughput-ML-iross-OSGUS24.pdf)
 
 ### Self-checkpointing for long-running jobs
 
-View the slides: [Slides coming soon]
+View the slides: [pdf](checkpoint/files/OSGUS2024_checkpointing.pdf) [ppt](checkpoint/files/OSGUS2024_checkpointing.pptx)
 
 -   [Exercise 1.1: Trying out self-checkpointing](checkpoint/part1-ex1-checkpointing.md)
 
