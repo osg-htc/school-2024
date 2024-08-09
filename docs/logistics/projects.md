@@ -7,18 +7,16 @@ project designation for your research group.
 
 Please complete the following steps by September 20: 
 
-1. Fill out the following form, setting OSG-School-2023 as the "Project Name". **Click 
-    on "Submit Manually" when done.**
-	
-	[Project Creation Form](https://topology.opensciencegrid.org/generate_project_yaml)
+1. Fill out the following form: [Project Creation Form](https://topology.opensciencegrid.org/generate_project_yaml)
 	
 	If the project name doesn't auto-populate, just fill in `OSG_School_2024`
+    **Click on "Submit Manually" when done.**
 	
-	Top of the form: 
+	The form looks like this: 
 	
 	![Top of the form](../assets/form-example.png)
 	
-	Submit manually: 
+	This should be the option you choose at the end: 
 	
 	![Submit manually](../assets/submit-manually.png)
 
