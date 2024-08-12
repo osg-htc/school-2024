@@ -41,8 +41,10 @@ nav:
     - Meal information:             logistics/meals.md
     - Dining options:               logistics/dining.md
     - Madison Fun Day:              logistics/fun-day.md
-    - Account setup:                logistics/account-setup.md
-   
+    - Initial account setup:        logistics/account-setup.md
+    - Access OSPool long-term:      logistics/projects.md
+    - Reimbursements:               logistics/reimbursements.md
+
   - Materials:
     - Overview:                     materials/index.md
     - Intro to HTCondor:
