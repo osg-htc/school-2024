@@ -44,6 +44,7 @@ nav:
     - Initial account setup:        logistics/account-setup.md
     - Access OSPool long-term:      logistics/projects.md
     - Reimbursements:               logistics/reimbursements.md
+    - Final assignment:             logistics/assignment.md
 
   - Materials:
     - Overview:                     materials/index.md
